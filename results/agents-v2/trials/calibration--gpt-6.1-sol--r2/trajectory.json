@@ -1,0 +1,207 @@
+[
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "core.py",
+      "content": ""
+    },
+    "result": {
+      "content": "import math\n\ndef validate(rows,y,w,n):\n    if n<1 or len(rows)!=len(y) or len(y)!=len(w) or any(v<0 for v in w):\n        raise ValueError('inputs')\n    for r,t in zip(rows,y):\n        if not r or not 0<=t<len(r) or any(not math.isfinite(v) or v<0 or v>1 for v in r) or abs(sum(r)-1)>1e-8:\n            raise ValueError('probabilities')\n\ndef bins(rows,y,w,n):\n    validate(rows,y,w,n)\n    accum=[[0.,0.,0.] for _ in range(n)]\n    for r,t,v in zip(rows,y,w):\n        pred=max(range(len(r)),key=lambda i:r[i]); conf=r[pred]\n        slot=int(conf*n)\n        accum[slot][0]+=v; accum[slot][1]+=v*(pred==t); accum[slot][2]+=v*conf\n    return [{'weight':a,'accuracy':b/a if a else 0.,'confidence':c/a if a else 0.} for a,b,c in accum]\n\ndef brier(rows,y,w):\n    total=sum(w)\n    return sum(v*sum((a-(j==t))**2 for j,a in enumerate(r)) for r,t,v in zip(rows,y,w))/total if total else 0.0\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "pipeline.py",
+      "content": ""
+    },
+    "result": {
+      "content": "from core import bins,brier\n\ndef solve(p):\n    r,y,w,n=p['probabilities'],p['y'],[1.0]*len(p['y']),p['n']\n    grouped=bins(r,y,w,n); total=sum(w)\n    ece=sum(b['weight']*abs(b['accuracy']-b['confidence']) for b in grouped)/total if total else 0.0\n    return {'bins':grouped,'ece':ece,'brier':brier(r,y,w)}\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "CONTRACT.md",
+      "content": ""
+    },
+    "result": {
+      "content": "# calibration\n\nMulticlass probabilities. core.bins(rows,y,weights,n): equal-width confidence bins [i/n,(i+1)/n), last includes 1. Top-class ties choose lowest class index. Return length-n records {weight,accuracy,confidence}, empty bins all zero. core.brier is weighted mean SUM squared class errors (not divided by classes). solve returns {bins,ece,brier}, ECE weighted absolute bin accuracy-confidence differences. Zero total weight yields zero ECE/Brier. n>=1, matching lengths, nonnegative weights, nonempty class vectors, labels in range, finite probabilities in [0,1] summing to 1 within 1e-8 required, else ValueError.\n\nOnly core.py and pipeline.py may be modified. Tests, contracts and fixtures are protected. A passing visible test is not sufficient for acceptance.\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "visible.json",
+      "content": ""
+    },
+    "result": {
+      "content": "[\n  {\n    \"input\": {\n      \"probabilities\": [\n        [\n          0.8,\n          0.2\n        ]\n      ],\n      \"y\": [\n        0\n      ],\n      \"weights\": [\n        1\n      ],\n      \"n\": 2\n    },\n    \"expected\": {\n      \"value\": {\n        \"bins\": [\n          {\n            \"weight\": 0.0,\n            \"accuracy\": 0.0,\n            \"confidence\": 0.0\n          },\n          {\n            \"weight\": 1.0,\n            \"accuracy\": 1.0,\n            \"confidence\": 0.8\n          }\n        ],\n        \"ece\": 0.19999999999999996,\n        \"brier\": 0.07999999999999999\n      }\n    }\n  }\n]\n"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "core.py",
+      "content": "import math\nimport operator\n\n\ndef validate(rows, y, w, n):\n    try:\n        n = operator.index(n)\n        if n < 1 or len(rows) != len(y) or len(y) != len(w):\n            raise ValueError('inputs')\n        if any(not math.isfinite(v) or v < 0 for v in w):\n            raise ValueError('weights')\n        for r, t in zip(rows, y):\n            t = operator.index(t)\n            if len(r) == 0 or not 0 <= t < len(r):\n                raise ValueError('labels')\n            if any(not math.isfinite(v) or v < 0 or v > 1 for v in r):\n                raise ValueError('probabilities')\n            if abs(math.fsum(r) - 1.0) > 1e-8:\n                raise ValueError('probabilities')\n    except (TypeError, OverflowError, IndexError) as exc:\n        raise ValueError('inputs') from exc\n\n\ndef bins(rows, y, w, n):\n    validate(rows, y, w, n)\n    n = operator.index(n)\n    accum = [[0.0, 0.0, 0.0] for _ in range(n)]\n    for r, t, v in zip(rows, y, w):\n        pred = max(range(len(r)), key=lambda i: r[i])\n        conf = r[pred]\n        slot = min(int(conf * n), n - 1)\n        accum[slot][0] += v\n        accum[slot][1] += v * (pred == t)\n        accum[slot][2] += v * conf\n    return [\n        {'weight': a, 'accuracy': b / a if a else 0.0,\n         'confidence': c / a if a else 0.0}\n        for a, b, c in accum\n    ]\n\n\ndef brier(rows, y, w):\n    validate(rows, y, w, 1)\n    total = sum(w)\n    if not total:\n        return 0.0\n    return sum(\n        v * math.fsum((a - (j == t)) ** 2 for j, a in enumerate(r))\n        for r, t, v in zip(rows, y, w)\n    ) / total\n"
+    },
+    "result": {
+      "written": "core.py",
+      "sha256": "1a4b981d2e2e4f0baeb42a16a7caa1798549bdd842e96e8563b0d0a197de6e7f"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "pipeline.py",
+      "content": "from core import bins, brier\n\n\ndef solve(p):\n    r, y, n = p['probabilities'], p['y'], p['n']\n    w = p.get('weights', [1.0] * len(y))\n    grouped = bins(r, y, w, n)\n    total = sum(w)\n    ece = (\n        sum(b['weight'] * abs(b['accuracy'] - b['confidence']) for b in grouped)\n        / total if total else 0.0\n    )\n    return {'bins': grouped, 'ece': ece, 'brier': brier(r, y, w)}\n"
+    },
+    "result": {
+      "written": "pipeline.py",
+      "sha256": "7e1d78b96556958ab87602b6cce2ab5ca20648d3fba79c5feea253852d7b57cb"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "run_tests",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "status": "pass",
+      "passed": 1,
+      "total": 1,
+      "case_passes": [
+        true
+      ],
+      "observed": [
+        {
+          "value": {
+            "bins": [
+              {
+                "weight": 0.0,
+                "accuracy": 0.0,
+                "confidence": 0.0
+              },
+              {
+                "weight": 1.0,
+                "accuracy": 1.0,
+                "confidence": 0.8
+              }
+            ],
+            "ece": 0.19999999999999996,
+            "brier": 0.07999999999999999
+          },
+          "mutated": false
+        }
+      ],
+      "expected": [
+        {
+          "value": {
+            "bins": [
+              {
+                "weight": 0.0,
+                "accuracy": 0.0,
+                "confidence": 0.0
+              },
+              {
+                "weight": 1.0,
+                "accuracy": 1.0,
+                "confidence": 0.8
+              }
+            ],
+            "ece": 0.19999999999999996,
+            "brier": 0.07999999999999999
+          }
+        }
+      ]
+    }
+  },
+  {
+    "turn": 2,
+    "action": {
+      "tool": "write_file",
+      "path": "core.py",
+      "content": "import math\nimport operator\nfrom bisect import bisect_right\n\n\ndef validate(rows, y, w, n):\n    try:\n        n = operator.index(n)\n        if n < 1 or len(rows) != len(y) or len(y) != len(w):\n            raise ValueError('inputs')\n        if any(not math.isfinite(v) or v < 0 for v in w):\n            raise ValueError('weights')\n        for r, t in zip(rows, y):\n            t = operator.index(t)\n            if len(r) == 0 or not 0 <= t < len(r):\n                raise ValueError('labels')\n            if any(not math.isfinite(v) or v < 0 or v > 1 for v in r):\n                raise ValueError('probabilities')\n            if abs(math.fsum(r) - 1.0) > 1e-8:\n                raise ValueError('probabilities')\n    except (TypeError, OverflowError, IndexError) as exc:\n        raise ValueError('inputs') from exc\n\n\ndef bins(rows, y, w, n):\n    validate(rows, y, w, n)\n    n = operator.index(n)\n    boundaries = [i / n for i in range(1, n)]\n    accum = [[0.0, 0.0, 0.0] for _ in range(n)]\n    for r, t, v in zip(rows, y, w):\n        pred = max(range(len(r)), key=lambda i: r[i])\n        conf = r[pred]\n        slot = bisect_right(boundaries, conf)\n        accum[slot][0] += v\n        accum[slot][1] += v * (pred == t)\n        accum[slot][2] += v * conf\n    return [\n        {'weight': a, 'accuracy': b / a if a else 0.0,\n         'confidence': c / a if a else 0.0}\n        for a, b, c in accum\n    ]\n\n\ndef brier(rows, y, w):\n    validate(rows, y, w, 1)\n    total = sum(w)\n    if not total:\n        return 0.0\n    return sum(\n        v * math.fsum((a - (j == t)) ** 2 for j, a in enumerate(r))\n        for r, t, v in zip(rows, y, w)\n    ) / total\n"
+    },
+    "result": {
+      "written": "core.py",
+      "sha256": "f3618667b50dd6ef541fd33e0351830c27883834a0b41f72e4e892f22c521306"
+    }
+  },
+  {
+    "turn": 2,
+    "action": {
+      "tool": "run_tests",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "status": "pass",
+      "passed": 1,
+      "total": 1,
+      "case_passes": [
+        true
+      ],
+      "observed": [
+        {
+          "value": {
+            "bins": [
+              {
+                "weight": 0.0,
+                "accuracy": 0.0,
+                "confidence": 0.0
+              },
+              {
+                "weight": 1.0,
+                "accuracy": 1.0,
+                "confidence": 0.8
+              }
+            ],
+            "ece": 0.19999999999999996,
+            "brier": 0.07999999999999999
+          },
+          "mutated": false
+        }
+      ],
+      "expected": [
+        {
+          "value": {
+            "bins": [
+              {
+                "weight": 0.0,
+                "accuracy": 0.0,
+                "confidence": 0.0
+              },
+              {
+                "weight": 1.0,
+                "accuracy": 1.0,
+                "confidence": 0.8
+              }
+            ],
+            "ece": 0.19999999999999996,
+            "brier": 0.07999999999999999
+          }
+        }
+      ]
+    }
+  },
+  {
+    "turn": 3,
+    "action": {
+      "tool": "submit",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "submitted": true
+    }
+  }
+]

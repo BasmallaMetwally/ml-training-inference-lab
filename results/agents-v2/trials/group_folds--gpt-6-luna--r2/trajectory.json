@@ -1,0 +1,18 @@
+[
+  {
+    "turn": 0,
+    "action": {
+      "tool": "list_files",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "files": [
+        "CONTRACT.md",
+        "core.py",
+        "pipeline.py",
+        "visible.json"
+      ]
+    }
+  }
+]

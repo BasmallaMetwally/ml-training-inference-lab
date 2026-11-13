@@ -1,0 +1,147 @@
+{
+  "validation": [
+    {
+      "task": "weighted_scaler",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 5,
+      "reference_source_sha256": "e2e8db214d3224354d8b0939604e5e484e661176021bc41cff7ae06f036a8c74",
+      "hidden_cases_sha256": "bd23ff526717387ae7b182eb8804973820eb9aee256c190bb60fd4cecea7fdb7"
+    },
+    {
+      "task": "temporal_purge",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 20,
+      "reference_source_sha256": "b1322f06e9e64064021b171e131115672b1a4d7eeff28f49795d8dca9162302b",
+      "hidden_cases_sha256": "37dcb9c070bc0c6015b179fc97c6583f92aa95f4a18aee8e286d0d2b8dfa5f5b"
+    },
+    {
+      "task": "ranking_metrics",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 21,
+      "reference_source_sha256": "1d2c0eaedd541d3d52a03dc5dc445d8ea2ad6743a1d15b79af0bb7817b2783b4",
+      "hidden_cases_sha256": "f58ab4c5ee9f4dc4e741333fd4c101f080be6fcca979e8253ff357ce6eea0116"
+    },
+    {
+      "task": "group_folds",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 21,
+      "reference_source_sha256": "7a329379fc570ebe4550091d3a7a9123f2eb36159724799cdd0fa9fc8976374c",
+      "hidden_cases_sha256": "2933c032f0cd8b78810768f50bb307bb3552a0906eee93c96acd466882088c0f"
+    },
+    {
+      "task": "stream_confusion",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 20,
+      "reference_source_sha256": "dc8de203c1c3c065079bd890e574dcc202bf2a33e053be74792e04d9a7eb1b98",
+      "hidden_cases_sha256": "e1af7af4672a82fcb9e18ae7a7403dca79092bcf7aac20904dafc9e917f5f31a"
+    },
+    {
+      "task": "accumulated_sgd",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 19,
+      "reference_source_sha256": "4dc0d426f992140688e700f5d0d7b520fad424abb520df6f0205f0c17a7db023",
+      "hidden_cases_sha256": "aedabdf4dceb2207b2706c28846e54f6f1c0236a873d38872a55bd538536f28d"
+    },
+    {
+      "task": "adamw_resume",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 19,
+      "reference_source_sha256": "b47299fc40465f5b80d8d13e5902cc9623ece20319cdaf44f6aa19c5c32185bc",
+      "hidden_cases_sha256": "275409f91e5153087f5d2d44f8fa90e773817123688284edb781d7eadafe46f3"
+    },
+    {
+      "task": "early_stop_resume",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 20,
+      "reference_source_sha256": "f5fdf830361eb214838ff935cbe64171aacf3df06213e488000db072da1c4337",
+      "hidden_cases_sha256": "83c0cec41cd542e04eb5e2980531c3fd2fab83df7b51211ef3485cebb944add6"
+    },
+    {
+      "task": "artifact_cache",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 5,
+      "reference_source_sha256": "f19d414674e1902a1fb3201c477c8f96bba9dbb97a10b61df9d9bc3494de3d3f",
+      "hidden_cases_sha256": "36072bc0bca33d1e5cfca1d3416c4383e2fe3494a0a0e4fe3e913f2dfa4c54f5"
+    },
+    {
+      "task": "retrieval_ndcg",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 20,
+      "reference_source_sha256": "bab2c37a491a0600bbbdee62f669ca59bde6642c321954ec6c8974b984c8cadd",
+      "hidden_cases_sha256": "07c07b972e1e74ed896537fae11bc0d59892e7d1f3676f0ddce2705bab48094e"
+    },
+    {
+      "task": "calibration",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 21,
+      "reference_source_sha256": "f9d9df41a4cf56e6c4b7a8f1d8fdc7108aba3a46830abb75a6fa66d5ce6a8aa2",
+      "hidden_cases_sha256": "59415a71fef0b93f97ee880dda98c7f814705dee46719d0ef0d9044aecf9459c"
+    },
+    {
+      "task": "time_windows",
+      "reference": "pass",
+      "broken_starter": "incorrect",
+      "constant_visible_overfit": "incorrect",
+      "cases": 20,
+      "reference_source_sha256": "b9ca3d0632ab0c856b5ad08004cc43d379bfcd657ccf53a295eaefb42ed7820d",
+      "hidden_cases_sha256": "0278bcbf152dbf3e929a16db4b086087c143a7193aface7502918c641fd01516"
+    }
+  ],
+  "execution_attacks": [
+    {
+      "attack": "exit_success",
+      "status": "invalid_output"
+    },
+    {
+      "attack": "input_mutation",
+      "status": "incorrect"
+    },
+    {
+      "attack": "stdout_flood",
+      "status": "invalid_output"
+    },
+    {
+      "attack": "hang",
+      "status": "timeout"
+    },
+    {
+      "attack": "protected_write",
+      "status": "incorrect"
+    },
+    {
+      "attack": "network",
+      "status": "incorrect"
+    }
+  ],
+  "image_id": "sha256:99ee89ea0f0565225bbea938e9f3dbce96261a467ee161abd17c3556ba3a62f7",
+  "base_image_tag": "python:3.12-slim",
+  "private_source_hashes": {
+    "validate_local.py": "94283d3eff7aca7279351fc957f167480457d34e04675b399efbb486579c6e73",
+    "grade_v2.py": "1336b627390c641a1eefe7d7c9e8a2f19df1e9c3248165135b8cf11cefb1ebb7",
+    "check_reference_math.py": "7c2521a3941313d90e5e5f01a5db9e685dd2fc62daadf06ccc1ffbde4bc2b1bd",
+    "build_suite.py": "ac3f85c439a3a83d27a39c30f6681908ca854621accdd2427bb0a83abbe3807f"
+  },
+  "note": "Hashes and validation support audit; hidden cases/references are withheld. No full public independent replay claim."
+}

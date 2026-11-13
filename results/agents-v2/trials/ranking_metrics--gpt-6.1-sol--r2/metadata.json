@@ -1,0 +1,18 @@
+{
+  "task": "ranking_metrics",
+  "model": "gpt-6.1-sol",
+  "repetition": 2,
+  "status": "submitted",
+  "seconds": 48.30091979098506,
+  "model_turns": 3,
+  "logical_actions": 8,
+  "visible_test_calls": 1,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "4bc204889ba34fafce7dabc9c69d708dcea623392717ef77d1474b82cf4830f4",
+    "pipeline.py": "79206a09e9ee923589223c379d1ddc3c0bf22ac676cfd019231f27d8e9979a37"
+  },
+  "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e"
+}

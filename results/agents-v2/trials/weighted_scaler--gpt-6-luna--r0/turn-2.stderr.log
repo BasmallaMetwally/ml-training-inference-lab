@@ -1,0 +1,4 @@
+2026-11-13T20:28:29.564054Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-13T20:28:34.536776Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-11-13T20:28:45.779516Z ERROR codex_core::tools::router: error=patch rejected: writing is blocked by read-only sandbox; rejected by user approval settings
+2026-11-13T20:28:49.740891Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at AbsolutePathBuf("/Users/basmallametwally/.codex/shell_snapshots/01a1d698-efe0-7753-a75d-3e1815d8d33e.1794601709538626000.sh"): Os { code: 2, kind: NotFound, message: "No such file or directory" }

@@ -1,0 +1,1 @@
+{"actions":[{"tool":"write_file","path":"pipeline.py","content":"from core import fit, transform\n\n\ndef solve(p):\n    train = p['train']\n    other = p['other']\n    state = fit(train, p['weights'])\n    if not train:\n        if not other:\n            return []\n        state = [[0.0, 1.0] for _ in range(len(other[0]))]\n    return transform(other, state)\n"}]}

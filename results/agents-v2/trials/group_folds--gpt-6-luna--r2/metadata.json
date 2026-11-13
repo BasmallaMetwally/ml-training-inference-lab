@@ -1,0 +1,18 @@
+{
+  "task": "group_folds",
+  "model": "gpt-6-luna",
+  "repetition": 2,
+  "status": "protocol_violation",
+  "seconds": 24.861406583106145,
+  "model_turns": 2,
+  "logical_actions": 1,
+  "visible_test_calls": 0,
+  "native_tool_events": 2,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "65207da73b8797de8981535e6fe93de740ffd465e6c2f003bb6621700f009437",
+    "pipeline.py": "757c71b12b3bbe06b3e10970aac7572d7425b504cb9c4341a939bdfaec897afa"
+  },
+  "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57"
+}

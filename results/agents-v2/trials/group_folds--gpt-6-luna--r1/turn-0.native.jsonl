@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"01a1d69e-9b11-7111-86bb-ab1beca6b28a"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/basmallametwally/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"{\"actions\":[{\"tool\":\"list_files\",\"path\":\"\",\"content\":\"\"}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":25578,"cached_input_tokens":23168,"cache_write_input_tokens":0,"output_tokens":88,"reasoning_output_tokens":33}}

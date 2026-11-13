@@ -1,0 +1,18 @@
+{
+  "task": "retrieval_ndcg",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "status": "submitted",
+  "seconds": 45.57111708295997,
+  "model_turns": 4,
+  "logical_actions": 9,
+  "visible_test_calls": 1,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "c7a88b3df4fd6b4b034a957fbccf9710371b524117219455aa0bb1d1e98ec05b",
+    "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+  },
+  "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15"
+}

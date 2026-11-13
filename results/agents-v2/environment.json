@@ -1,0 +1,17 @@
+{
+  "controller_python": "3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "visible_worker_python": "Python 3.9.6",
+  "native_tools": "shell/unified_exec/apps/browser/computer/view_image features disabled; remaining native tool events invalidate attempt",
+  "private_evaluator_commit": "c54a5b9a723c0fbeb52c1a5abc614a0d670ab224",
+  "docker_validation_run": "https://github.com/BasmallaMetwally/ml-lab-private-evaluator/actions/runs/43502756865",
+  "base_image": "python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "provider_revision": "Requested model aliases recorded; underlying weight revision and sampling seed not exposed by CLI",
+  "collection_concurrency": 4,
+  "preflight_excluded": true,
+  "infrastructure_notes": [
+    "Initial Docker prevalidation could not fetch an abbreviated ref; rerun used full SHA.",
+    "Next prevalidation found the legacy Docker ignore allowlist excluded the v2 worker. A Dockerfile-specific allowlist fixed the build; task files, hidden cases and collection harness were unchanged."
+  ]
+}

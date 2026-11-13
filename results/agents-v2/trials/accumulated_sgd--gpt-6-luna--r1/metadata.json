@@ -1,0 +1,18 @@
+{
+  "task": "accumulated_sgd",
+  "model": "gpt-6-luna",
+  "repetition": 1,
+  "status": "protocol_violation",
+  "seconds": 13.150187500054017,
+  "model_turns": 1,
+  "logical_actions": 0,
+  "visible_test_calls": 0,
+  "native_tool_events": 2,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "f93e87d52cd59f609f4c41bad17c11c71f135fc38e5886bb807b86c79b2e63e2",
+    "pipeline.py": "4086e37afcdc86c2fda2c627ba119401998ce81e99e09aa534c53b7318e174d3"
+  },
+  "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68"
+}

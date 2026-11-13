@@ -1,0 +1,128 @@
+[
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "core.py",
+      "content": ""
+    },
+    "result": {
+      "content": "def count(actual,predicted,labels):\n    if len(actual)!=len(predicted) or len(labels)!=len(set(labels)):\n        raise ValueError('inputs')\n    names=sorted(set(labels)|set(actual)|set(predicted))\n    matrix=[[0]*len(names) for _ in names]\n    for a,b in zip(actual,predicted):\n        matrix[names.index(a)][names.index(b)]+=1\n    return names,matrix\n\ndef merge(left,right):\n    names=sorted(set(left[0])|set(right[0]))\n    matrix=[[0]*len(names) for _ in names]\n    for labels,values in (left,right):\n        for i,a in enumerate(labels):\n            for j,b in enumerate(labels):\n                matrix[names.index(b)][names.index(a)]+=values[i][j]\n    return names,matrix\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "pipeline.py",
+      "content": ""
+    },
+    "result": {
+      "content": "from core import count,merge\n\ndef solve(p):\n    state=count([],[],p['labels'])\n    for shard in p['shards']:\n        state=merge(state,count(shard['actual'],shard['predicted'],[]))\n    labels,m=state\n    f=[]\n    for i in range(len(labels)):\n        denom=sum(m[i])+sum(row[i] for row in m)\n        f.append(2*m[i][i]/denom if denom else 0.0)\n    return {'labels':labels,'matrix':m,'macro_f1':sum(f)}\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "CONTRACT.md",
+      "content": ""
+    },
+    "result": {
+      "content": "# stream_confusion\n\nPayload shards is a list of {actual:[str], predicted:[str]}, labels is a list of strings. Build confusion counts with rows=actual, columns=predicted. core.count accumulates each shard without mutating it; core.merge aligns matrices by label strings, union sorted lexically. Include initial supplied labels even unseen; reject duplicated initial labels or unequal actual/predicted lengths with ValueError. solve returns labels, matrix, macro_f1 averaged over every union label, treating zero denominator as zero. Empty union gives macro_f1=0.\n\nOnly core.py and pipeline.py may be modified. Tests, contracts and fixtures are protected. A passing visible test is not sufficient for acceptance.\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "visible.json",
+      "content": ""
+    },
+    "result": {
+      "content": "[\n  {\n    \"input\": {\n      \"labels\": [\n        \"x\"\n      ],\n      \"shards\": [\n        {\n          \"actual\": [\n            \"x\"\n          ],\n          \"predicted\": [\n            \"x\"\n          ]\n        }\n      ]\n    },\n    \"expected\": {\n      \"value\": {\n        \"labels\": [\n          \"x\"\n        ],\n        \"matrix\": [\n          [\n            1\n          ]\n        ],\n        \"macro_f1\": 1.0\n      }\n    }\n  }\n]\n"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "core.py",
+      "content": "def count(actual, predicted, labels):\n    if len(actual) != len(predicted) or len(labels) != len(set(labels)):\n        raise ValueError('inputs')\n    names = sorted(set(labels) | set(actual) | set(predicted))\n    indices = {name: i for i, name in enumerate(names)}\n    matrix = [[0] * len(names) for _ in names]\n    for actual_label, predicted_label in zip(actual, predicted):\n        matrix[indices[actual_label]][indices[predicted_label]] += 1\n    return names, matrix\n\n\ndef merge(left, right):\n    names = sorted(set(left[0]) | set(right[0]))\n    indices = {name: i for i, name in enumerate(names)}\n    matrix = [[0] * len(names) for _ in names]\n    for labels, values in (left, right):\n        positions = [indices[label] for label in labels]\n        for i, row_index in enumerate(positions):\n            for j, column_index in enumerate(positions):\n                matrix[row_index][column_index] += values[i][j]\n    return names, matrix\n"
+    },
+    "result": {
+      "written": "core.py",
+      "sha256": "9f3df03db0d7b0a51613d82ed89e8262975e3cb9afd4faead46e0de1d705c686"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "pipeline.py",
+      "content": "from core import count, merge\n\n\ndef solve(p):\n    state = count([], [], p['labels'])\n    for shard in p['shards']:\n        state = merge(state, count(shard['actual'], shard['predicted'], []))\n    labels, matrix = state\n    scores = []\n    for i in range(len(labels)):\n        denominator = sum(matrix[i]) + sum(row[i] for row in matrix)\n        scores.append(2 * matrix[i][i] / denominator if denominator else 0.0)\n    return {\n        'labels': labels,\n        'matrix': matrix,\n        'macro_f1': sum(scores) / len(labels) if labels else 0.0,\n    }\n"
+    },
+    "result": {
+      "written": "pipeline.py",
+      "sha256": "0bfb302b369d92f6f4e152b945beedb9f8a953b1253ac3e862bbe037adb231bf"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "run_tests",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "status": "pass",
+      "passed": 1,
+      "total": 1,
+      "case_passes": [
+        true
+      ],
+      "observed": [
+        {
+          "value": {
+            "labels": [
+              "x"
+            ],
+            "matrix": [
+              [
+                1
+              ]
+            ],
+            "macro_f1": 1.0
+          },
+          "mutated": false
+        }
+      ],
+      "expected": [
+        {
+          "value": {
+            "labels": [
+              "x"
+            ],
+            "matrix": [
+              [
+                1
+              ]
+            ],
+            "macro_f1": 1.0
+          }
+        }
+      ]
+    }
+  },
+  {
+    "turn": 2,
+    "action": {
+      "tool": "submit",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "submitted": true
+    }
+  }
+]

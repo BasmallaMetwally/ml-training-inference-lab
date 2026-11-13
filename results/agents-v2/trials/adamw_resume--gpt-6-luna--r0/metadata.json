@@ -1,0 +1,18 @@
+{
+  "task": "adamw_resume",
+  "model": "gpt-6-luna",
+  "repetition": 0,
+  "status": "protocol_violation",
+  "seconds": 29.06492954189889,
+  "model_turns": 3,
+  "logical_actions": 3,
+  "visible_test_calls": 0,
+  "native_tool_events": 2,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "2655db6d4cad00d3727793a01b05871916109b2767c865bee8d49ad3dc9c9d15",
+    "pipeline.py": "1c502516514f1a1f5f15551737dd2bdc771d4df7a8ffb4465f3cca0ad7214b25"
+  },
+  "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8"
+}

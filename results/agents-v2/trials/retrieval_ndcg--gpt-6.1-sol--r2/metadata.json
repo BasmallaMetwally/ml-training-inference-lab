@@ -1,0 +1,18 @@
+{
+  "task": "retrieval_ndcg",
+  "model": "gpt-6.1-sol",
+  "repetition": 2,
+  "status": "submitted",
+  "seconds": 38.366516749956645,
+  "model_turns": 3,
+  "logical_actions": 8,
+  "visible_test_calls": 1,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "eb5783a0ba50542cd617276ce151bbb2971b4e909893bf3feea5b449f6ba86d4",
+    "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+  },
+  "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15"
+}

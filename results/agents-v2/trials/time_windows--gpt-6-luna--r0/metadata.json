@@ -1,0 +1,18 @@
+{
+  "task": "time_windows",
+  "model": "gpt-6-luna",
+  "repetition": 0,
+  "status": "submitted",
+  "seconds": 75.95836416608654,
+  "model_turns": 5,
+  "logical_actions": 9,
+  "visible_test_calls": 2,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "2b33e52b267c391397876ed7656fb6574c2da458711d9526e0502d92e1301437",
+    "pipeline.py": "08c81f0c8c3b30991f161195c06709feaba52f7cb6894f3968a9a1b273cfdc61"
+  },
+  "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159"
+}

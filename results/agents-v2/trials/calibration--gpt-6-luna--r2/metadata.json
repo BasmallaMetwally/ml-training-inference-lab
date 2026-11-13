@@ -1,0 +1,18 @@
+{
+  "task": "calibration",
+  "model": "gpt-6-luna",
+  "repetition": 2,
+  "status": "protocol_violation",
+  "seconds": 58.5349267909769,
+  "model_turns": 4,
+  "logical_actions": 5,
+  "visible_test_calls": 0,
+  "native_tool_events": 2,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "934c60a4158f1496e6f6d304c076e9dbcb3d5fa72d0470553ec9338f37bb5647",
+    "pipeline.py": "43095d41dfec4df45d71733c5c846a402e12b2853dd26525f5f774aa175497f6"
+  },
+  "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4"
+}

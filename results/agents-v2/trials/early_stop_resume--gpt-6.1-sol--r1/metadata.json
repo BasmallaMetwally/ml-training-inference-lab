@@ -1,0 +1,18 @@
+{
+  "task": "early_stop_resume",
+  "model": "gpt-6.1-sol",
+  "repetition": 1,
+  "status": "submitted",
+  "seconds": 62.316864958032966,
+  "model_turns": 4,
+  "logical_actions": 10,
+  "visible_test_calls": 2,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "38749f17de6a107206fd965352de81178ef263c53d4f3770b1e501a69b52fc0e",
+    "pipeline.py": "4ebb51970030126a45cb2d59208f180317626d9342cda68724a48fe1678e0369"
+  },
+  "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c"
+}

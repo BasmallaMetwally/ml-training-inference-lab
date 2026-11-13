@@ -16,3 +16,13 @@ network, mutation and host comparison controls have separate regression checks.
 Twelve independent hand-calculated examples also validate the reference formulas.
 The complete hidden suite is still private; hashes do not constitute full public
 independent reproducibility.
+
+To replay a final candidate on public fixtures without a model account:
+
+```sh
+docker build -f Dockerfile.agent-v2 -t ml-agent-v2:1 .
+python scripts/replay_agent_v2.py TASK--MODEL--r0 --backend docker
+```
+
+This checks public visible fixtures only. It does not reproduce the withheld grade.
+On macOS, `--backend macos` uses the same visible-test Seatbelt policy as collection.

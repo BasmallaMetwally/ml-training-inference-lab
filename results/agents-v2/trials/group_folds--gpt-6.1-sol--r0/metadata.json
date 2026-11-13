@@ -1,0 +1,18 @@
+{
+  "task": "group_folds",
+  "model": "gpt-6.1-sol",
+  "repetition": 0,
+  "status": "submitted",
+  "seconds": 36.25951020803768,
+  "model_turns": 3,
+  "logical_actions": 8,
+  "visible_test_calls": 1,
+  "native_tool_events": 0,
+  "violations": [],
+  "protected_integrity": true,
+  "candidate_sha256": {
+    "core.py": "5fb117ff0cab90cf31c2916792d3ca105361098486207ad82fb9d51722df532e",
+    "pipeline.py": "304a3d1175923df2cc9ef0dbf45d30fd80b8f53e4434e83dd0be9c635c252f66"
+  },
+  "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57"
+}

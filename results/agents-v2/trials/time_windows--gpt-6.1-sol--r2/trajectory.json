@@ -1,0 +1,160 @@
+[
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "core.py",
+      "content": ""
+    },
+    "result": {
+      "content": "def windows(rows,lookback,horizon,stride):\n    if min(lookback,horizon,stride)<1:\n        raise ValueError('config')\n    groups={}; seen=set()\n    for r in rows:\n        key=(r['entity'],r['t'])\n        if key in seen:\n            raise ValueError('duplicate')\n        seen.add(key); groups.setdefault(r['entity'],[]).append(r)\n    out=[]\n    for entity in sorted(groups):\n        data=sorted(groups[entity],key=lambda r:r['t'])\n        length=lookback+horizon\n        for start in range(0,len(data)-length+1,stride):\n            part=data[start:start+length]\n            if False:\n                continue\n            out.append({'entity':entity,'start':part[lookback]['t'],'x':[r['value'] for r in part[:lookback]],'y':[r['value'] for r in part[lookback:]]})\n    return out\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "pipeline.py",
+      "content": ""
+    },
+    "result": {
+      "content": "from core import windows\n\ndef solve(p):\n    rows=p['rows']; c=p['cutoff']\n    args=(p['lookback'],p['horizon'],p['stride'])\n    # Validate duplicates before partition too.\n    windows(rows,*args)\n    return {'train':windows([r for r in rows if r['t']<c],*args),'eval':[w for w in windows(rows,*args) if w['start']>=c]}\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "CONTRACT.md",
+      "content": ""
+    },
+    "result": {
+      "content": "# time_windows\n\nRecords {entity:str,t:int,value:number}. core.windows sorts by entity then t, rejects duplicate (entity,t), and uses consecutive timestamps only. For each entity and each start index 0,stride,2*stride,... form lookback feature values followed by horizon targets; include only if timestamps across full window increase by exactly 1. Require lookback,horizon,stride>=1. pipeline.solve splits RAW records at t<cutoff vs t>=cutoff BEFORE constructing windows; no train history in eval windows. Return {train,eval} each list of {entity,start,x,y}; start is first target timestamp. Sort output entity then start. Empty partition allowed; do not mutate rows.\n\nOnly core.py and pipeline.py may be modified. Tests, contracts and fixtures are protected. A passing visible test is not sufficient for acceptance.\n"
+    }
+  },
+  {
+    "turn": 0,
+    "action": {
+      "tool": "read_file",
+      "path": "visible.json",
+      "content": ""
+    },
+    "result": {
+      "content": "[\n  {\n    \"input\": {\n      \"rows\": [\n        {\n          \"entity\": \"a\",\n          \"t\": 0,\n          \"value\": 0\n        },\n        {\n          \"entity\": \"a\",\n          \"t\": 1,\n          \"value\": 1\n        },\n        {\n          \"entity\": \"a\",\n          \"t\": 2,\n          \"value\": 2\n        },\n        {\n          \"entity\": \"a\",\n          \"t\": 3,\n          \"value\": 3\n        }\n      ],\n      \"cutoff\": 8,\n      \"lookback\": 2,\n      \"horizon\": 1,\n      \"stride\": 1\n    },\n    \"expected\": {\n      \"value\": {\n        \"train\": [\n          {\n            \"entity\": \"a\",\n            \"start\": 2,\n            \"x\": [\n              0,\n              1\n            ],\n            \"y\": [\n              2\n            ]\n          },\n          {\n            \"entity\": \"a\",\n            \"start\": 3,\n            \"x\": [\n              1,\n              2\n            ],\n            \"y\": [\n              3\n            ]\n          }\n        ],\n        \"eval\": []\n      }\n    }\n  }\n]\n"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "core.py",
+      "content": "def windows(rows, lookback, horizon, stride):\n    if min(lookback, horizon, stride) < 1:\n        raise ValueError('config')\n    groups = {}\n    seen = set()\n    for row in rows:\n        key = (row['entity'], row['t'])\n        if key in seen:\n            raise ValueError('duplicate')\n        seen.add(key)\n        groups.setdefault(row['entity'], []).append(row)\n\n    out = []\n    length = lookback + horizon\n    for entity in sorted(groups):\n        data = sorted(groups[entity], key=lambda row: row['t'])\n        for offset in range(0, len(data) - length + 1, stride):\n            part = data[offset:offset + length]\n            if any(part[i]['t'] - part[i - 1]['t'] != 1\n                   for i in range(1, length)):\n                continue\n            out.append({\n                'entity': entity,\n                'start': part[lookback]['t'],\n                'x': [row['value'] for row in part[:lookback]],\n                'y': [row['value'] for row in part[lookback:]],\n            })\n    return out\n"
+    },
+    "result": {
+      "written": "core.py",
+      "sha256": "e4d72c059d0e7906f1011870170aab832b86b7459909a14ad07c63dd92100ccf"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "write_file",
+      "path": "pipeline.py",
+      "content": "from core import windows\n\n\ndef solve(p):\n    cutoff = p['cutoff']\n    train_rows = []\n    eval_rows = []\n    for row in p['rows']:\n        if row['t'] < cutoff:\n            train_rows.append(row)\n        else:\n            eval_rows.append(row)\n    args = (p['lookback'], p['horizon'], p['stride'])\n    return {\n        'train': windows(train_rows, *args),\n        'eval': windows(eval_rows, *args),\n    }\n"
+    },
+    "result": {
+      "written": "pipeline.py",
+      "sha256": "e4b90f442842b17138280172c517bf15dbf3cb7c3db43c33f8ef9a76d35b1385"
+    }
+  },
+  {
+    "turn": 1,
+    "action": {
+      "tool": "run_tests",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "status": "pass",
+      "passed": 1,
+      "total": 1,
+      "case_passes": [
+        true
+      ],
+      "observed": [
+        {
+          "value": {
+            "train": [
+              {
+                "entity": "a",
+                "start": 2,
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  2
+                ]
+              },
+              {
+                "entity": "a",
+                "start": 3,
+                "x": [
+                  1,
+                  2
+                ],
+                "y": [
+                  3
+                ]
+              }
+            ],
+            "eval": []
+          },
+          "mutated": false
+        }
+      ],
+      "expected": [
+        {
+          "value": {
+            "train": [
+              {
+                "entity": "a",
+                "start": 2,
+                "x": [
+                  0,
+                  1
+                ],
+                "y": [
+                  2
+                ]
+              },
+              {
+                "entity": "a",
+                "start": 3,
+                "x": [
+                  1,
+                  2
+                ],
+                "y": [
+                  3
+                ]
+              }
+            ],
+            "eval": []
+          }
+        }
+      ]
+    }
+  },
+  {
+    "turn": 2,
+    "action": {
+      "tool": "submit",
+      "path": "",
+      "content": ""
+    },
+    "result": {
+      "submitted": true
+    }
+  }
+]

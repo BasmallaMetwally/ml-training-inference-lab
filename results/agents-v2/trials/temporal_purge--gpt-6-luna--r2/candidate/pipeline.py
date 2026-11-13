@@ -1,0 +1,5 @@
+from core import split
+
+
+def solve(p):
+    return split(p['rows'], p['cutoff'], p.get('gap', 0))
