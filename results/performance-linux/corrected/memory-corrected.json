@@ -1,0 +1,968 @@
+{
+  "status": "corrected_method",
+  "repetitions": 3,
+  "launcher": "stdlib-only process; workers exec before measurement",
+  "linux_counter": "/proc/self/status VmHWM; ru_maxrss diagnostic only",
+  "measurements": [
+    {
+      "variant": "eager",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 411521024,
+      "baseline_rss_after_imports_bytes": 384249856,
+      "final_process_rss_bytes": 411521024,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384249856,
+          "peak_rss_bytes": 384249856,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384118784
+        },
+        "after_setup": {
+          "rss_bytes": 397754368,
+          "peak_rss_bytes": 397754368,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397721600
+        },
+        "after_inference": {
+          "rss_bytes": 411521024,
+          "peak_rss_bytes": 411521024,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 411394048
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "eager",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 408424448,
+      "baseline_rss_after_imports_bytes": 384331776,
+      "final_process_rss_bytes": 408424448,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384331776,
+          "peak_rss_bytes": 384331776,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384176128
+        },
+        "after_setup": {
+          "rss_bytes": 397836288,
+          "peak_rss_bytes": 397836288,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397647872
+        },
+        "after_inference": {
+          "rss_bytes": 408424448,
+          "peak_rss_bytes": 408424448,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408305664
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 412168192,
+      "baseline_rss_after_imports_bytes": 384135168,
+      "final_process_rss_bytes": 412168192,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384135168,
+          "peak_rss_bytes": 384135168,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383922176
+        },
+        "after_setup": {
+          "rss_bytes": 404717568,
+          "peak_rss_bytes": 404717568,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 404611072
+        },
+        "after_inference": {
+          "rss_bytes": 412168192,
+          "peak_rss_bytes": 412168192,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 411992064
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 410120192,
+      "baseline_rss_after_imports_bytes": 384208896,
+      "final_process_rss_bytes": 410120192,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384208896,
+          "peak_rss_bytes": 384208896,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384053248
+        },
+        "after_setup": {
+          "rss_bytes": 404791296,
+          "peak_rss_bytes": 404791296,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 404668416
+        },
+        "after_inference": {
+          "rss_bytes": 410120192,
+          "peak_rss_bytes": 410120192,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 409952256
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 506277888,
+      "baseline_rss_after_imports_bytes": 384327680,
+      "final_process_rss_bytes": 479313920,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384327680,
+          "peak_rss_bytes": 384327680,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384237568
+        },
+        "after_setup": {
+          "rss_bytes": 421031936,
+          "peak_rss_bytes": 421031936,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 420950016
+        },
+        "after_inference": {
+          "rss_bytes": 479313920,
+          "peak_rss_bytes": 506277888,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 506277888
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 492236800,
+      "baseline_rss_after_imports_bytes": 384270336,
+      "final_process_rss_bytes": 464244736,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384270336,
+          "peak_rss_bytes": 384270336,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384049152
+        },
+        "after_setup": {
+          "rss_bytes": 420950016,
+          "peak_rss_bytes": 420950016,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 420802560
+        },
+        "after_inference": {
+          "rss_bytes": 464244736,
+          "peak_rss_bytes": 492236800,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 492236800
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 414818304,
+      "baseline_rss_after_imports_bytes": 384172032,
+      "final_process_rss_bytes": 414818304,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384172032,
+          "peak_rss_bytes": 384172032,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384077824
+        },
+        "after_setup": {
+          "rss_bytes": 407977984,
+          "peak_rss_bytes": 407977984,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 407838720
+        },
+        "after_inference": {
+          "rss_bytes": 414818304,
+          "peak_rss_bytes": 414818304,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 414781440
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 414359552,
+      "baseline_rss_after_imports_bytes": 384319488,
+      "final_process_rss_bytes": 414359552,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384319488,
+          "peak_rss_bytes": 384319488,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384098304
+        },
+        "after_setup": {
+          "rss_bytes": 408580096,
+          "peak_rss_bytes": 408580096,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408453120
+        },
+        "after_inference": {
+          "rss_bytes": 414359552,
+          "peak_rss_bytes": 414359552,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 414216192
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 523755520,
+      "baseline_rss_after_imports_bytes": 384147456,
+      "final_process_rss_bytes": 523755520,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384147456,
+          "peak_rss_bytes": 384147456,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383930368
+        },
+        "after_setup": {
+          "rss_bytes": 520826880,
+          "peak_rss_bytes": 520826880,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 520663040
+        },
+        "after_inference": {
+          "rss_bytes": 523755520,
+          "peak_rss_bytes": 523755520,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 523612160
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 434208768,
+      "baseline_rss_after_imports_bytes": 384200704,
+      "final_process_rss_bytes": 434208768,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384200704,
+          "peak_rss_bytes": 384200704,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384049152
+        },
+        "after_setup": {
+          "rss_bytes": 434098176,
+          "peak_rss_bytes": 434098176,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 433872896
+        },
+        "after_inference": {
+          "rss_bytes": 434208768,
+          "peak_rss_bytes": 434208768,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 434003968
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 0,
+      "status": "measured"
+    },
+    {
+      "variant": "eager",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 411570176,
+      "baseline_rss_after_imports_bytes": 384299008,
+      "final_process_rss_bytes": 411570176,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384299008,
+          "peak_rss_bytes": 384299008,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384151552
+        },
+        "after_setup": {
+          "rss_bytes": 397803520,
+          "peak_rss_bytes": 397803520,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397623296
+        },
+        "after_inference": {
+          "rss_bytes": 411570176,
+          "peak_rss_bytes": 411570176,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 411426816
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "eager",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 408326144,
+      "baseline_rss_after_imports_bytes": 384299008,
+      "final_process_rss_bytes": 408326144,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384299008,
+          "peak_rss_bytes": 384299008,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384131072
+        },
+        "after_setup": {
+          "rss_bytes": 397737984,
+          "peak_rss_bytes": 397737984,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397606912
+        },
+        "after_inference": {
+          "rss_bytes": 408326144,
+          "peak_rss_bytes": 408326144,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408264704
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 412651520,
+      "baseline_rss_after_imports_bytes": 384147456,
+      "final_process_rss_bytes": 412651520,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384147456,
+          "peak_rss_bytes": 384147456,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383922176
+        },
+        "after_setup": {
+          "rss_bytes": 405200896,
+          "peak_rss_bytes": 405200896,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 405069824
+        },
+        "after_inference": {
+          "rss_bytes": 412651520,
+          "peak_rss_bytes": 412651520,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 412450816
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 410722304,
+      "baseline_rss_after_imports_bytes": 384344064,
+      "final_process_rss_bytes": 410722304,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384344064,
+          "peak_rss_bytes": 384344064,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384253952
+        },
+        "after_setup": {
+          "rss_bytes": 405393408,
+          "peak_rss_bytes": 405393408,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 405327872
+        },
+        "after_inference": {
+          "rss_bytes": 410722304,
+          "peak_rss_bytes": 410722304,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 410611712
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 494260224,
+      "baseline_rss_after_imports_bytes": 384110592,
+      "final_process_rss_bytes": 466345984,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384110592,
+          "peak_rss_bytes": 384110592,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383942656
+        },
+        "after_setup": {
+          "rss_bytes": 421216256,
+          "peak_rss_bytes": 421216256,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 421122048
+        },
+        "after_inference": {
+          "rss_bytes": 466345984,
+          "peak_rss_bytes": 494260224,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 494260224
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 492220416,
+      "baseline_rss_after_imports_bytes": 384249856,
+      "final_process_rss_bytes": 464236544,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384249856,
+          "peak_rss_bytes": 384249856,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384102400
+        },
+        "after_setup": {
+          "rss_bytes": 420933632,
+          "peak_rss_bytes": 420933632,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 420786176
+        },
+        "after_inference": {
+          "rss_bytes": 464236544,
+          "peak_rss_bytes": 492220416,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 492220416
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 415133696,
+      "baseline_rss_after_imports_bytes": 384081920,
+      "final_process_rss_bytes": 415133696,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384081920,
+          "peak_rss_bytes": 384081920,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383926272
+        },
+        "after_setup": {
+          "rss_bytes": 408293376,
+          "peak_rss_bytes": 408293376,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408080384
+        },
+        "after_inference": {
+          "rss_bytes": 415133696,
+          "peak_rss_bytes": 415133696,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 415023104
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 414330880,
+      "baseline_rss_after_imports_bytes": 384278528,
+      "final_process_rss_bytes": 414330880,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384278528,
+          "peak_rss_bytes": 384278528,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384192512
+        },
+        "after_setup": {
+          "rss_bytes": 408551424,
+          "peak_rss_bytes": 408551424,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408412160
+        },
+        "after_inference": {
+          "rss_bytes": 414330880,
+          "peak_rss_bytes": 414330880,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 414175232
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 440053760,
+      "baseline_rss_after_imports_bytes": 384065536,
+      "final_process_rss_bytes": 440053760,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384065536,
+          "peak_rss_bytes": 384065536,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383840256
+        },
+        "after_setup": {
+          "rss_bytes": 433963008,
+          "peak_rss_bytes": 433963008,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 433737728
+        },
+        "after_inference": {
+          "rss_bytes": 440053760,
+          "peak_rss_bytes": 440053760,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 439832576
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 434388992,
+      "baseline_rss_after_imports_bytes": 384385024,
+      "final_process_rss_bytes": 434388992,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384385024,
+          "peak_rss_bytes": 384385024,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384163840
+        },
+        "after_setup": {
+          "rss_bytes": 434278400,
+          "peak_rss_bytes": 434278400,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 434057216
+        },
+        "after_inference": {
+          "rss_bytes": 434388992,
+          "peak_rss_bytes": 434388992,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 434188288
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 1,
+      "status": "measured"
+    },
+    {
+      "variant": "eager",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 411615232,
+      "baseline_rss_after_imports_bytes": 384348160,
+      "final_process_rss_bytes": 411615232,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384348160,
+          "peak_rss_bytes": 384348160,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384253952
+        },
+        "after_setup": {
+          "rss_bytes": 397848576,
+          "peak_rss_bytes": 397848576,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397725696
+        },
+        "after_inference": {
+          "rss_bytes": 411615232,
+          "peak_rss_bytes": 411615232,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 411529216
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "eager",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 408141824,
+      "baseline_rss_after_imports_bytes": 384114688,
+      "final_process_rss_bytes": 408141824,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384114688,
+          "peak_rss_bytes": 384114688,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383889408
+        },
+        "after_setup": {
+          "rss_bytes": 397553664,
+          "peak_rss_bytes": 397553664,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 397369344
+        },
+        "after_inference": {
+          "rss_bytes": 408141824,
+          "peak_rss_bytes": 408141824,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408027136
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 412262400,
+      "baseline_rss_after_imports_bytes": 384225280,
+      "final_process_rss_bytes": 412262400,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384225280,
+          "peak_rss_bytes": 384225280,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384008192
+        },
+        "after_setup": {
+          "rss_bytes": 404811776,
+          "peak_rss_bytes": 404811776,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 404692992
+        },
+        "after_inference": {
+          "rss_bytes": 412262400,
+          "peak_rss_bytes": 412262400,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 412073984
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "fused",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 410542080,
+      "baseline_rss_after_imports_bytes": 384229376,
+      "final_process_rss_bytes": 410542080,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384229376,
+          "peak_rss_bytes": 384229376,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383950848
+        },
+        "after_setup": {
+          "rss_bytes": 405213184,
+          "peak_rss_bytes": 405213184,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 404959232
+        },
+        "after_inference": {
+          "rss_bytes": 410542080,
+          "peak_rss_bytes": 410542080,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 410243072
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 494305280,
+      "baseline_rss_after_imports_bytes": 384110592,
+      "final_process_rss_bytes": 466333696,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384110592,
+          "peak_rss_bytes": 384110592,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383950848
+        },
+        "after_setup": {
+          "rss_bytes": 421253120,
+          "peak_rss_bytes": 421253120,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 421167104
+        },
+        "after_inference": {
+          "rss_bytes": 466333696,
+          "peak_rss_bytes": 494305280,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 494305280
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "compiled",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 492355584,
+      "baseline_rss_after_imports_bytes": 384311296,
+      "final_process_rss_bytes": 464338944,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384311296,
+          "peak_rss_bytes": 384311296,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384221184
+        },
+        "after_setup": {
+          "rss_bytes": 421044224,
+          "peak_rss_bytes": 421044224,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 420921344
+        },
+        "after_inference": {
+          "rss_bytes": 464338944,
+          "peak_rss_bytes": 492355584,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 492355584
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 415027200,
+      "baseline_rss_after_imports_bytes": 384339968,
+      "final_process_rss_bytes": 415027200,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384339968,
+          "peak_rss_bytes": 384339968,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 384225280
+        },
+        "after_setup": {
+          "rss_bytes": 408211456,
+          "peak_rss_bytes": 408211456,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 408051712
+        },
+        "after_inference": {
+          "rss_bytes": 415027200,
+          "peak_rss_bytes": 415027200,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 414969856
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "int8",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 413663232,
+      "baseline_rss_after_imports_bytes": 384110592,
+      "final_process_rss_bytes": 413663232,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384110592,
+          "peak_rss_bytes": 384110592,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383905792
+        },
+        "after_setup": {
+          "rss_bytes": 407912448,
+          "peak_rss_bytes": 407912448,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 407740416
+        },
+        "after_inference": {
+          "rss_bytes": 413663232,
+          "peak_rss_bytes": 413663232,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 413466624
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 440086528,
+      "baseline_rss_after_imports_bytes": 384098304,
+      "final_process_rss_bytes": 440086528,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384098304,
+          "peak_rss_bytes": 384098304,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383848448
+        },
+        "after_setup": {
+          "rss_bytes": 433995776,
+          "peak_rss_bytes": 433995776,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 433745920
+        },
+        "after_inference": {
+          "rss_bytes": 440086528,
+          "peak_rss_bytes": 440086528,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 439971840
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    },
+    {
+      "variant": "onnx",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 434176000,
+      "baseline_rss_after_imports_bytes": 384172032,
+      "final_process_rss_bytes": 434176000,
+      "stages": {
+        "after_imports": {
+          "rss_bytes": 384172032,
+          "peak_rss_bytes": 384172032,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 383836160
+        },
+        "after_setup": {
+          "rss_bytes": 434061312,
+          "peak_rss_bytes": 434061312,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 433659904
+        },
+        "after_inference": {
+          "rss_bytes": 434176000,
+          "peak_rss_bytes": 434176000,
+          "method": "/proc/self/status VmHWM",
+          "diagnostic_ru_maxrss_bytes": 433790976
+        }
+      },
+      "counter_method": "/proc/self/status VmHWM",
+      "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
+      "repetition": 2,
+      "status": "measured"
+    }
+  ]
+}

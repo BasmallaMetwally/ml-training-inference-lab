@@ -68,7 +68,17 @@
       0.00660000000000005,
       0.0025000000000000577
     ],
-    "assumption": "Independent seed pairs; signs exchangeable under the null; fixed dataset split"
+    "assumption": "Independent seed-indexed run blocks; signs exchangeable under the null; fixed dataset split. Dedicated equal-seed shuffle generators share batch order; architecture-specific initialization and dropout are not matched. Pairing does not guarantee variance reduction."
+  },
+  "welch_sensitivity_cnn_minus_mlp": {
+    "mean_difference": 0.005399999999999849,
+    "ci95": [
+      0.003859215500150578,
+      0.006940784499849121
+    ],
+    "p_two_sided": 3.544498058998155e-06,
+    "degrees_of_freedom": 13.361996793945684,
+    "interpretation": "Unpaired Welch sensitivity analysis; seed labels are not a matched-randomness design."
   },
   "latency_ms": {
     "mlp": {

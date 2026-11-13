@@ -1,0 +1,22 @@
+{
+  "architectures": [
+    "mlp_small",
+    "mlp",
+    "mlp_large",
+    "cnn_small",
+    "cnn",
+    "cnn_large"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "split_seed": 42,
+  "epochs": 10,
+  "batch_size": 128,
+  "lr": 0.001,
+  "cpu_threads": 1,
+  "status": "Exploratory follow-up after observing v1.0 test results; not a new untouched-test confirmation.",
+  "plot": "All six points use the same three seeds; original 10-seed inference remains separate."
+}

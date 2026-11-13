@@ -138,13 +138,13 @@ def main() -> None:
         "Fusion removes the BatchNorm operator paths and reduces the number of ATen invocations. These instrumented totals include profiling overhead; operator self time does not independently identify pure Python or C++ dispatch overhead. Uninstrumented latency ablations supply the performance comparison. Do not subtract nested profiler totals as if they were independent costs.",
         "",
         "## Actual peak process memory",
+        "Linux v1.0 memory measurements are inconclusive. Use the [corrected three-repeat Linux study](../performance-linux/corrected/REPORT.md). The following table contains macOS observations only.",
         "",
         "| Platform | Runtime | Checks | Peak process RSS MiB | Baseline after imports MiB |",
         "| --- | --- | --- | ---: | ---: |",
     ]
     for platform, path in [
         ("macOS", "results/performance/memory.json"),
-        ("Linux", "results/performance-linux/memory.json"),
     ]:
         for row in read(path)["measurements"]:
             if "peak_process_rss_bytes" not in row:
@@ -154,7 +154,7 @@ def main() -> None:
             )
     lines += [
         "",
-        "Measured with OS high-water RSS in separate fresh processes, including imports, model/runtime construction and 50 batch-128 forwards. On Linux ru_maxrss KiB is converted to bytes; on macOS it is already bytes. These are process peaks, not peak activations or parameter storage. One process measurement per variant is not evidence of a small memory improvement. Compiled construction may reuse an on-disk compiler cache.",
+        "Measured with OS high-water RSS in separate fresh processes, including imports, model/runtime construction and 50 batch-128 forwards. macOS ru_maxrss is in bytes. Corrected Linux measurements use exec-local VmHWM; original Linux values must not be compared. These are process peaks, not peak activations or parameter storage. One process measurement per variant is not evidence of a small memory improvement. Compiled construction may reuse an on-disk compiler cache.",
         "",
         "## Attempt audit",
         "",
@@ -169,7 +169,7 @@ def main() -> None:
 
 1. **الدقة والحجم والسرعة لا يتحركون معًا.** عبر 10 seeds، حقق الـMLP دقة {mlp["mean"] * 100:.3f}% ± {mlp["std"] * 100:.3f} نقطة مئوية، والـCNN دقة {cnn["mean"] * 100:.3f}% ± {cnn["std"] * 100:.3f}. فرق الـCNN المزدوج {difference["mean"] * 100:.3f} نقطة، بفاصل ثقة 95% من {a:.3f} إلى {b:.3f} وp={difference["exact_sign_flip_p_two_sided"]:.6f}. رغم امتلاكه 9,098 parameters مقابل 109,770، كان الـCNN أبطأ عند batch=1 على الجهاز المقاس. فواصل الثقة تصف اختلاف التدريب بين الـseeds على تقسيم ثابت، وليس اختلاف جميع البيانات الممكنة.
 
-2. **الـfusion تحسن حقيقي لكنه يعتمد على حجم الدفعة وحدود القياس.** استمر التحسن مع تشغيل فحص المدخلات وإيقافه. يوضح profiler انخفاض عدد استدعاءات ATen بعد إزالة مسارات BatchNorm، بينما تكبر تكلفة فحص كل عناصر المدخلات مع حجم الدفعة. لم تُقاس تكلفة dispatch الخالصة بشكل مستقل. قسنا peak RSS الفعلي للعملية بدل الاستدلال عليه من عدد الأوزان. int8 الذي يغيّر التصنيفات يُرفض تحت شرط التطابق التام؛ نجاح compile على Linux لا يعني نجاحه على macOS.
+2. **الـfusion تحسن حقيقي لكنه يعتمد على حجم الدفعة وحدود القياس.** استمر التحسن مع تشغيل فحص المدخلات وإيقافه. يوضح profiler انخفاض عدد استدعاءات ATen بعد إزالة مسارات BatchNorm، بينما تكبر تكلفة فحص كل عناصر المدخلات مع حجم الدفعة. لم تُقاس تكلفة dispatch الخالصة بشكل مستقل. جدول ذاكرة Linux الأصلي غير حاسم؛ القياس المصحح يستخدم VmHWM وثلاثة تكرارات لكل حالة. int8 الذي يغيّر التصنيفات يُرفض تحت شرط التطابق التام؛ نجاح compile على Linux لا يعني نجاحه على macOS.
 
 3. **نتائج الـagents كشفت سقفًا للاختبار.** نجح GPT-6-Luna وGPT-6.1-Sol في 36/36 محاولة لكل نموذج: 12 مهمة × 3 تكرارات، داخل Docker بدون شبكة، مع المراجع خارج الحاويات. لم نرَ timeout أو crash أو reward hacking. فاصل Wilson الوصفي على المهام الـ12 التي نجحت في جميع التكرارات يقارب 75.8%–100%؛ التكرارات مترابطة والمهام مختارة، فلا يوجد دليل كافٍ لترتيب النموذجين أو تعميم نسبة 100%.
 

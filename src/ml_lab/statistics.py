@@ -39,6 +39,33 @@ def paired_comparison(first: list[float] | np.ndarray, second: list[float] | np.
     )
     result["differences"] = differences.tolist()
     result["assumption"] = (
-        "Independent seed pairs; signs exchangeable under the null; fixed dataset split"
+        "Independent seed-indexed run blocks; signs exchangeable under the null; fixed dataset split. Dedicated equal-seed shuffle generators share batch order; architecture-specific initialization and dropout are not matched. Pairing does not guarantee variance reduction."
     )
     return result
+
+
+def welch_comparison(first: list[float] | np.ndarray, second: list[float] | np.ndarray) -> dict:
+    """Unpaired sensitivity analysis, allowing unequal architecture variances."""
+    a, b = np.asarray(first, dtype=float), np.asarray(second, dtype=float)
+    summarize(a)
+    summarize(b)
+    v1, v2 = a.var(ddof=1) / len(a), b.var(ddof=1) / len(b)
+    se = float(np.sqrt(v1 + v2))
+    difference = float(b.mean() - a.mean())
+    if se == 0:
+        return {
+            "mean_difference": difference,
+            "ci95": [difference, difference],
+            "p_two_sided": 1.0 if difference == 0 else 0.0,
+            "degrees_of_freedom": None,
+        }
+    df = float((v1 + v2) ** 2 / (v1 * v1 / (len(a) - 1) + v2 * v2 / (len(b) - 1)))
+    margin = float(stats.t.ppf(0.975, df) * se)
+    test = stats.ttest_ind(b, a, equal_var=False)
+    return {
+        "mean_difference": difference,
+        "ci95": [difference - margin, difference + margin],
+        "p_two_sided": float(test.pvalue),
+        "degrees_of_freedom": df,
+        "interpretation": "Unpaired Welch sensitivity analysis ignores shared shuffle-order dependence; initialization and dropout are not matched.",
+    }

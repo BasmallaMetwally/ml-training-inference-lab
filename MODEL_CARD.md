@@ -13,3 +13,7 @@
 **Limitations:** one dataset, fixed split, ten seeds and a small architecture comparison. Shirt/T-shirt and other visually similar garment classes remain error sources. No calibration, out-of-distribution robustness, demographic analysis, GPU or distributed-training claims. There is no evidence here of professional deployment experience.
 
 **Artifacts and license:** source under MIT; selected checkpoints and exported/runtime artifacts are separate GitHub Release assets. SHA256 provenance links checkpoints to exported graphs. Dataset attribution is in DATA_SHEET.md and THIRD_PARTY.md. Code/model versioning does not imply third-party certification.
+
+## Post-v1.0 corrections and exploratory extension
+
+The original Linux peak-memory comparison is inconclusive; use the [replacement VmHWM study](results/performance-linux/corrected/REPORT.md). The [six-capacity, three-seed sweep](results/capacity-sweep/REPORT.md) is exploratory test-set reuse. It does not replace the original ten-seed accuracy comparison. Architecture seed blocks share shuffle order, but not initialization or dropout; pairing gives no guaranteed variance reduction. An unpaired Welch sensitivity check is recorded in results/study/summary.json.

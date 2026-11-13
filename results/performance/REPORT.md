@@ -77,3 +77,7 @@ Measured with OS high-water RSS in separate fresh processes, including imports, 
 The macOS Inductor attempt failed while loading the C++ runtime and is recorded as unavailable; Linux compilation is separately measured. A first Linux ONNX attempt reused an exported graph from a different checkpoint and was invalidated. The cache now verifies both checkpoint SHA256 and graph SHA256 before reuse, with regression tests. Only the corrected run is included in the comparison.
 
 Corrected Linux runtime run: https://github.com/BasmallaMetwally/ml-training-inference-lab/actions/runs/43453954524
+
+## Corrected Linux memory follow-up
+
+[Three-repeat VmHWM measurements, stage counters and regression evidence](../performance-linux/corrected/REPORT.md) supersede the inconclusive archived Linux table.

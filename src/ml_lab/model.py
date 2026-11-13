@@ -8,18 +8,18 @@ from torch.nn.utils.fusion import fuse_linear_bn_eval
 class FashionMLP(nn.Module):
     """Small fully connected classifier with checked public input boundaries."""
 
-    def __init__(self) -> None:
+    def __init__(self, widths: tuple[int, int] = (128, 64)) -> None:
         super().__init__()
         self.layers = nn.Sequential(
-            nn.Linear(784, 128),
-            nn.BatchNorm1d(128),
+            nn.Linear(784, widths[0]),
+            nn.BatchNorm1d(widths[0]),
             nn.ReLU(),
             nn.Dropout(0.2),
-            nn.Linear(128, 64),
-            nn.BatchNorm1d(64),
+            nn.Linear(widths[0], widths[1]),
+            nn.BatchNorm1d(widths[1]),
             nn.ReLU(),
             nn.Dropout(0.2),
-            nn.Linear(64, 10),
+            nn.Linear(widths[1], 10),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -43,18 +43,18 @@ class FashionMLP(nn.Module):
 class FashionCNN(FashionMLP):
     """Compact convolutional comparison, accepting the same flat image contract."""
 
-    def __init__(self) -> None:
+    def __init__(self, width: int = 8) -> None:
         nn.Module.__init__(self)
         self.layers = nn.Sequential(
             nn.Unflatten(1, (1, 28, 28)),
-            nn.Conv2d(1, 8, 3, padding=1),
+            nn.Conv2d(1, width, 3, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(2),
-            nn.Conv2d(8, 16, 3, padding=1),
+            nn.Conv2d(width, 2 * width, 3, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(2),
             nn.Flatten(),
-            nn.Linear(16 * 7 * 7, 10),
+            nn.Linear(2 * width * 7 * 7, 10),
         )
 
 
@@ -64,6 +64,14 @@ def make_model(kind: str = "mlp") -> nn.Module:
         return FashionMLP()
     if kind == "cnn":
         return FashionCNN()
+    if kind == "mlp_small":
+        return FashionMLP((64, 32))
+    if kind == "mlp_large":
+        return FashionMLP((256, 128))
+    if kind == "cnn_small":
+        return FashionCNN(4)
+    if kind == "cnn_large":
+        return FashionCNN(12)
     raise ValueError(f"Unknown model kind: {kind}")
 
 

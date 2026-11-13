@@ -19,7 +19,11 @@ def main() -> None:
     tr.add_argument("--lr", type=float, default=0.001)
     tr.add_argument("--threads", type=int, default=1)
     tr.add_argument("--resume", action="store_true")
-    tr.add_argument("--model-kind", choices=["mlp", "cnn"], default="mlp")
+    tr.add_argument(
+        "--model-kind",
+        choices=["mlp", "cnn", "mlp_small", "mlp_large", "cnn_small", "cnn_large"],
+        default="mlp",
+    )
     tr.add_argument("--split-seed", type=int, default=None)
     for cmd in ["evaluate", "benchmark"]:
         q = sub.add_parser(cmd)

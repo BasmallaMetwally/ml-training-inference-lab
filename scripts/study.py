@@ -17,7 +17,7 @@ from torch.utils.benchmark import Timer
 from ml_lab.data import digest, test_data
 from ml_lab.engine import final_evaluation, load_model, seed_everything, train, write_json
 from ml_lab.model import fused_model
-from ml_lab.statistics import paired_comparison
+from ml_lab.statistics import paired_comparison, welch_comparison
 from ml_lab.statistics import summarize as summary
 
 OUT = Path("results/study")
@@ -185,6 +185,7 @@ def main() -> None:
         "plan": plan,
         "accuracy": {k: summary([r["test"]["accuracy"] for r in v]) for k, v in groups.items()},
         "paired_difference_cnn_minus_mlp": paired_comparison(a, b),
+        "welch_sensitivity_cnn_minus_mlp": welch_comparison(a, b),
         "latency_ms": {
             k: summary([r["latency"]["1"]["median_ms"] for r in v]) for k, v in groups.items()
         },

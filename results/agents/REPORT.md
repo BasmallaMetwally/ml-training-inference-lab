@@ -23,9 +23,11 @@ There are no observed model failure categories to compare. Missing a failure doe
 
 ## Evidence
 
-- `grades.json`: task statuses and candidate source hashes, without hidden inputs.
-- `grader_validation.json`: twelve independent reference functions pass and twelve broken starters are rejected.
+- [grades.json](grades.json): task statuses and candidate source hashes, without hidden inputs.
+- [grader_validation.json](grader_validation.json): twelve independent reference functions pass and twelve broken starters are rejected.
 - Per-trial folders: complete prompt response, executable solution, transcript and generation metadata.
-- `protocol.json`: models, repetition count and budgets.
+- [protocol.json](protocol.json): models, repetition count and budgets.
 
 Docker: no network, read-only root and submission, unprivileged user, no capabilities, no new privileges, limited PIDs/CPU/RAM and a timeout. The grader and reference calculations run on the host in a separate private repository.
+
+The withheld evaluator prevents full independent replay from this public repository. Public validation and candidate hashes support audit but do not remove that limitation. Harder multi-file, tool-using and deliberate grader-tampering tasks are future experiments; no outcomes from those experiments are claimed.

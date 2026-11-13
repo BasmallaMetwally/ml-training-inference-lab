@@ -175,7 +175,13 @@ def train(
     }
     if model_kind != "mlp":
         config["model_kind"] = model_kind
-        config["architecture"] = "Conv8-ReLU-Pool-Conv16-ReLU-Pool-Linear10"
+        config["architecture"] = {
+            "cnn": "Conv8-ReLU-Pool-Conv16-ReLU-Pool-Linear10",
+            "mlp_small": "784-64-BN-ReLU-Dropout-32-BN-ReLU-Dropout-10",
+            "mlp_large": "784-256-BN-ReLU-Dropout-128-BN-ReLU-Dropout-10",
+            "cnn_small": "Conv4-ReLU-Pool-Conv8-ReLU-Pool-Linear10",
+            "cnn_large": "Conv12-ReLU-Pool-Conv24-ReLU-Pool-Linear10",
+        }[model_kind]
     if split_seed is not None:
         config["split_seed"] = split_seed
     model = make_model(model_kind)

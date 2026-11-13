@@ -1,6 +1,6 @@
 import pytest
 
-from ml_lab.statistics import paired_comparison, summarize
+from ml_lab.statistics import paired_comparison, summarize, welch_comparison
 
 
 def test_identical_pairs_show_no_effect():
@@ -24,3 +24,13 @@ def test_summary_uses_sample_standard_deviation():
     result = summarize([1.0, 2.0, 3.0])
     assert result["mean"] == 2 and result["std"] == 1
     assert result["ci95"][0] < 1 and result["ci95"][1] > 3
+
+
+def test_welch_sensitivity_is_invariant_to_seed_reordering():
+    first = [0.81, 0.82, 0.80, 0.83]
+    second = [0.89, 0.85, 0.87, 0.90]
+    a = welch_comparison(first, second)
+    b = welch_comparison(first, list(reversed(second)))
+    assert a["p_two_sided"] == pytest.approx(b["p_two_sided"])
+    assert a["ci95"] == pytest.approx(b["ci95"])
+    assert a["ci95"][0] > 0

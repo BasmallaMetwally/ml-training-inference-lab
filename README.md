@@ -2,11 +2,13 @@
 
 A measured ML engineering project: paired neural-network training, inference optimization, reproducibility checks and a coding-agent repair pilot. Developed with coding-agent assistance; claims are linked to recorded experiments.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24201648.svg)](https://doi.org/10.5281/zenodo.24201648)
+
 [Archived v1.0 — DOI 10.5281/zenodo.24201648](https://doi.org/10.5281/zenodo.24201648)
 
 [What we found — العربية](FINDINGS.ar.md) · [Model card](MODEL_CARD.md) · [Data sheet](DATA_SHEET.md) · [Short project post](POST.md)
 
-**Measurement correction:** the v1.0 Linux peak-RSS table is inconclusive and must not be used to compare runtimes. See [errata](ERRATA.md).
+**Measurement correction:** the v1.0 Linux peak-RSS table is inconclusive and must not be used to compare runtimes. See [errata](ERRATA.md) and the completed [replacement Linux measurements](results/performance-linux/corrected/REPORT.md).
 
 ## Results
 
@@ -17,9 +19,13 @@ A measured ML engineering project: paired neural-network training, inference opt
 
 Ten initialization/shuffle seeds per architecture, one fixed stratified split, ten epochs, identical optimization settings. CNN minus MLP accuracy: **+0.540 percentage points**, paired 95% seed-level t interval **[+0.435, +0.645]**, exact two-sided sign-flip **p = 0.001953**. This is conditional on the dataset split; it is not a population-data confidence interval or evidence of state-of-the-art performance.
 
-![Accuracy, latency and parameter tradeoff](results/study/pareto.png)
+Seed blocks share shuffle order through dedicated equal-seed generators; initialization and dropout differ between architectures. Pairing does not guarantee variance reduction. An unpaired Welch sensitivity check gives a 95% interval [0.386, 0.694] percentage points, p=3.54e-06; this sensitivity check ignores shared-order dependence.
 
-The CNN has about twelve times fewer parameters but higher batch-1 latency on this CPU. Both points are nondominated when accuracy, latency and parameter count are considered together. Marker area represents parameters; error bars are sample standard deviations.
+![Exploratory six-model tradeoff](results/capacity-sweep/pareto.png)
+
+[Six architectures on three common seeds: protocol, matched latency and results](results/capacity-sweep/REPORT.md). This post-hoc exploratory sweep reuses the official test set. The original ten-seed study remains separate.
+
+The CNN has about twelve times fewer parameters but higher batch-1 latency on this CPU. The original two-model comparison alone does not establish a broad Pareto frontier. Marker area represents parameters; error bars are sample standard deviations.
 
 - **Inference:** checked/unchecked ablations, fusion, compilation, dynamic int8 and ONNX Runtime. Prediction-changing variants are rejected by the strict parity policy. [Full runtime, profiler and peak-RSS report](results/performance/REPORT.md).
 - **Reproducibility:** exact checkpoint resumption passes within Linux and within macOS; Linux tensors differ from the recorded macOS tensors. [Recorded evidence](results/reproducibility/).
@@ -115,3 +121,5 @@ This is an educational CPU project on a small garment dataset. It does not demon
 - [ONNX Runtime documentation](https://onnxruntime.ai/docs/).
 
 Source license: MIT. Dataset attribution: [THIRD_PARTY.md](THIRD_PARTY.md).
+
+Source provenance: `results/source_manifest.json` records the archived v1.0 sources; `results/followup_source_manifest.json` records the current correction and exploratory scripts. The Git history identifies both versions.
