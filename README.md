@@ -2,7 +2,9 @@
 
 A measured ML engineering project: paired neural-network training, inference optimization, reproducibility checks and a coding-agent repair pilot. Developed with coding-agent assistance; claims are linked to recorded experiments.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24201648.svg)](https://doi.org/10.5281/zenodo.24201648)
+[![v1.1 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24207624.svg)](https://doi.org/10.5281/zenodo.24207624)
+
+[Release v1.1](https://github.com/BasmallaMetwally/ml-training-inference-lab/releases/tag/v1.1) · [v1.1 archive — DOI 10.5281/zenodo.24207624](https://doi.org/10.5281/zenodo.24207624)
 
 [Archived v1.0 — DOI 10.5281/zenodo.24201648](https://doi.org/10.5281/zenodo.24201648)
 

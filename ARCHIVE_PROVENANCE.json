@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "doi": "10.5281/zenodo.24207624",
+  "zenodo_record_id": 24207624,
+  "github_release": "https://github.com/BasmallaMetwally/ml-training-inference-lab/releases/tag/v1.1",
+  "release_commit": "0569d60d3948513e63ee737fed8de899c48c381f",
+  "zenodo_files": [
+    {
+      "key": "BasmallaMetwally/ml-training-inference-lab-v1.1.zip",
+      "size": 2841794,
+      "checksum": "md5:c6bfc0364fe651be0ae4dd6df42ce724"
+    }
+  ],
+  "archive_scope": "Automatic Zenodo archive contains committed source and recorded evaluation artifacts. Twelve new-capacity checkpoints are separate GitHub release assets.",
+  "original_v1_0": {
+    "doi": "10.5281/zenodo.24201648",
+    "tag_commit_verified_unchanged": "a4e26cede8777b9028845fcc21e4e369833a8d1c"
+  },
+  "verification": {
+    "zenodo_md5_matches_published_checksum": true,
+    "zenodo_source_files_match_release_archive_sha256": true,
+    "verified_files": 1663
+  }
+}
