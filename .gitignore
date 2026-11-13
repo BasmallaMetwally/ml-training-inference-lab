@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/
+runs/
+*.pt
+.DS_Store
+.cache/
+.mplconfig/
+.ruff_cache/
+release-assets/
+results/seed42/dataset_manifest.json
+

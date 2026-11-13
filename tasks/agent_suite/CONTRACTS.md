@@ -1,0 +1,19 @@
+# ML engineering repair suite
+
+Implement the following independent functions in `solution.py`, using Python and PyTorch. Preserve the signatures. All input tensors are CPU tensors. Do not access files, network, environment variables or test infrastructure. Return ordinary tensors or tuples as specified. Numerical correctness is checked on withheld inputs; no grader feedback is available during a trial.
+
+1. `stable_loss(logits, targets)`: scalar mean multiclass cross entropy, differentiable with respect to finite float32 logits, including magnitudes up to 100,000. `targets` is int64.
+2. `masked_softmax(logits, mask)`: stable softmax over the last dimension restricted to Boolean `mask` entries; masked entries must be exactly zero. Entirely masked rows must return zeros, not NaNs. Keep the input shape.
+3. `standardize(train, other)`: return `(normalized_train, normalized_other)`. Fit per-column mean and population standard deviation on train only. Use `std.clamp_min(1e-6)`; zero-variance columns are allowed. Both inputs are 2D float64.
+4. `pairwise_distance(x, y)`: all squared Euclidean distances between rows of 2D float64 matrices, shape `[len(x), len(y)]`, never negative. Do not return square roots. Inputs may contain repeated rows.
+5. `ridge_fit(x, y, alpha)`: return ridge coefficients solving `(X.T @ X + alpha * I) w = X.T @ y`, without adding an intercept. Alpha is positive, x/y are float64, y is 1D. Collinear columns are allowed.
+6. `clip_gradient(grads, max_norm)`: return an out-of-place tensor equal to a flat gradient vector scaled to Euclidean norm at most `max_norm`; if norm is zero, return zeros. Do not change the input tensor. Max norm is positive.
+7. `accumulate_step(w, batches_x, batches_y, lr)`: return new linear regression weights after one SGD step on the concatenation of all microbatches, using the mean squared error `mean((X @ w - y)**2)`. Microbatches can have unequal lengths. Do not mutate w or the batches. Float64 inputs; no intercept.
+8. `predict(model, x)`: return logits with eval semantics and no autograd graph; do not update BatchNorm running statistics. The supplied model can contain BatchNorm and Dropout. It is allowed to leave the model in eval mode.
+9. `adam_update(w, grad, m, v, step, lr, beta1, beta2, eps)`: return `(new_w, new_m, new_v)` for one ordinary Adam update with bias correction at 1-indexed `step`; no weight decay or AMSGrad. Epsilon is added after the square root of the corrected second moment. Do not mutate inputs.
+10. `confusion_matrix(targets, predictions, nclasses)`: return int64 `[nclasses,nclasses]` counts with actual classes on rows and predictions on columns, including absent classes. Inputs are valid int64 class indices; the input may be empty.
+11. `stratified_split(labels, val_fraction, seed)`: return `(train_indices, validation_indices)` int64 1D tensors. For each distinct class, choose exactly `floor(class_count * val_fraction)` validation examples. Every index must appear exactly once, splits must be disjoint, and results must be identical for the same seed regardless of global torch RNG state. Different seeds should generally change membership. All classes have enough samples.
+12. `early_stop(values, patience, min_delta)`: return `(best_index, stop_index)`. Iterate losses in order. An improvement means `loss < best_loss - min_delta`, updating best loss/index and resetting stale count; otherwise increment stale count. Stop at the first index whose stale count reaches patience. If never stopped, stop_index is the last index. Only processed values count toward best_index. Values are finite, sequence is nonempty, patience >= 1, min_delta >= 0.
+
+The fixed suite is small and intended as a pilot, not a frontier model ranking. Identical instructions and budgets must be used across models. Hosted outputs contain only aggregate grades; the private evaluator holds reference calculations and case generation.
+

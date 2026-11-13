@@ -1,0 +1,227 @@
+{
+  "representative_seed": 0,
+  "selection": "predeclared seed; first errors in official test order",
+  "shirt_recall": 0.674,
+  "shirt_to_tshirt_count": 107,
+  "confusion_matrix": [
+    [
+      826,
+      1,
+      16,
+      33,
+      3,
+      2,
+      109,
+      0,
+      10,
+      0
+    ],
+    [
+      2,
+      966,
+      1,
+      23,
+      4,
+      0,
+      3,
+      0,
+      1,
+      0
+    ],
+    [
+      22,
+      0,
+      813,
+      11,
+      105,
+      1,
+      47,
+      0,
+      1,
+      0
+    ],
+    [
+      13,
+      6,
+      6,
+      914,
+      27,
+      1,
+      27,
+      0,
+      6,
+      0
+    ],
+    [
+      1,
+      1,
+      83,
+      32,
+      828,
+      1,
+      50,
+      0,
+      4,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      962,
+      0,
+      23,
+      2,
+      13
+    ],
+    [
+      107,
+      1,
+      107,
+      30,
+      69,
+      0,
+      674,
+      0,
+      12,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      25,
+      0,
+      956,
+      0,
+      19
+    ],
+    [
+      6,
+      0,
+      4,
+      10,
+      4,
+      4,
+      7,
+      4,
+      961,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      1,
+      42,
+      0,
+      949
+    ]
+  ],
+  "examples": [
+    {
+      "test_index": 40,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.9763595461845398
+    },
+    {
+      "test_index": 286,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.3553244173526764
+    },
+    {
+      "test_index": 344,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.5627567768096924
+    },
+    {
+      "test_index": 474,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.6985968351364136
+    },
+    {
+      "test_index": 563,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.5975438356399536
+    },
+    {
+      "test_index": 565,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.741058349609375
+    },
+    {
+      "test_index": 572,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.580359935760498
+    },
+    {
+      "test_index": 586,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.929897665977478
+    },
+    {
+      "test_index": 977,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.6519595384597778
+    },
+    {
+      "test_index": 1056,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.6475625038146973
+    },
+    {
+      "test_index": 1152,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.8146130442619324
+    },
+    {
+      "test_index": 1235,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.6339206695556641
+    },
+    {
+      "test_index": 1294,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.8442739248275757
+    },
+    {
+      "test_index": 1396,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.6127738952636719
+    },
+    {
+      "test_index": 1458,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.46078625321388245
+    },
+    {
+      "test_index": 1620,
+      "actual": "Shirt",
+      "predicted": "T-shirt/top",
+      "predicted_probability": 0.5014083385467529
+    }
+  ],
+  "interpretation": "Visual overlap in silhouettes, sleeves and low-resolution grayscale texture is a plausible explanation; no causal mechanism is established. Error inspection is post-evaluation and did not tune these models."
+}

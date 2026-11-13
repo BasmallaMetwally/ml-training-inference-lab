@@ -1,0 +1,9 @@
+{
+  "mean": 0.28622886538505554,
+  "std": 0.3531208336353302,
+  "seed": 42,
+  "train_size": 50000,
+  "validation_size": 10000,
+  "train_indices_sha256": "66426f4930e716df4d20183b392dd76a6833f6cabe6215d7aa0825905c99b73e",
+  "validation_indices_sha256": "05fedb4b220e9ecb8bdeebba711917a0391b03e8db6694f3d590d98ac1b8d279"
+}

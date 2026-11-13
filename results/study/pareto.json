@@ -1,0 +1,19 @@
+{
+  "points": [
+    {
+      "kind": "mlp",
+      "latency_ms": 0.04377962903236039,
+      "accuracy": 0.8842800000000001,
+      "parameters": 109770,
+      "pareto_optimal_3objectives": true
+    },
+    {
+      "kind": "cnn",
+      "latency_ms": 0.08339229039847851,
+      "accuracy": 0.8896799999999999,
+      "parameters": 9098,
+      "pareto_optimal_3objectives": true
+    }
+  ],
+  "objectives": "maximize accuracy, minimize latency and parameters"
+}

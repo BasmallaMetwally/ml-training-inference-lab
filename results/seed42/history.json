@@ -1,0 +1,82 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.6178713338375091,
+    "validation_loss": 0.3977690361022949,
+    "validation_accuracy": 0.8559,
+    "max_preclip_gradient_norm": 3.6584057807922363,
+    "seconds": 0.4566700829891488
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.411448820476532,
+    "validation_loss": 0.3665336330413818,
+    "validation_accuracy": 0.867,
+    "max_preclip_gradient_norm": 1.2957797050476074,
+    "seconds": 0.44354845804627985
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.3714427444076538,
+    "validation_loss": 0.35627965507507325,
+    "validation_accuracy": 0.8706,
+    "max_preclip_gradient_norm": 1.1876550912857056,
+    "seconds": 0.43838387506548315
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.3503861183929443,
+    "validation_loss": 0.33361338844299315,
+    "validation_accuracy": 0.8802,
+    "max_preclip_gradient_norm": 1.2498360872268677,
+    "seconds": 0.44284374988637865
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.3300879866027832,
+    "validation_loss": 0.32669250507354736,
+    "validation_accuracy": 0.8821,
+    "max_preclip_gradient_norm": 1.4356135129928589,
+    "seconds": 0.44832800002768636
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.3156989614677429,
+    "validation_loss": 0.3275644711494446,
+    "validation_accuracy": 0.8815,
+    "max_preclip_gradient_norm": 1.180429458618164,
+    "seconds": 0.4518470420734957
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.29968264324665067,
+    "validation_loss": 0.31425556659698484,
+    "validation_accuracy": 0.889,
+    "max_preclip_gradient_norm": 1.1145093441009521,
+    "seconds": 0.43718966701999307
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.2905686259651184,
+    "validation_loss": 0.31966373119354247,
+    "validation_accuracy": 0.8858,
+    "max_preclip_gradient_norm": 1.2087600231170654,
+    "seconds": 0.4386609169887379
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.2847069030570984,
+    "validation_loss": 0.30780017070770266,
+    "validation_accuracy": 0.8895,
+    "max_preclip_gradient_norm": 1.2006996870040894,
+    "seconds": 0.4431968330172822
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.2741152279472351,
+    "validation_loss": 0.3089810047149658,
+    "validation_accuracy": 0.8903,
+    "max_preclip_gradient_norm": 1.124268889427185,
+    "seconds": 0.4436087500071153
+  }
+]

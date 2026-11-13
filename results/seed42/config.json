@@ -1,0 +1,10 @@
+{
+  "seed": 42,
+  "batch_size": 128,
+  "lr": 0.001,
+  "threads": 1,
+  "architecture": "784-128-BN-ReLU-Dropout-64-BN-ReLU-Dropout-10",
+  "optimizer": "Adam",
+  "selection": "minimum validation cross entropy",
+  "target_epochs": 10
+}

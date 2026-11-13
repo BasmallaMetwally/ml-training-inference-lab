@@ -1,0 +1,77 @@
+{
+  "reference_passes": 3,
+  "incorrect_fixtures_rejected": 7,
+  "note": "Hand-authored fixture checks only. No external coding-agent trials.",
+  "cases": [
+    {
+      "fixture": "reference.py",
+      "task": "train_step",
+      "status": "pass",
+      "seed_cases": 3,
+      "seconds": 1.4006398749770597
+    },
+    {
+      "fixture": "starter.py",
+      "task": "train_step",
+      "status": "incorrect",
+      "detail": "Loss did not fall sufficiently",
+      "seconds": 1.4013257079059258
+    },
+    {
+      "fixture": "reference.py",
+      "task": "stable_loss",
+      "status": "pass",
+      "seed_cases": 3,
+      "seconds": 1.402323874994181
+    },
+    {
+      "fixture": "starter.py",
+      "task": "stable_loss",
+      "status": "incorrect",
+      "detail": "Loss must be a finite scalar",
+      "seconds": 1.3944358750013635
+    },
+    {
+      "fixture": "reference.py",
+      "task": "predict",
+      "status": "pass",
+      "seed_cases": 3,
+      "seconds": 1.408619667054154
+    },
+    {
+      "fixture": "starter.py",
+      "task": "predict",
+      "status": "incorrect",
+      "detail": "Inference created a gradient graph",
+      "seconds": 1.3903665419202298
+    },
+    {
+      "fixture": "mutants/stale_gradients.py",
+      "task": "train_step",
+      "status": "incorrect",
+      "detail": "Stale gradients were not cleared",
+      "seconds": 1.4187243749620393
+    },
+    {
+      "fixture": "mutants/detached_loss.py",
+      "task": "stable_loss",
+      "status": "crash",
+      "detail": "RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn",
+      "seconds": 1.4053240839857608
+    },
+    {
+      "fixture": "mutants/no_eval.py",
+      "task": "predict",
+      "status": "incorrect",
+      "detail": "Tensor-likes are not close!\n\nMismatched elements: 69 / 69 (100.0%)\nGreatest absolute difference: 2.8817288875579834 at index (2, 2) (up to 1e-05 allowed)\nGreatest relative difference: 1042.4923095703125 at index (4, 2) (up to 1.3e-06 allowed)",
+      "seconds": 1.374420000007376
+    },
+    {
+      "fixture": "mutants/no_inference.py",
+      "task": "predict",
+      "status": "incorrect",
+      "detail": "Inference created a gradient graph",
+      "seconds": 1.3937249589944258
+    }
+  ]
+}

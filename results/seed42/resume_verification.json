@@ -1,0 +1,17 @@
+{
+  "protocol": "10 uninterrupted epochs vs 5 epochs + checkpoint restore + 5 epochs",
+  "device": "cpu",
+  "same_environment_required": true,
+  "comparisons": {
+    "last.pt": {
+      "all_model_tensors_bitwise_equal": true,
+      "epoch_metrics_equal_excluding_wall_time": true,
+      "epoch": 10
+    },
+    "best.pt": {
+      "all_model_tensors_bitwise_equal": true,
+      "epoch_metrics_equal_excluding_wall_time": true,
+      "epoch": 9
+    }
+  }
+}

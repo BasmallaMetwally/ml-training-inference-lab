@@ -1,0 +1,15 @@
+{
+  "models": [
+    "gpt-6-luna",
+    "gpt-6.1-sol"
+  ],
+  "repetitions": 3,
+  "tasks": 12,
+  "timeout_seconds_per_suite": 240,
+  "feedback": "none",
+  "tools": "forbidden; transcripts audited",
+  "unit": "one suite response per model/repetition; 12 task outcomes share a response",
+  "prompt_sha256": "67142c4766141abc1149b7e5e61e26b8d72439c89374a32413b0ae2069bbaa98",
+  "reasoning_effort": "medium",
+  "temperature": "provider default; not user-controlled through this CLI"
+}

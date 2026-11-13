@@ -1,0 +1,93 @@
+{
+  "plan": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "architectures": [
+      "mlp",
+      "cnn"
+    ],
+    "split_seed": 42,
+    "epochs": 10,
+    "lr": 0.001,
+    "batch_size": 128,
+    "selection": "minimum validation cross entropy",
+    "test_policy": "same official test set for all predetermined runs; no test-driven tuning",
+    "statistical_unit": "training seed, fixed dataset split, paired architectures",
+    "primary_comparison": "CNN minus MLP test accuracy, paired exact sign-flip test and Student-t CI",
+    "caveat": "Seed uncertainty is conditional on this split and is not a population-level data uncertainty interval.",
+    "representative_seed": 0
+  },
+  "accuracy": {
+    "mlp": {
+      "n": 10,
+      "mean": 0.8842800000000001,
+      "std": 0.001025020325001738,
+      "ci95": [
+        0.8835467446317498,
+        0.8850132553682504
+      ]
+    },
+    "cnn": {
+      "n": 10,
+      "mean": 0.8896799999999999,
+      "std": 0.0020159365069366514,
+      "ci95": [
+        0.8882378858977644,
+        0.8911221141022354
+      ]
+    }
+  },
+  "paired_difference_cnn_minus_mlp": {
+    "n": 10,
+    "mean": 0.005399999999999993,
+    "std": 0.0014666666666666565,
+    "ci95": [
+      0.004350809871243026,
+      0.00644919012875696
+    ],
+    "exact_sign_flip_p_two_sided": 0.001953125,
+    "paired_t_p_two_sided": 9.95524817179082e-07,
+    "differences": [
+      0.0049000000000000155,
+      0.0050000000000000044,
+      0.007299999999999973,
+      0.0041999999999999815,
+      0.006000000000000005,
+      0.007099999999999995,
+      0.0045999999999999375,
+      0.005799999999999916,
+      0.00660000000000005,
+      0.0025000000000000577
+    ]
+  },
+  "latency_ms": {
+    "mlp": {
+      "n": 10,
+      "mean": 0.04377962903236039,
+      "std": 0.0012451129258298224,
+      "ci95": [
+        0.04288892890215469,
+        0.044670329162566094
+      ]
+    },
+    "cnn": {
+      "n": 10,
+      "mean": 0.08339229039847851,
+      "std": 0.0023504360326973344,
+      "ci95": [
+        0.08171088975044617,
+        0.08507369104651084
+      ]
+    }
+  }
+}
