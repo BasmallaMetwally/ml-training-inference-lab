@@ -1,0 +1,158 @@
+[
+  {
+    "task": "weighted_scaler",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "temporal_purge",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "ranking_metrics",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "group_folds",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "stream_confusion",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "accumulated_sgd",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "adamw_resume",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "early_stop_resume",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "artifact_cache",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "retrieval_ndcg",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "calibration",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  },
+  {
+    "task": "time_windows",
+    "editable": [
+      "core.py",
+      "pipeline.py"
+    ],
+    "protected": [
+      "CONTRACT.md",
+      "visible.json"
+    ],
+    "visible_cases": 1,
+    "category": "multi_file_ml_repair"
+  }
+]

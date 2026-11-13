@@ -1,0 +1,22 @@
+[
+  {
+    "input": {
+      "state": null,
+      "values": [
+        1,
+        0.5
+      ],
+      "patience": 2,
+      "delta": 0
+    },
+    "expected": {
+      "value": {
+        "best": 0.5,
+        "best_index": 1,
+        "stale": 0,
+        "seen": 2,
+        "stopped": false
+      }
+    }
+  }
+]

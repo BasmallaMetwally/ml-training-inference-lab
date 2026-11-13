@@ -1,0 +1,61 @@
+[
+  {
+    "input": {
+      "rows": [
+        {
+          "entity": "a",
+          "t": 0,
+          "value": 0
+        },
+        {
+          "entity": "a",
+          "t": 1,
+          "value": 1
+        },
+        {
+          "entity": "a",
+          "t": 2,
+          "value": 2
+        },
+        {
+          "entity": "a",
+          "t": 3,
+          "value": 3
+        }
+      ],
+      "cutoff": 8,
+      "lookback": 2,
+      "horizon": 1,
+      "stride": 1
+    },
+    "expected": {
+      "value": {
+        "train": [
+          {
+            "entity": "a",
+            "start": 2,
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              2
+            ]
+          },
+          {
+            "entity": "a",
+            "start": 3,
+            "x": [
+              1,
+              2
+            ],
+            "y": [
+              3
+            ]
+          }
+        ],
+        "eval": []
+      }
+    }
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "input": {
+      "items": [
+        {
+          "id": "a",
+          "score": 1
+        }
+      ],
+      "judgments": {
+        "a": 1
+      },
+      "k": 1
+    },
+    "expected": {
+      "value": {
+        "ids": [
+          "a"
+        ],
+        "ndcg": 1.0
+      }
+    }
+  }
+]

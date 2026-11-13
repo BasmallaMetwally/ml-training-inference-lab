@@ -1,0 +1,37 @@
+[
+  {
+    "input": {
+      "probabilities": [
+        [
+          0.8,
+          0.2
+        ]
+      ],
+      "y": [
+        0
+      ],
+      "weights": [
+        1
+      ],
+      "n": 2
+    },
+    "expected": {
+      "value": {
+        "bins": [
+          {
+            "weight": 0.0,
+            "accuracy": 0.0,
+            "confidence": 0.0
+          },
+          {
+            "weight": 1.0,
+            "accuracy": 1.0,
+            "confidence": 0.8
+          }
+        ],
+        "ece": 0.19999999999999996,
+        "brier": 0.07999999999999999
+      }
+    }
+  }
+]

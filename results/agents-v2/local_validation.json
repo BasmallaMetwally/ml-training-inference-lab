@@ -1,0 +1,114 @@
+{
+  "tasks": [
+    {
+      "task": "weighted_scaler",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 5,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "temporal_purge",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 20,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "ranking_metrics",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 21,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "group_folds",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 21,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "stream_confusion",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 20,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "accumulated_sgd",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 19,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "adamw_resume",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 19,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "early_stop_resume",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 20,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "artifact_cache",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 5,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "retrieval_ndcg",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 20,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "calibration",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 21,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    },
+    {
+      "task": "time_windows",
+      "reference": "pass",
+      "starter": "incorrect",
+      "hidden_cases": 20,
+      "protected_write_rejected": true,
+      "path_escape_rejected": true
+    }
+  ],
+  "isolation_probe": {
+    "status": "executed",
+    "outputs": [
+      {
+        "value": {
+          "private_read": "denied",
+          "write": "denied",
+          "network": "denied"
+        },
+        "mutated": false
+      }
+    ]
+  },
+  "scope": "Pre-generation local Seatbelt checks. Docker hidden grading and mutation controls recorded separately."
+}

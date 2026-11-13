@@ -1,0 +1,31 @@
+[
+  {
+    "input": {
+      "rows": [
+        {
+          "id": "a",
+          "entity": "a",
+          "t": 1
+        },
+        {
+          "id": "b",
+          "entity": "b",
+          "t": 9
+        }
+      ],
+      "cutoff": 5,
+      "gap": 0
+    },
+    "expected": {
+      "value": {
+        "train": [
+          "a"
+        ],
+        "eval": [
+          "b"
+        ],
+        "purged": []
+      }
+    }
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "input": {
+      "labels": [
+        "x"
+      ],
+      "shards": [
+        {
+          "actual": [
+            "x"
+          ],
+          "predicted": [
+            "x"
+          ]
+        }
+      ]
+    },
+    "expected": {
+      "value": {
+        "labels": [
+          "x"
+        ],
+        "matrix": [
+          [
+            1
+          ]
+        ],
+        "macro_f1": 1.0
+      }
+    }
+  }
+]

@@ -1,0 +1,5 @@
+2026-11-13T20:15:06.199377Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-11-13T20:15:06.214503Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-11-13T20:15:06.230554Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-13T20:15:11.319910Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-11-13T20:15:24.397252Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out

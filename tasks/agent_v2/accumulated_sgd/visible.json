@@ -1,0 +1,39 @@
+[
+  {
+    "input": {
+      "weights": [
+        1
+      ],
+      "velocity": [
+        0
+      ],
+      "steps": [
+        [
+          {
+            "x": [
+              [
+                1
+              ]
+            ],
+            "y": [
+              0
+            ]
+          }
+        ]
+      ],
+      "lr": 0.1,
+      "momentum": 0,
+      "clip": 10
+    },
+    "expected": {
+      "value": {
+        "weights": [
+          0.8
+        ],
+        "velocity": [
+          2.0
+        ]
+      }
+    }
+  }
+]
