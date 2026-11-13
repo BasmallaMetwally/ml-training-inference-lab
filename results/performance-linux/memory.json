@@ -91,5 +91,7 @@
       "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
     }
   ],
-  "method": "OS peak RSS in separate processes; platform units normalized to bytes"
+  "method": "OS peak RSS in separate processes; platform units normalized to bytes",
+  "status": "inconclusive",
+  "warning": "v1.0 ru_maxrss values are identical across variants and may contain pre-exec launcher history; not comparative memory evidence. See ERRATA.md."
 }

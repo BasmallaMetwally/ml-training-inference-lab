@@ -45,7 +45,9 @@ Dynamic int8 is a measured negative result when it changes classifications, even
 
 Fusion removes the BatchNorm operator paths and reduces the number of ATen invocations. These instrumented totals include profiling overhead; operator self time does not independently identify pure Python or C++ dispatch overhead. Uninstrumented latency ablations supply the performance comparison. Do not subtract nested profiler totals as if they were independent costs.
 
-## Actual peak process memory
+## Peak process memory — Linux v1.0 inconclusive
+
+**Correction:** the original Linux rows below are invalid for comparing variants. Their identical 871.0 MiB peaks may reflect pre-exec high-water history. They are retained only as an audit record; see [ERRATA.md](../../ERRATA.md).
 
 | Platform | Runtime | Checks | Peak process RSS MiB | Baseline after imports MiB |
 | --- | --- | --- | ---: | ---: |

@@ -4,7 +4,6 @@ import argparse
 import json
 import os
 import random
-import resource
 import subprocess
 import sys
 import time
@@ -25,6 +24,7 @@ from torch.utils.benchmark import Timer
 from ml_lab.artifacts import export_cache_valid
 from ml_lab.data import digest, training_data
 from ml_lab.engine import environment, load_model, seed_everything, write_json
+from ml_lab.memory import process_memory
 from ml_lab.model import FashionMLP, fused_model
 
 OUT = Path("results/performance")
@@ -98,27 +98,27 @@ def make_core(name: str) -> Callable:
 
 
 def memory_worker(name: str, checked: bool) -> None:
-    """Fresh-process OS high-water RSS including imports/model/runtime, not just tensors."""
-    import psutil
-
+    """Record exec-local process peaks and separate setup/inference stages."""
     seed_everything(42)
-    baseline = psutil.Process().memory_info().rss
+    baseline = process_memory()
     core = make_core(name)
     model = Guarded(core, checked)
     sample = torch.randn(128, 784)
+    setup = process_memory()
     with torch.inference_mode():
         for _ in range(50):
             model(sample)
-    peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    peak_bytes = int(peak if sys.platform == "darwin" else peak * 1024)
+    final = process_memory()
     value = {
         "variant": name,
         "checked": checked,
         "batch_size": 128,
-        "peak_process_rss_bytes": peak_bytes,
-        "baseline_rss_after_imports_bytes": baseline,
-        "final_process_rss_bytes": psutil.Process().memory_info().rss,
-        "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory.",
+        "peak_process_rss_bytes": final["peak_rss_bytes"],
+        "baseline_rss_after_imports_bytes": baseline["rss_bytes"],
+        "final_process_rss_bytes": final["rss_bytes"],
+        "stages": {"after_imports": baseline, "after_setup": setup, "after_inference": final},
+        "counter_method": final["method"],
+        "scope": "This process since exec: imports + model/runtime construction + 50 batch-128 forwards. Excludes child compiler processes and activation-only attribution. On-disk compiler cache may be warm.",
     }
     print("MEMORY_JSON=" + json.dumps(value))
 
@@ -245,38 +245,14 @@ def main() -> None:
                 "note": "Self CPU time includes operator/dispatch implementation overhead; this profiler does not separately identify pure Python vs C++ dispatch cost.",
             }
     write_json(OUT / "profiles.json", profiles)
-    memory = []
-    for name, value in results["variants"].items():
-        if value["status"] != "measured":
-            continue
-        for checked in [True, False]:
-            p = subprocess.run(
-                [sys.executable, __file__, "--memory-worker", name, "--checked", str(int(checked))],
-                capture_output=True,
-                text=True,
-                timeout=180,
-            )
-            lines = [
-                line.removeprefix("MEMORY_JSON=")
-                for line in p.stdout.splitlines()
-                if line.startswith("MEMORY_JSON=")
-            ]
-            memory.append(
-                json.loads(lines[-1])
-                if lines
-                else {
-                    "variant": name,
-                    "checked": checked,
-                    "status": "failed",
-                    "error": p.stderr[-2000:],
-                }
-            )
-    write_json(
-        OUT / "memory.json",
-        {
-            "measurements": memory,
-            "method": "OS peak RSS in separate processes; platform units normalized to bytes",
-        },
+    subprocess.run(
+        [
+            sys.executable,
+            str(Path(__file__).with_name("memory_study.py")),
+            "--out",
+            str(OUT / "memory.json"),
+        ],
+        check=True,
     )
     print(
         "Performance ablation, runtime parity, profiler traces and peak RSS complete.", flush=True

@@ -6,6 +6,8 @@ A measured ML engineering project: paired neural-network training, inference opt
 
 [What we found — العربية](FINDINGS.ar.md) · [Model card](MODEL_CARD.md) · [Data sheet](DATA_SHEET.md) · [Short project post](POST.md)
 
+**Measurement correction:** the v1.0 Linux peak-RSS table is inconclusive and must not be used to compare runtimes. See [errata](ERRATA.md).
+
 ## Results
 
 | Model | Test accuracy, mean ± sample SD | Parameters | Batch-1 CPU latency, mean across seeds |
