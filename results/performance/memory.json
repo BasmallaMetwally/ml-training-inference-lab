@@ -1,0 +1,77 @@
+{
+  "measurements": [
+    {
+      "variant": "eager",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 296681472,
+      "baseline_rss_after_imports_bytes": 292929536,
+      "final_process_rss_bytes": 296681472,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "eager",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 296189952,
+      "baseline_rss_after_imports_bytes": 293322752,
+      "final_process_rss_bytes": 296189952,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "fused",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 297123840,
+      "baseline_rss_after_imports_bytes": 293158912,
+      "final_process_rss_bytes": 297123840,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "fused",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 296615936,
+      "baseline_rss_after_imports_bytes": 292978688,
+      "final_process_rss_bytes": 296615936,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "int8",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 298631168,
+      "baseline_rss_after_imports_bytes": 293093376,
+      "final_process_rss_bytes": 298631168,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "int8",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 298811392,
+      "baseline_rss_after_imports_bytes": 293683200,
+      "final_process_rss_bytes": 298811392,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "onnx",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 321077248,
+      "baseline_rss_after_imports_bytes": 293552128,
+      "final_process_rss_bytes": 321077248,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "onnx",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 320520192,
+      "baseline_rss_after_imports_bytes": 293388288,
+      "final_process_rss_bytes": 320520192,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    }
+  ],
+  "method": "OS peak RSS in separate processes; platform units normalized to bytes"
+}

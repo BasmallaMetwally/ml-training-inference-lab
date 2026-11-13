@@ -1,0 +1,13 @@
+{
+  "attempts": {
+    "compiled": {
+      "status": "unsupported_or_failed",
+      "error": "InductorError"
+    },
+    "int8": {
+      "status": "unsupported_or_failed",
+      "error": "RuntimeError: Didn't find engine for operation quantized::linear_prepack NoQEngine"
+    }
+  },
+  "resolution": "Explicit system clang++ on macOS; explicitly select a supported quantized engine before conversion."
+}

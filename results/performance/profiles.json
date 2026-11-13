@@ -1,0 +1,594 @@
+{
+  "eager-checked": {
+    "forwards": 100,
+    "operators": [
+      {
+        "name": "whole_forward",
+        "count": 100,
+        "self_cpu_us": 639.291000000008,
+        "total_cpu_us": 8778.779000000002
+      },
+      {
+        "name": "input_validation",
+        "count": 100,
+        "self_cpu_us": 593.6909999999941,
+        "total_cpu_us": 1847.9019999999969
+      },
+      {
+        "name": "aten::isfinite",
+        "count": 100,
+        "self_cpu_us": 133.65399999998812,
+        "total_cpu_us": 980.4860000000045
+      },
+      {
+        "name": "aten::eq",
+        "count": 100,
+        "self_cpu_us": 107.45300000000105,
+        "total_cpu_us": 107.45300000000105
+      },
+      {
+        "name": "aten::abs",
+        "count": 200,
+        "self_cpu_us": 206.50800000001618,
+        "total_cpu_us": 570.8450000000024
+      },
+      {
+        "name": "aten::empty",
+        "count": 1400,
+        "self_cpu_us": 582.6739999999875,
+        "total_cpu_us": 820.9489999999903
+      },
+      {
+        "name": "aten::fill_",
+        "count": 1700,
+        "self_cpu_us": 270.29899999998946,
+        "total_cpu_us": 270.29899999998946
+      },
+      {
+        "name": "aten::set_",
+        "count": 100,
+        "self_cpu_us": 21.992999999992776,
+        "total_cpu_us": 21.992999999992776
+      },
+      {
+        "name": "aten::ne",
+        "count": 100,
+        "self_cpu_us": 147.7050000000031,
+        "total_cpu_us": 338.23300000001075
+      },
+      {
+        "name": "aten::to",
+        "count": 100,
+        "self_cpu_us": 35.20500000000379,
+        "total_cpu_us": 190.52800000000764
+      },
+      {
+        "name": "aten::_to_copy",
+        "count": 100,
+        "self_cpu_us": 73.62599999998997,
+        "total_cpu_us": 155.32300000000384
+      },
+      {
+        "name": "aten::empty_strided",
+        "count": 100,
+        "self_cpu_us": 39.78800000001587,
+        "total_cpu_us": 44.37400000000832
+      },
+      {
+        "name": "aten::copy_",
+        "count": 400,
+        "self_cpu_us": 172.73300000000586,
+        "total_cpu_us": 172.73300000000586
+      },
+      {
+        "name": "aten::mul",
+        "count": 100,
+        "self_cpu_us": 45.3310000000007,
+        "total_cpu_us": 45.3310000000007
+      },
+      {
+        "name": "aten::all",
+        "count": 100,
+        "self_cpu_us": 148.953999999995,
+        "total_cpu_us": 177.48700000000036
+      },
+      {
+        "name": "aten::as_strided",
+        "count": 700,
+        "self_cpu_us": 137.98100000001932,
+        "total_cpu_us": 137.98100000001932
+      },
+      {
+        "name": "aten::is_nonzero",
+        "count": 100,
+        "self_cpu_us": 32.73899999999145,
+        "total_cpu_us": 96.23799999999784
+      },
+      {
+        "name": "aten::item",
+        "count": 100,
+        "self_cpu_us": 50.08300000001083,
+        "total_cpu_us": 63.49900000000639
+      },
+      {
+        "name": "aten::_local_scalar_dense",
+        "count": 100,
+        "self_cpu_us": 13.415999999995563,
+        "total_cpu_us": 13.415999999995563
+      },
+      {
+        "name": "network_core",
+        "count": 100,
+        "self_cpu_us": 2700.2000000000044,
+        "total_cpu_us": 6291.585999999997
+      },
+      {
+        "name": "aten::linear",
+        "count": 300,
+        "self_cpu_us": 197.70000000000823,
+        "total_cpu_us": 1858.895999999999
+      },
+      {
+        "name": "aten::t",
+        "count": 300,
+        "self_cpu_us": 146.35699999999514,
+        "total_cpu_us": 382.6489999999927
+      },
+      {
+        "name": "aten::transpose",
+        "count": 300,
+        "self_cpu_us": 160.72199999998833,
+        "total_cpu_us": 236.29199999999759
+      },
+      {
+        "name": "aten::addmm",
+        "count": 300,
+        "self_cpu_us": 905.7439999999983,
+        "total_cpu_us": 1278.5469999999982
+      },
+      {
+        "name": "aten::expand",
+        "count": 300,
+        "self_cpu_us": 169.06600000000628,
+        "total_cpu_us": 210.27100000001292
+      },
+      {
+        "name": "aten::resolve_conj",
+        "count": 600,
+        "self_cpu_us": 27.121999999986542,
+        "total_cpu_us": 27.121999999986542
+      },
+      {
+        "name": "aten::batch_norm",
+        "count": 200,
+        "self_cpu_us": 124.77699999998708,
+        "total_cpu_us": 1563.3749999999873
+      },
+      {
+        "name": "aten::_batch_norm_impl_index",
+        "count": 200,
+        "self_cpu_us": 224.12500000000443,
+        "total_cpu_us": 1438.5980000000002
+      },
+      {
+        "name": "aten::native_batch_norm",
+        "count": 200,
+        "self_cpu_us": 417.758000000001,
+        "total_cpu_us": 1036.7289999999957
+      },
+      {
+        "name": "aten::empty_like",
+        "count": 200,
+        "self_cpu_us": 82.9690000000071,
+        "total_cpu_us": 206.50400000000462
+      },
+      {
+        "name": "aten::relu",
+        "count": 200,
+        "self_cpu_us": 57.57000000000363,
+        "total_cpu_us": 153.19799999999952
+      },
+      {
+        "name": "aten::clamp_min",
+        "count": 200,
+        "self_cpu_us": 95.6279999999959,
+        "total_cpu_us": 95.6279999999959
+      },
+      {
+        "name": "aten::dropout",
+        "count": 200,
+        "self_cpu_us": 15.917000000006283,
+        "total_cpu_us": 15.917000000006283
+      }
+    ],
+    "aten_calls": 9100,
+    "note": "Self CPU time includes operator/dispatch implementation overhead; this profiler does not separately identify pure Python vs C++ dispatch cost."
+  },
+  "eager-unchecked": {
+    "forwards": 100,
+    "operators": [
+      {
+        "name": "whole_forward",
+        "count": 100,
+        "self_cpu_us": 451.81499999999636,
+        "total_cpu_us": 6732.5279999999975
+      },
+      {
+        "name": "network_core",
+        "count": 100,
+        "self_cpu_us": 2690.7009999999864,
+        "total_cpu_us": 6280.713000000001
+      },
+      {
+        "name": "aten::linear",
+        "count": 300,
+        "self_cpu_us": 246.06400000000684,
+        "total_cpu_us": 1891.792000000004
+      },
+      {
+        "name": "aten::t",
+        "count": 300,
+        "self_cpu_us": 132.0389999999863,
+        "total_cpu_us": 371.4849999999933
+      },
+      {
+        "name": "aten::transpose",
+        "count": 300,
+        "self_cpu_us": 166.0310000000124,
+        "total_cpu_us": 239.44600000000702
+      },
+      {
+        "name": "aten::as_strided",
+        "count": 600,
+        "self_cpu_us": 117.29199999999008,
+        "total_cpu_us": 117.29199999999008
+      },
+      {
+        "name": "aten::addmm",
+        "count": 300,
+        "self_cpu_us": 916.2690000000049,
+        "total_cpu_us": 1274.243000000004
+      },
+      {
+        "name": "aten::expand",
+        "count": 300,
+        "self_cpu_us": 155.15500000000787,
+        "total_cpu_us": 199.03200000000334
+      },
+      {
+        "name": "aten::copy_",
+        "count": 300,
+        "self_cpu_us": 133.40799999999598,
+        "total_cpu_us": 133.40799999999598
+      },
+      {
+        "name": "aten::resolve_conj",
+        "count": 600,
+        "self_cpu_us": 25.533999999999708,
+        "total_cpu_us": 25.533999999999708
+      },
+      {
+        "name": "aten::batch_norm",
+        "count": 200,
+        "self_cpu_us": 115.6529999999978,
+        "total_cpu_us": 1526.02
+      },
+      {
+        "name": "aten::_batch_norm_impl_index",
+        "count": 200,
+        "self_cpu_us": 221.34800000000303,
+        "total_cpu_us": 1410.367000000002
+      },
+      {
+        "name": "aten::empty",
+        "count": 1200,
+        "self_cpu_us": 491.6750000000138,
+        "total_cpu_us": 715.1300000000027
+      },
+      {
+        "name": "aten::fill_",
+        "count": 1200,
+        "self_cpu_us": 223.4549999999889,
+        "total_cpu_us": 223.4549999999889
+      },
+      {
+        "name": "aten::native_batch_norm",
+        "count": 200,
+        "self_cpu_us": 397.5540000000013,
+        "total_cpu_us": 1000.7029999999972
+      },
+      {
+        "name": "aten::empty_like",
+        "count": 200,
+        "self_cpu_us": 76.33499999999503,
+        "total_cpu_us": 204.1179999999996
+      },
+      {
+        "name": "aten::relu",
+        "count": 200,
+        "self_cpu_us": 64.1520000000001,
+        "total_cpu_us": 156.40499999999975
+      },
+      {
+        "name": "aten::clamp_min",
+        "count": 200,
+        "self_cpu_us": 92.25299999999964,
+        "total_cpu_us": 92.25299999999964
+      },
+      {
+        "name": "aten::dropout",
+        "count": 200,
+        "self_cpu_us": 15.795000000010646,
+        "total_cpu_us": 15.795000000010646
+      }
+    ],
+    "aten_calls": 6800,
+    "note": "Self CPU time includes operator/dispatch implementation overhead; this profiler does not separately identify pure Python vs C++ dispatch cost."
+  },
+  "fused-checked": {
+    "forwards": 100,
+    "operators": [
+      {
+        "name": "whole_forward",
+        "count": 100,
+        "self_cpu_us": 638.8120000000022,
+        "total_cpu_us": 6371.957000000002
+      },
+      {
+        "name": "input_validation",
+        "count": 100,
+        "self_cpu_us": 575.5910000000039,
+        "total_cpu_us": 1808.7470000000008
+      },
+      {
+        "name": "aten::isfinite",
+        "count": 100,
+        "self_cpu_us": 110.7899999999945,
+        "total_cpu_us": 965.9139999999967
+      },
+      {
+        "name": "aten::eq",
+        "count": 100,
+        "self_cpu_us": 110.57600000000309,
+        "total_cpu_us": 110.57600000000309
+      },
+      {
+        "name": "aten::abs",
+        "count": 200,
+        "self_cpu_us": 201.23299999999813,
+        "total_cpu_us": 589.2220000000029
+      },
+      {
+        "name": "aten::empty",
+        "count": 200,
+        "self_cpu_us": 95.16000000000645,
+        "total_cpu_us": 122.20000000000255
+      },
+      {
+        "name": "aten::fill_",
+        "count": 500,
+        "self_cpu_us": 57.53499999999849,
+        "total_cpu_us": 57.53499999999849
+      },
+      {
+        "name": "aten::set_",
+        "count": 100,
+        "self_cpu_us": 22.46099999999967,
+        "total_cpu_us": 22.46099999999967
+      },
+      {
+        "name": "aten::ne",
+        "count": 100,
+        "self_cpu_us": 143.11700000000553,
+        "total_cpu_us": 334.6080000000002
+      },
+      {
+        "name": "aten::to",
+        "count": 100,
+        "self_cpu_us": 26.870999999994524,
+        "total_cpu_us": 191.49099999999464
+      },
+      {
+        "name": "aten::_to_copy",
+        "count": 100,
+        "self_cpu_us": 67.67299999999955,
+        "total_cpu_us": 164.62000000000012
+      },
+      {
+        "name": "aten::empty_strided",
+        "count": 100,
+        "self_cpu_us": 56.827999999999406,
+        "total_cpu_us": 60.45399999999802
+      },
+      {
+        "name": "aten::copy_",
+        "count": 400,
+        "self_cpu_us": 163.2299999999966,
+        "total_cpu_us": 163.2299999999966
+      },
+      {
+        "name": "aten::mul",
+        "count": 100,
+        "self_cpu_us": 43.045999999998685,
+        "total_cpu_us": 43.045999999998685
+      },
+      {
+        "name": "aten::all",
+        "count": 100,
+        "self_cpu_us": 154.46299999999746,
+        "total_cpu_us": 178.3719999999994
+      },
+      {
+        "name": "aten::as_strided",
+        "count": 700,
+        "self_cpu_us": 129.13399999998865,
+        "total_cpu_us": 129.13399999998865
+      },
+      {
+        "name": "aten::is_nonzero",
+        "count": 100,
+        "self_cpu_us": 33.32900000000029,
+        "total_cpu_us": 88.8700000000008
+      },
+      {
+        "name": "aten::item",
+        "count": 100,
+        "self_cpu_us": 41.83500000000106,
+        "total_cpu_us": 55.54100000000051
+      },
+      {
+        "name": "aten::_local_scalar_dense",
+        "count": 100,
+        "self_cpu_us": 13.705999999999449,
+        "total_cpu_us": 13.705999999999449
+      },
+      {
+        "name": "network_core",
+        "count": 100,
+        "self_cpu_us": 1932.5620000000054,
+        "total_cpu_us": 3924.3979999999992
+      },
+      {
+        "name": "aten::linear",
+        "count": 300,
+        "self_cpu_us": 186.53599999998517,
+        "total_cpu_us": 1811.4959999999955
+      },
+      {
+        "name": "aten::t",
+        "count": 300,
+        "self_cpu_us": 131.55300000000318,
+        "total_cpu_us": 343.8650000000067
+      },
+      {
+        "name": "aten::transpose",
+        "count": 300,
+        "self_cpu_us": 150.76400000001013,
+        "total_cpu_us": 212.31200000000354
+      },
+      {
+        "name": "aten::addmm",
+        "count": 300,
+        "self_cpu_us": 906.8030000000059,
+        "total_cpu_us": 1281.0950000000037
+      },
+      {
+        "name": "aten::expand",
+        "count": 300,
+        "self_cpu_us": 171.65700000000493,
+        "total_cpu_us": 221.20300000000213
+      },
+      {
+        "name": "aten::resolve_conj",
+        "count": 600,
+        "self_cpu_us": 26.352000000001567,
+        "total_cpu_us": 26.352000000001567
+      },
+      {
+        "name": "aten::relu",
+        "count": 200,
+        "self_cpu_us": 64.62899999999968,
+        "total_cpu_us": 164.00000000000023
+      },
+      {
+        "name": "aten::clamp_min",
+        "count": 200,
+        "self_cpu_us": 99.37100000000055,
+        "total_cpu_us": 99.37100000000055
+      },
+      {
+        "name": "aten::dropout",
+        "count": 200,
+        "self_cpu_us": 16.3399999999981,
+        "total_cpu_us": 16.3399999999981
+      }
+    ],
+    "aten_calls": 5900,
+    "note": "Self CPU time includes operator/dispatch implementation overhead; this profiler does not separately identify pure Python vs C++ dispatch cost."
+  },
+  "fused-unchecked": {
+    "forwards": 100,
+    "operators": [
+      {
+        "name": "whole_forward",
+        "count": 100,
+        "self_cpu_us": 441.44799999999435,
+        "total_cpu_us": 4251.452999999996
+      },
+      {
+        "name": "network_core",
+        "count": 100,
+        "self_cpu_us": 1902.3950000000066,
+        "total_cpu_us": 3810.005000000002
+      },
+      {
+        "name": "aten::linear",
+        "count": 300,
+        "self_cpu_us": 193.19399999999354,
+        "total_cpu_us": 1736.670999999997
+      },
+      {
+        "name": "aten::t",
+        "count": 300,
+        "self_cpu_us": 122.49300000000301,
+        "total_cpu_us": 334.38600000000156
+      },
+      {
+        "name": "aten::transpose",
+        "count": 300,
+        "self_cpu_us": 150.49399999999844,
+        "total_cpu_us": 211.89299999999855
+      },
+      {
+        "name": "aten::as_strided",
+        "count": 600,
+        "self_cpu_us": 103.97800000000092,
+        "total_cpu_us": 103.97800000000092
+      },
+      {
+        "name": "aten::addmm",
+        "count": 300,
+        "self_cpu_us": 850.7439999999929,
+        "total_cpu_us": 1209.091000000002
+      },
+      {
+        "name": "aten::expand",
+        "count": 300,
+        "self_cpu_us": 171.4900000000037,
+        "total_cpu_us": 214.0690000000045
+      },
+      {
+        "name": "aten::copy_",
+        "count": 300,
+        "self_cpu_us": 119.70000000000005,
+        "total_cpu_us": 119.70000000000005
+      },
+      {
+        "name": "aten::resolve_conj",
+        "count": 600,
+        "self_cpu_us": 24.57800000000458,
+        "total_cpu_us": 24.57800000000458
+      },
+      {
+        "name": "aten::relu",
+        "count": 200,
+        "self_cpu_us": 63.94799999999947,
+        "total_cpu_us": 153.68499999999761
+      },
+      {
+        "name": "aten::clamp_min",
+        "count": 200,
+        "self_cpu_us": 89.73699999999815,
+        "total_cpu_us": 89.73699999999815
+      },
+      {
+        "name": "aten::dropout",
+        "count": 200,
+        "self_cpu_us": 17.254000000000417,
+        "total_cpu_us": 17.254000000000417
+      }
+    ],
+    "aten_calls": 3600,
+    "note": "Self CPU time includes operator/dispatch implementation overhead; this profiler does not separately identify pure Python vs C++ dispatch cost."
+  }
+}

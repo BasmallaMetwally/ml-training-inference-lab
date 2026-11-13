@@ -12,6 +12,8 @@ import warnings
 from pathlib import Path
 
 os.environ.setdefault("TORCHINDUCTOR_CACHE_DIR", str(Path(".cache/inductor").resolve()))
+if sys.platform == "darwin":
+    os.environ.setdefault("CXX", "/usr/bin/clang++")
 os.environ.setdefault("MPLCONFIGDIR", str(Path(".mplconfig").resolve()))
 import numpy as np
 import torch
@@ -50,6 +52,8 @@ def make_core(name):
     if name == "compiled":
         return torch.compile(fused_model(model).layers, fullgraph=True)
     if name == "int8":
+        engines = torch.backends.quantized.supported_engines
+        torch.backends.quantized.engine = "x86" if "x86" in engines else "qnnpack"
         # Dynamic quantization is deliberately evaluated, not assumed equivalent.
         with warnings.catch_warnings():
             warnings.simplefilter("ignore", DeprecationWarning)
