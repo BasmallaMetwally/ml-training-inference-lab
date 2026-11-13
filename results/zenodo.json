@@ -1,0 +1,17 @@
+{
+  "doi": "10.5281/zenodo.24201648",
+  "concept_doi": "10.5281/zenodo.24201647",
+  "record_url": "https://zenodo.org/records/24201648",
+  "version": "1.0",
+  "resource_type": "software",
+  "license": "MIT",
+  "author": "Metwally, Basmala",
+  "publication_date": "2026-11-13",
+  "archived_source_commit": "a4e26cede8777b9028845fcc21e4e369833a8d1c",
+  "files": [
+    "ml-training-inference-lab.zip",
+    "checkpoints-v1.0.zip",
+    "runtime-artifacts-v1.0.zip",
+    "SHA256SUMS.txt"
+  ]
+}

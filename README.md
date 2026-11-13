@@ -2,6 +2,8 @@
 
 A measured ML engineering project: paired neural-network training, inference optimization, reproducibility checks and a coding-agent repair pilot. Developed with coding-agent assistance; claims are linked to recorded experiments.
 
+[Archived v1.0 — DOI 10.5281/zenodo.24201648](https://doi.org/10.5281/zenodo.24201648)
+
 [What we found — العربية](FINDINGS.ar.md) · [Model card](MODEL_CARD.md) · [Data sheet](DATA_SHEET.md) · [Short project post](POST.md)
 
 ## Results
@@ -100,7 +102,7 @@ The three original public local graders remain as development examples. Their `s
 
 GitHub Actions runs correctness, Ruff and full-data exact-resumption checks on Linux and macOS. Actual completed evidence is linked in [results/reproducibility/ci.json](results/reproducibility/ci.json). The separate Linux runtime workflow records compiled/int8/ONNX experiments.
 
-Source archives contain one canonical `results/` tree and no duplicated `runs/`, dataset or checkpoints. [Release v1.0](https://github.com/BasmallaMetwally/ml-training-inference-lab/releases/tag/v1.0) provides separate checkpoint and profiling/ONNX assets with SHA256 sums. Checkpoints retain resume state; run `scripts/package_release.py` after a committed checkout to rebuild local assets. The Zenodo DOI is added only after it is actually issued; CITATION.cff and .zenodo.json contain release metadata without a fabricated identifier.
+Source archives contain one canonical `results/` tree and no duplicated `runs/`, dataset or checkpoints. [Release v1.0](https://github.com/BasmallaMetwally/ml-training-inference-lab/releases/tag/v1.0) provides separate checkpoint and profiling/ONNX assets with SHA256 sums. Checkpoints retain resume state; run `scripts/package_release.py` after a committed checkout to rebuild local assets. The release assets are archived on [Zenodo](https://doi.org/10.5281/zenodo.24201648); CITATION.cff provides the issued version-specific DOI. Citation-only updates on the main branch do not change the archived v1.0 snapshot.
 
 ## Scope and sources
 

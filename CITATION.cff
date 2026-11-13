@@ -6,6 +6,7 @@ authors:
   - family-names: "Metwally"
     given-names: "Basmala"
 version: "1.0"
+doi: "10.5281/zenodo.24201648"
 date-released: "2026-11-13"
 url: "https://github.com/BasmallaMetwally/ml-training-inference-lab"
 repository-code: "https://github.com/BasmallaMetwally/ml-training-inference-lab"

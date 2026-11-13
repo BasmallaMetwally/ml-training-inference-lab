@@ -11,3 +11,5 @@ For evaluation practice, two models each attempted twelve ML repair tasks three 
 Finally, checkpoint resumption was bitwise reproducible within Linux and macOS, while the cross-platform tensors differed.
 
 Code and evidence: https://github.com/BasmallaMetwally/ml-training-inference-lab
+
+Archived v1.0: https://doi.org/10.5281/zenodo.24201648
