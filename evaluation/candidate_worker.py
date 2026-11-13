@@ -5,12 +5,13 @@ import importlib.util
 import io
 import json
 import sys
+from typing import Any
 
 import torch
 from torch import nn
 
 
-def decode(value):
+def decode(value: Any) -> Any:
     """Decode explicit CPU tensor envelopes and nested argument lists."""
     if isinstance(value, dict) and "tensor" in value:
         return torch.tensor(
@@ -23,7 +24,7 @@ def decode(value):
     return value
 
 
-def encode(value):
+def encode(value: Any) -> Any:
     """Encode tensors without sharing Python objects with the parent evaluator."""
     if isinstance(value, torch.Tensor):
         return {
@@ -36,7 +37,8 @@ def encode(value):
     return value
 
 
-def main():
+def main() -> None:
+    """Execute tensor RPC requests without holding grader/reference code."""
     torch.set_num_threads(1)
     spec = importlib.util.spec_from_file_location("submission", "/submission/solution.py")
     module = importlib.util.module_from_spec(spec)

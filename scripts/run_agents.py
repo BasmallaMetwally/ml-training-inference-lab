@@ -10,7 +10,8 @@ from pathlib import Path
 from ml_lab.engine import write_json
 
 
-def main():
+def main() -> None:
+    """Collect six zero-feedback responses under the fixed evaluation protocol."""
     root = Path(__file__).resolve().parents[1]
     out = root / "results/agents"
     out.mkdir(parents=True, exist_ok=True)

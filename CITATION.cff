@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite this software release."
+type: software
+title: "ML Training and Inference Lab"
+authors:
+  - family-names: "Metwally"
+    given-names: "Basmala"
+version: "1.0"
+date-released: "2026-11-13"
+url: "https://github.com/BasmallaMetwally/ml-training-inference-lab"
+repository-code: "https://github.com/BasmallaMetwally/ml-training-inference-lab"
+license: MIT
+abstract: "A paired ten-seed PyTorch architecture study, inference runtime ablations, measured reproducibility and a twelve-task coding-agent repair pilot."

@@ -1,0 +1,95 @@
+{
+  "measurements": [
+    {
+      "variant": "eager",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384937984,
+      "final_process_rss_bytes": 412241920,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "eager",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384868352,
+      "final_process_rss_bytes": 409047040,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "fused",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 385019904,
+      "final_process_rss_bytes": 413507584,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "fused",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384839680,
+      "final_process_rss_bytes": 410836992,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "compiled",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 385019904,
+      "final_process_rss_bytes": 480202752,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "compiled",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384921600,
+      "final_process_rss_bytes": 464969728,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "int8",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384978944,
+      "final_process_rss_bytes": 416141312,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "int8",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384806912,
+      "final_process_rss_bytes": 414945280,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "onnx",
+      "checked": true,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384843776,
+      "final_process_rss_bytes": 440938496,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    },
+    {
+      "variant": "onnx",
+      "checked": false,
+      "batch_size": 128,
+      "peak_process_rss_bytes": 913358848,
+      "baseline_rss_after_imports_bytes": 384872448,
+      "final_process_rss_bytes": 435056640,
+      "scope": "Fresh process OS ru_maxrss: imports + model/runtime construction + 50 forwards. Compiled variant includes compilation; not activation-only memory."
+    }
+  ],
+  "method": "OS peak RSS in separate processes; platform units normalized to bytes"
+}

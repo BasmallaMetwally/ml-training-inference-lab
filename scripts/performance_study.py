@@ -9,6 +9,7 @@ import subprocess
 import sys
 import time
 import warnings
+from collections.abc import Callable
 from pathlib import Path
 
 os.environ.setdefault("TORCHINDUCTOR_CACHE_DIR", str(Path(".cache/inductor").resolve()))
@@ -32,18 +33,19 @@ OUT = Path("results/performance")
 class Guarded(nn.Module):
     """Keep input validation identical across Torch and ONNX forward paths."""
 
-    def __init__(self, core, checked):
+    def __init__(self, core: Callable, checked: bool) -> None:
         super().__init__()
         self.core = core
         self.checked = checked
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """Apply the same input boundary before invoking the selected runtime."""
         if self.checked:
             FashionMLP.validate(x)
         return self.core(x)
 
 
-def make_core(name):
+def make_core(name: str) -> Callable:
     """Build an eval-only runtime from the fixed, selected seed42 checkpoint."""
     model, _ = load_model("runs/seed42")
     if name == "eager":
@@ -95,7 +97,7 @@ def make_core(name):
     raise ValueError(name)
 
 
-def memory_worker(name, checked):
+def memory_worker(name: str, checked: bool) -> None:
     """Fresh-process OS high-water RSS including imports/model/runtime, not just tensors."""
     import psutil
 
@@ -121,7 +123,8 @@ def memory_worker(name, checked):
     print("MEMORY_JSON=" + json.dumps(value))
 
 
-def main():
+def main() -> None:
+    """Measure runtimes, validation ablations, operator attribution and RSS."""
     OUT.mkdir(parents=True, exist_ok=True)
     seed_everything(42)
     model, ck = load_model("runs/seed42")
@@ -170,7 +173,10 @@ def main():
         except Exception as exc:
             results["variants"][name] = {
                 "status": "unsupported_or_failed",
-                "error": f"{type(exc).__name__}: {exc}"[-3000:],
+                "error": f"{type(exc).__name__}: {exc}"[-3000:]
+                .replace(str(Path.cwd()), "<project>")
+                .replace(sys.prefix, "<venv>")
+                .replace(str(Path.home()), "<home>"),
             }
         write_json(OUT / "summary.json", results)
     samples = {(name, checked, b): [] for name, checked, b, _ in jobs}

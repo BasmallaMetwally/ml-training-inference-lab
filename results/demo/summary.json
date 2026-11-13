@@ -1,0 +1,7 @@
+{
+  "checkpoint_seed": 42,
+  "shirt_recall": 0.7269999980926514,
+  "shirt_to_tshirt_count": 94,
+  "image_selection": "first matching official test indices",
+  "interpretation": "Similar low-resolution silhouettes and sleeve/neckline cues are a visual hypothesis, not a measured causal explanation."
+}

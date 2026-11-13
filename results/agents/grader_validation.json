@@ -1,0 +1,163 @@
+{
+  "cases": [
+    {
+      "fixture": "reference.py",
+      "task": "stable_loss",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 8.367091285
+    },
+    {
+      "fixture": "reference.py",
+      "task": "masked_softmax",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7050961009999952
+    },
+    {
+      "fixture": "reference.py",
+      "task": "standardize",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.709242476
+    },
+    {
+      "fixture": "reference.py",
+      "task": "pairwise_distance",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7131596239999993
+    },
+    {
+      "fixture": "reference.py",
+      "task": "ridge_fit",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7338505910000066
+    },
+    {
+      "fixture": "reference.py",
+      "task": "clip_gradient",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7147615680000001
+    },
+    {
+      "fixture": "reference.py",
+      "task": "accumulate_step",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.6959233609999984
+    },
+    {
+      "fixture": "reference.py",
+      "task": "predict",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.84370705500001
+    },
+    {
+      "fixture": "reference.py",
+      "task": "adam_update",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.757851445
+    },
+    {
+      "fixture": "reference.py",
+      "task": "confusion_matrix",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7678106420000006
+    },
+    {
+      "fixture": "reference.py",
+      "task": "stratified_split",
+      "status": "pass",
+      "cases": 4,
+      "seconds": 1.8583954129999825
+    },
+    {
+      "fixture": "reference.py",
+      "task": "early_stop",
+      "status": "pass",
+      "cases": 3,
+      "seconds": 1.7116222900000082
+    },
+    {
+      "fixture": "starter.py",
+      "task": "stable_loss",
+      "status": "incorrect",
+      "seconds": 1.6701473480000004
+    },
+    {
+      "fixture": "starter.py",
+      "task": "masked_softmax",
+      "status": "incorrect",
+      "seconds": 1.6339287430000127
+    },
+    {
+      "fixture": "starter.py",
+      "task": "standardize",
+      "status": "incorrect",
+      "seconds": 1.6429152020000117
+    },
+    {
+      "fixture": "starter.py",
+      "task": "pairwise_distance",
+      "status": "incorrect",
+      "seconds": 1.6648506450000014
+    },
+    {
+      "fixture": "starter.py",
+      "task": "ridge_fit",
+      "status": "crash",
+      "error_type": "_LinAlgError",
+      "seconds": 1.6522432959999946
+    },
+    {
+      "fixture": "starter.py",
+      "task": "clip_gradient",
+      "status": "incorrect",
+      "seconds": 1.6498475489999862
+    },
+    {
+      "fixture": "starter.py",
+      "task": "accumulate_step",
+      "status": "incorrect",
+      "seconds": 1.7048065150000014
+    },
+    {
+      "fixture": "starter.py",
+      "task": "predict",
+      "status": "incorrect",
+      "seconds": 1.7058501600000113
+    },
+    {
+      "fixture": "starter.py",
+      "task": "adam_update",
+      "status": "incorrect",
+      "seconds": 1.7022924419999867
+    },
+    {
+      "fixture": "starter.py",
+      "task": "confusion_matrix",
+      "status": "incorrect",
+      "seconds": 1.7109978910000052
+    },
+    {
+      "fixture": "starter.py",
+      "task": "stratified_split",
+      "status": "incorrect",
+      "seconds": 1.7439272770000116
+    },
+    {
+      "fixture": "starter.py",
+      "task": "early_stop",
+      "status": "incorrect",
+      "seconds": 1.7846654500000056
+    }
+  ],
+  "correct_tasks_passed": 12,
+  "broken_tasks_rejected": 12
+}

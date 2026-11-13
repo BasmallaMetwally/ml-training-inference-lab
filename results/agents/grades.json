@@ -1,0 +1,479 @@
+{
+  "isolation": "Docker --network none; reference calculations on host, candidate containers receive inputs only",
+  "trials": [
+    {
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "source_sha256": "2fac716b9031ab3ff5c7f6023a470f87e8de1ad66a5f5e974a4e6914dd01f0ab",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 2.113361258999987
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7351278790000038
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.748042024
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7832560600000136
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7839120250000065
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7588307210000096
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7573105540000142
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8646931619999805
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.801263500999994
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7927931799999897
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.8389258709999865
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8312708500000099
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "source_sha256": "e7c3654b7ed0619dababea9101863873fe01de1a609e4c5df19bd6f18c88035b",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8488650949999794
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.805697345999988
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7943684480000002
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8266515370000036
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.769427890000003
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8057461479999972
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.759150558999977
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8424449059999972
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8290251079999962
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7311995729999978
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.6824480900000083
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7013796310000089
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "source_sha256": "6b87a3c055fa2b586c22310306fa31a5e8034302d1e4502de93e3f9e9e588f83",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7287714920000212
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7210081829999808
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7380036350000125
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.751956199999995
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7115779190000069
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.789002212000014
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8922802680000075
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.9398881299999857
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7851255340000023
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7653717729999983
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.8443133879999891
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7897021940000002
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "source_sha256": "a9abc53f7773baeba325cadfc74171d3d8441c922dd82710fd7e1a4c7b34844f",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7447683329999961
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8335151659999838
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8054373459999908
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7366978910000057
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7524274890000129
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.79235391200001
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7613861029999782
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8020509510000124
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7797475290000193
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8514322019999838
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.885441548999978
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8394838320000133
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "source_sha256": "ac95b6a46ea5d2c382601c5688a864b7c15e0a5070f0a3d074b9579e509d6760",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8071687199999928
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8235476559999881
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7510322070000086
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.745541811999999
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.6846151859999736
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8214915429999792
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7411427670000137
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8276599840000358
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8617162959999973
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8260469530000023
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.6954411410000034
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.79863756900005
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "source_sha256": "d771b4861be8c2fb73c7bdfaf2319e0c77c6add8c717ed71340c60c08156e83b",
+      "outcomes": [
+        {
+          "task": "stable_loss",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8051001759999963
+        },
+        {
+          "task": "masked_softmax",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8061131119999914
+        },
+        {
+          "task": "standardize",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.758168621999971
+        },
+        {
+          "task": "pairwise_distance",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7065662930000371
+        },
+        {
+          "task": "ridge_fit",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.6835813419999681
+        },
+        {
+          "task": "clip_gradient",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.7959594090000337
+        },
+        {
+          "task": "accumulate_step",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.8150086979999855
+        },
+        {
+          "task": "predict",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.676827051000032
+        },
+        {
+          "task": "adam_update",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.6769280019999542
+        },
+        {
+          "task": "confusion_matrix",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.6516314909999892
+        },
+        {
+          "task": "stratified_split",
+          "status": "pass",
+          "cases": 4,
+          "seconds": 1.6484316149999927
+        },
+        {
+          "task": "early_stop",
+          "status": "pass",
+          "cases": 3,
+          "seconds": 1.6670780249999666
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "title": "ML Training and Inference Lab",
+  "upload_type": "software",
+  "description": "Paired ten-seed PyTorch MLP/CNN training, held-out evaluation, inference runtime ablations, profiler and peak-RSS evidence, Linux/macOS reproducibility, and a twelve-task coding-agent repair pilot with withheld Docker grading.",
+  "creators": [{"name": "Metwally, Basmala"}],
+  "license": "MIT",
+  "version": "1.0",
+  "keywords": ["machine learning", "PyTorch", "reproducibility", "inference", "coding agents", "evaluation"],
+  "related_identifiers": [{"identifier": "https://github.com/BasmallaMetwally/ml-training-inference-lab", "relation": "isSupplementTo", "scheme": "url"}]
+}

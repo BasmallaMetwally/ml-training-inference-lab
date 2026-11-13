@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ml-training-inference-lab"
-version = "0.1.0"
+version = "1.0.0"
 description = "Reproducible PyTorch training, inference benchmarking and debugging tasks"
 requires-python = ">=3.11"
 dependencies = ["torch>=2.6,<3", "numpy>=1.26,<3"]

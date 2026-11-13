@@ -1,4 +1,4 @@
-"""Preregistered paired 10-seed architecture study and error analysis."""
+"""Paired 10-seed architecture study with a locally recorded analysis plan."""
 
 import itertools
 import json
@@ -12,12 +12,13 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
-from scipy import stats
 from torch.utils.benchmark import Timer
 
-from ml_lab.data import test_data
+from ml_lab.data import digest, test_data
 from ml_lab.engine import final_evaluation, load_model, seed_everything, train, write_json
 from ml_lab.model import fused_model
+from ml_lab.statistics import paired_comparison
+from ml_lab.statistics import summarize as summary
 
 OUT = Path("results/study")
 LABELS = [
@@ -34,20 +35,7 @@ LABELS = [
 ]
 
 
-def summary(values):
-    """Mean, sample standard deviation and Student-t interval across seeds."""
-    a = np.asarray(values, dtype=float)
-    spread = float(a.std(ddof=1))
-    margin = float(stats.t.ppf(0.975, len(a) - 1) * spread / np.sqrt(len(a)))
-    return {
-        "n": len(a),
-        "mean": float(a.mean()),
-        "std": spread,
-        "ci95": [float(a.mean() - margin), float(a.mean() + margin)],
-    }
-
-
-def latency(model, batch):
+def latency(model: torch.nn.Module, batch: int) -> dict:
     """Measure checked eval forward only, three steady-state repetitions."""
     sample = torch.zeros(batch, 784)
     medians = []
@@ -62,7 +50,7 @@ def latency(model, batch):
     return {"median_ms": float(np.median(medians)), "repeat_medians_ms": medians}
 
 
-def error_analysis():
+def error_analysis() -> None:
     """Analyze the predeclared representative seed 0, without tuning from errors."""
     model, ck = load_model("runs/study/mlp-0")
     x, y = test_data("data/fashion-mnist", ck["data"]["mean"], ck["data"]["std"])
@@ -129,7 +117,8 @@ def error_analysis():
     write_json(OUT / "errors.json", value)
 
 
-def main():
+def main() -> None:
+    """Run or verify all predeclared architecture/seed pairs and summarize them."""
     OUT.mkdir(parents=True, exist_ok=True)
     plan = {
         "seeds": list(range(10)),
@@ -149,11 +138,27 @@ def main():
     records = []
     for seed, kind in itertools.product(range(10), ["mlp", "cnn"]):
         target = OUT / f"{kind}-{seed}.json"
-        if target.exists():
-            records.append(json.loads(target.read_text()))
-            continue
         run = Path(f"runs/study/{kind}-{seed}")
-        train("data/fashion-mnist", run, epochs=10, seed=seed, model_kind=kind, split_seed=42)
+        if target.exists() and (run / "best.pt").exists():
+            cached = json.loads(target.read_text())
+            if cached["test"]["checkpoint_sha256"] != digest(run / "best.pt"):
+                raise ValueError(f"Cached metrics and checkpoint differ: {run}")
+            records.append(cached)
+            continue
+        last = run / "last.pt"
+        completed = (
+            torch.load(last, map_location="cpu", weights_only=True)["epoch"] if last.exists() else 0
+        )
+        if completed < 10:
+            train(
+                "data/fashion-mnist",
+                run,
+                epochs=10,
+                seed=seed,
+                model_kind=kind,
+                split_seed=42,
+                resume=last.exists(),
+            )
         metrics = final_evaluation("data/fashion-mnist", run)
         model, _ = load_model(run)
         seed_everything(seed)
@@ -176,20 +181,10 @@ def main():
     }
     a = np.array([r["test"]["accuracy"] for r in groups["mlp"]])
     b = np.array([r["test"]["accuracy"] for r in groups["cnn"]])
-    diff = b - a
-    null = np.array(
-        [np.mean(diff * np.array(signs)) for signs in itertools.product([-1, 1], repeat=10)]
-    )
-    p = float(np.mean(np.abs(null) >= abs(diff.mean()) - 1e-15))
     result = {
         "plan": plan,
         "accuracy": {k: summary([r["test"]["accuracy"] for r in v]) for k, v in groups.items()},
-        "paired_difference_cnn_minus_mlp": {
-            **summary(diff),
-            "exact_sign_flip_p_two_sided": p,
-            "paired_t_p_two_sided": float(stats.ttest_rel(b, a).pvalue),
-            "differences": diff.tolist(),
-        },
+        "paired_difference_cnn_minus_mlp": paired_comparison(a, b),
         "latency_ms": {
             k: summary([r["latency"]["1"]["median_ms"] for r in v]) for k, v in groups.items()
         },

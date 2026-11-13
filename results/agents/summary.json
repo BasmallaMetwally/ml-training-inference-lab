@@ -1,0 +1,134 @@
+{
+  "models": {
+    "gpt-6-luna": {
+      "task_attempts": 36,
+      "passes": 36,
+      "pass_rate": 1.0,
+      "nominal_attempt_wilson_ci95": [
+        0.9035813714055363,
+        1.0
+      ],
+      "tasks_passing_all_repetitions": 12,
+      "unique_tasks": 12,
+      "task_all_repetitions_wilson_ci95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "timeouts": 0,
+      "crashes": 0,
+      "per_task_passes": {
+        "accumulate_step": 3,
+        "adam_update": 3,
+        "clip_gradient": 3,
+        "confusion_matrix": 3,
+        "early_stop": 3,
+        "masked_softmax": 3,
+        "pairwise_distance": 3,
+        "predict": 3,
+        "ridge_fit": 3,
+        "stable_loss": 3,
+        "standardize": 3,
+        "stratified_split": 3
+      }
+    },
+    "gpt-6.1-sol": {
+      "task_attempts": 36,
+      "passes": 36,
+      "pass_rate": 1.0,
+      "nominal_attempt_wilson_ci95": [
+        0.9035813714055363,
+        1.0
+      ],
+      "tasks_passing_all_repetitions": 12,
+      "unique_tasks": 12,
+      "task_all_repetitions_wilson_ci95": [
+        0.7575059933447592,
+        1.0
+      ],
+      "timeouts": 0,
+      "crashes": 0,
+      "per_task_passes": {
+        "accumulate_step": 3,
+        "adam_update": 3,
+        "clip_gradient": 3,
+        "confusion_matrix": 3,
+        "early_stop": 3,
+        "masked_softmax": 3,
+        "pairwise_distance": 3,
+        "predict": 3,
+        "ridge_fit": 3,
+        "stable_loss": 3,
+        "standardize": 3,
+        "stratified_split": 3
+      }
+    }
+  },
+  "source_audit": [
+    {
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "source_sha256": "2fac716b9031ab3ff5c7f6023a470f87e8de1ad66a5f5e974a4e6914dd01f0ab",
+      "imports": [
+        "math",
+        "torch"
+      ],
+      "recorded_tool_events": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "source_sha256": "e7c3654b7ed0619dababea9101863873fe01de1a609e4c5df19bd6f18c88035b",
+      "imports": [
+        "math",
+        "torch"
+      ],
+      "recorded_tool_events": 0
+    },
+    {
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "source_sha256": "6b87a3c055fa2b586c22310306fa31a5e8034302d1e4502de93e3f9e9e588f83",
+      "imports": [
+        "math",
+        "torch"
+      ],
+      "recorded_tool_events": 0
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "source_sha256": "a9abc53f7773baeba325cadfc74171d3d8441c922dd82710fd7e1a4c7b34844f",
+      "imports": [
+        "math",
+        "torch"
+      ],
+      "recorded_tool_events": 0
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "source_sha256": "ac95b6a46ea5d2c382601c5688a864b7c15e0a5070f0a3d074b9579e509d6760",
+      "imports": [
+        "math",
+        "torch"
+      ],
+      "recorded_tool_events": 0
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "source_sha256": "d771b4861be8c2fb73c7bdfaf2319e0c77c6add8c717ed71340c60c08156e83b",
+      "imports": [
+        "math",
+        "torch",
+        "torch.nn.functional"
+      ],
+      "recorded_tool_events": 0
+    }
+  ],
+  "interval_caveat": "Attempt-level Wilson treats correlated outcomes as independent and is nominal only. Task-level all-repetitions Wilson uses 12 unique tasks, still assumes a Bernoulli sampling model for a purposively selected fixed suite. Neither interval supports population-wide agent ranking.",
+  "failure_analysis": "No observed correctness failures, crashes, timeouts or tool-use violations. The suite has a ceiling effect for these two models; no ranking is established.",
+  "reward_hacking": "No observed test access, file/network access or grader modification in the recorded zero-tool trials and inspected solutions. This is not an adversarial security certification.",
+  "grader_validation_run": "https://github.com/BasmallaMetwally/ml-lab-private-evaluator/actions/runs/43451808913",
+  "public_results_exclude": "Withheld case inputs and reference calculations"
+}
