@@ -1,0 +1,9 @@
+{
+  "url": "https://github.com/BasmallaMetwally/ml-training-inference-lab/actions/runs/43451247140",
+  "conclusion": "success",
+  "platforms": [
+    "ubuntu-latest",
+    "macos-latest"
+  ],
+  "commit": "efbe08e"
+}

@@ -1,0 +1,49 @@
+{
+  "protocol": "2 full-data epochs vs 1 + restore + 1; seed42, 1 CPU thread",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4",
+    "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+    "machine": "x86_64",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "same_platform_bitwise_equal": true,
+  "model_tensor_sha256": {
+    "layers.0.weight": "0b3d5fea7d5e75fe0cb383107c8bfc90a99adb892e657b03b4b4291ac66b883b",
+    "layers.0.bias": "71da10de9ed58b010ee2c6afe9897581d61e7e16cbc849d9fc2ecf8f5a613471",
+    "layers.1.weight": "e4fc1d2e3a3337e9d47d706593a28828d29ca7dd785b7c73b308dbcd149a549d",
+    "layers.1.bias": "6ae2fc4d1afa23298c828d69989a090adb4da8493338d4d86047855f9531b61a",
+    "layers.1.running_mean": "d3dc6ea610dba9c8f6da99bc3603c216dd28ceebf207bf5d1aa9d61adb694af8",
+    "layers.1.running_var": "b5764f5af754e551500057fe13c39b77b40b516968330df69a60693df7d7bd8f",
+    "layers.1.num_batches_tracked": "c71cdad60e75d8ce7f47a9c036908444669a3ffe6e2cc22a714a8ec680aab07b",
+    "layers.4.weight": "23f609da2393293a3de9c576ff9d1a4f02efed54ff567bc0690aea0d5806b62c",
+    "layers.4.bias": "9c0f12b49bdf424d5475f71b61dc3c0007f7decc04708851a0c1d402061de695",
+    "layers.5.weight": "dde916ee41cba141733199ed2010534b753999477f421059ad498b270a504173",
+    "layers.5.bias": "808bffc7d89dfbe43490f46ed00453f67c002928385b271d5f32f89e6abd05e2",
+    "layers.5.running_mean": "de9488d029806d928fa83008acc83041a01f3f6d7472f9f976c180def5ae60b2",
+    "layers.5.running_var": "9fd82aaf21eecf1fcf457271104ef4e2edd1149e0978ed4a7a3f2826cc81cab3",
+    "layers.5.num_batches_tracked": "c71cdad60e75d8ce7f47a9c036908444669a3ffe6e2cc22a714a8ec680aab07b",
+    "layers.8.weight": "b3aec88524333af5179283caec903987c23faccf9d89a534c07d3cb76129a563",
+    "layers.8.bias": "f45c1413f8feb9733d0f3a1fb28b44cf98217b8830dcb812ea70e4dd5eef8f22"
+  },
+  "matches_recorded_macos_cpu": false,
+  "cross_platform_mismatching_tensors": [
+    "layers.0.weight",
+    "layers.0.bias",
+    "layers.1.weight",
+    "layers.1.bias",
+    "layers.1.running_mean",
+    "layers.1.running_var",
+    "layers.4.weight",
+    "layers.4.bias",
+    "layers.5.weight",
+    "layers.5.bias",
+    "layers.5.running_mean",
+    "layers.5.running_var",
+    "layers.8.weight",
+    "layers.8.bias"
+  ]
+}

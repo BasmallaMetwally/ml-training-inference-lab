@@ -21,7 +21,8 @@ from torch import nn
 from torch.profiler import ProfilerActivity, profile, record_function
 from torch.utils.benchmark import Timer
 
-from ml_lab.data import training_data
+from ml_lab.artifacts import export_cache_valid
+from ml_lab.data import digest, training_data
 from ml_lab.engine import environment, load_model, seed_everything, write_json
 from ml_lab.model import FashionMLP, fused_model
 
@@ -64,7 +65,8 @@ def make_core(name):
         import onnxruntime as ort
 
         path = OUT / "model.onnx"
-        if not path.exists():
+        checkpoint_sha256 = digest("runs/seed42/best.pt")
+        if not export_cache_valid(path, checkpoint_sha256):
             torch.onnx.export(
                 fused_model(model).layers,
                 (torch.zeros(2, 784),),
@@ -74,6 +76,10 @@ def make_core(name):
                 dynamic_shapes=({0: torch.export.Dim("batch")},),
                 opset_version=18,
                 external_data=False,
+            )
+            write_json(
+                path.with_suffix(".onnx.json"),
+                {"checkpoint_sha256": checkpoint_sha256, "graph_sha256": digest(path)},
             )
         options = ort.SessionOptions()
         options.intra_op_num_threads = 1
@@ -124,6 +130,7 @@ def main():
         reference = torch.cat([model(v) for v in x.split(512)])
     results = {
         "environment": environment(),
+        "checkpoint_sha256": digest("runs/seed42/best.pt"),
         "protocol": {
             "repeats": 7,
             "min_run_time": 0.15,

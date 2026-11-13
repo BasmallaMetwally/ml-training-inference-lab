@@ -1,0 +1,34 @@
+{
+  "protocol": "2 full-data epochs vs 1 + restore + 1; seed42, 1 CPU thread",
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.15.0",
+    "numpy": "2.5.4",
+    "platform": "macOS-26.7.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "same_platform_bitwise_equal": true,
+  "model_tensor_sha256": {
+    "layers.0.weight": "6f8608c5db89c96958fa2b9dc8e706d1f4c53b5ad52ca113052eb9a54979874f",
+    "layers.0.bias": "41774dc5bf7150f00e1da4dd5e4c58222c10f4acd03eced6ad002a2224c0500c",
+    "layers.1.weight": "6076c29549761f107eaa0e4589df36720797a8c8c617e321ca48ff0c58ae1276",
+    "layers.1.bias": "6da5e2bc4940760e9a78a44b2f3daf33fa9edba951dc7f6f4aec394879902e56",
+    "layers.1.running_mean": "ec688aee3ef5278d8df590dc6f9106af94778f4835333d7d3194d2732a102103",
+    "layers.1.running_var": "149efe45dce5aba6d2c1123ed596528ac21a51948f910e90d07bd3bf58390218",
+    "layers.1.num_batches_tracked": "c71cdad60e75d8ce7f47a9c036908444669a3ffe6e2cc22a714a8ec680aab07b",
+    "layers.4.weight": "05dddf59e8e6265436601a41e8de41ae61798604c6ef14a698d0d99fce3273d2",
+    "layers.4.bias": "ba5f7840006c9d23635ffa569a578ea2776b9ea2ffa27745713b4d62adf7e4e9",
+    "layers.5.weight": "f6110fef3f860eb828d370b547a60b856fb8e9348edee50cd139aa8b7c7fc892",
+    "layers.5.bias": "d4aef6d9ebc3c09bd335e32c65ecb06589019e5797b908c470ed9ec51c7b461c",
+    "layers.5.running_mean": "2634ac5db82ce65bf4d8f91b77e05587b31c3940f32ffb6a90349fb0dcd4fbb8",
+    "layers.5.running_var": "ac2beea585234f7f41964fa1fcf20a63cd5dc50a169aa0a16143a59a69feeb5c",
+    "layers.5.num_batches_tracked": "c71cdad60e75d8ce7f47a9c036908444669a3ffe6e2cc22a714a8ec680aab07b",
+    "layers.8.weight": "0d379db5a6fe08f51788ea0d3e5d6802e608310414d5feb63e0b2f4295b3647c",
+    "layers.8.bias": "fa9b21e3395407145e4a8e893bc46a7b5ffc117e623a2163540d5b8fbb4964b2"
+  },
+  "matches_recorded_macos_cpu": true,
+  "cross_platform_mismatching_tensors": []
+}

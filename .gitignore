@@ -11,4 +11,7 @@ runs/
 .ruff_cache/
 release-assets/
 results/seed42/dataset_manifest.json
+results/performance/*-trace.json
+results/performance/*.onnx
+results/performance/*.onnx.json
 
