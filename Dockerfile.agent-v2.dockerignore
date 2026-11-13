@@ -1,0 +1,4 @@
+**
+!scripts/
+!scripts/agent_v2_worker.py
+!Dockerfile.agent-v2
