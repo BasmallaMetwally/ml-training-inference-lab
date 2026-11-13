@@ -10,7 +10,22 @@ A measured ML engineering project: paired neural-network training, inference opt
 
 **Measurement correction:** the v1.0 Linux peak-RSS table is inconclusive and must not be used to compare runtimes. See [errata](ERRATA.md) and the completed [replacement Linux measurements](results/performance-linux/corrected/REPORT.md).
 
-## Results
+## V1.1: multi-file coding-agent trajectories
+
+A fixed follow-up collected **72 independent task trajectories**: twelve synthetic ML engineering tasks × two models × three repetitions. Models selected real file/test actions through a bounded custom JSON tool interface; final correctness used **211 withheld cases** inside network-disabled Docker.
+
+| Model | Accepted repairs (correct + submitted + protocol compliant) | Functionally correct final candidates |
+| --- | ---: | ---: |
+| GPT-6-Luna | 26/36 (72.2%) | 30/36 (83.3%) |
+| GPT-6.1-Sol | 36/36 (100%) | 36/36 (100%) |
+
+Luna's end-to-end failures comprise seven forbidden native resource-inventory calls, two step-budget exhaustions and one submitted schema/integration bug (`weight` versus `weights`). No protected-test write was observed. These results distinguish the models on this fixed suite; Sol's ceiling and the small purposive task sample limit generalization. The four actual maintenance-note exposures are not a broad injection-resistance evaluation. Visible tests all passed after edits, so a benefit from iterative repair after failed feedback is not demonstrated.
+
+[Full report, uncertainty and limits](results/agents-v2/REPORT.md) · [Offline trajectory viewer](results/agents-v2/viewer.html) · [Failure example](results/agents-v2/failure_example.json) · [Frozen protocol](results/agents-v2/protocol.json)
+
+![V2 outcomes by task](results/agents-v2/task-results.png)
+
+## Training and inference results
 
 | Model | Test accuracy, mean ± sample SD | Parameters | Batch-1 CPU latency, mean across seeds |
 | --- | ---: | ---: | ---: |
@@ -29,7 +44,7 @@ The CNN has about twelve times fewer parameters but higher batch-1 latency on th
 
 - **Inference:** checked/unchecked ablations, fusion, compilation, dynamic int8 and ONNX Runtime. Prediction-changing variants are rejected by the strict parity policy. [Full runtime, profiler and peak-RSS report](results/performance/REPORT.md).
 - **Reproducibility:** exact checkpoint resumption passes within Linux and within macOS; Linux tensors differ from the recorded macOS tensors. [Recorded evidence](results/reproducibility/).
-- **Actual model trials:** GPT-6-Luna and GPT-6.1-Sol each passed 36/36 task attempts: twelve tasks × three repetitions. No crashes or timeouts. The suite shows a ceiling effect and establishes **no model ranking**. [Intervals, caveats and evidence](results/agents/REPORT.md).
+- **Historical v1 zero-tool pilot:** GPT-6-Luna and GPT-6.1-Sol each passed 36/36 task attempts: twelve tasks × three repetitions. No crashes or timeouts. The suite shows a ceiling effect and establishes **no model ranking**. [Intervals, caveats and evidence](results/agents/REPORT.md).
 - **Error analysis:** original seed42 Shirt recall is 72.7%; first Shirt→T-shirt errors are shown below. The ten-seed study also includes a separately identified representative seed0 analysis. These visual explanations are hypotheses, not demonstrated causes.
 
 ![Original Shirt error examples](results/demo/shirt_errors.png)

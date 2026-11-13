@@ -1,0 +1,6 @@
+{
+  "hand_calculated_oracle_checks": 12,
+  "all_passed": true,
+  "private_checker_sha256": "7c2521a3941313d90e5e5f01a5db9e685dd2fc62daadf06ccc1ffbde4bc2b1bd",
+  "scope": "Hand-calculated examples, one per task; complements generated expected values and does not prove all hidden cases correct."
+}

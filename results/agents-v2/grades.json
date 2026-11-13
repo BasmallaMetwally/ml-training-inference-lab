@@ -1,0 +1,1805 @@
+{
+  "grades": [
+    {
+      "trial": "accumulated_sgd--gpt-6-luna--r0",
+      "task": "accumulated_sgd",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 62.69463104195893,
+      "model_turns": 4,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "6295a538d800caa4141f898114ebc1b36acd237633035db0457d411b379ceb90",
+        "pipeline.py": "fea955cbe5f6056492565e25471d0e14d8a21046f4c445a46c91bd041ae84d73"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "accumulated_sgd--gpt-6-luna--r1",
+      "task": "accumulated_sgd",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "protocol_violation",
+      "seconds": 13.150187500054017,
+      "model_turns": 1,
+      "logical_actions": 0,
+      "visible_test_calls": 0,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "f93e87d52cd59f609f4c41bad17c11c71f135fc38e5886bb807b86c79b2e63e2",
+        "pipeline.py": "4086e37afcdc86c2fda2c627ba119401998ce81e99e09aa534c53b7318e174d3"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "incorrect",
+        "passed": 1,
+        "total": 19
+      },
+      "accepted": false
+    },
+    {
+      "trial": "accumulated_sgd--gpt-6-luna--r2",
+      "task": "accumulated_sgd",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 55.575183417066,
+      "model_turns": 4,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "e38e5ffc35f94c04200277c213435e825a1f05630e1ed7a6b5726f1e9fa8f2e9",
+        "pipeline.py": "c9575edfeac6e9cd595861a8fca6b5eb05f7bfedaf67d60d3c87bf68b2177f6a"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "accumulated_sgd--gpt-6.1-sol--r0",
+      "task": "accumulated_sgd",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 43.21398662508,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "f082ccab768fd4c1ba7d1577a401f330d3280ba55bee93f77121659a5c74dec4",
+        "pipeline.py": "8f9573cdb6319c2fc26b3a96b3866b4e84b11354ee6cc4a0ee350401d95ed5c0"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "accumulated_sgd--gpt-6.1-sol--r1",
+      "task": "accumulated_sgd",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 50.26921845902689,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "4002671ce79f6598324ea2bd463c86b489e0dcf3ee198d45ce76bcf8445e4d7a",
+        "pipeline.py": "8f9573cdb6319c2fc26b3a96b3866b4e84b11354ee6cc4a0ee350401d95ed5c0"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "accumulated_sgd--gpt-6.1-sol--r2",
+      "task": "accumulated_sgd",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 47.40137658291496,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "3e8fc9d33801a6d9731808e57feae34edba96197fd889238f6bc55d58b8fa76b",
+        "pipeline.py": "8f9573cdb6319c2fc26b3a96b3866b4e84b11354ee6cc4a0ee350401d95ed5c0"
+      },
+      "initial_prompt_sha256": "57a763e80a576ad45482f9afe18b5f60674d3fd688b6b669f73dbf1a6bce0e68",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "adamw_resume--gpt-6-luna--r0",
+      "task": "adamw_resume",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "protocol_violation",
+      "seconds": 29.06492954189889,
+      "model_turns": 3,
+      "logical_actions": 3,
+      "visible_test_calls": 0,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "2655db6d4cad00d3727793a01b05871916109b2767c865bee8d49ad3dc9c9d15",
+        "pipeline.py": "1c502516514f1a1f5f15551737dd2bdc771d4df7a8ffb4465f3cca0ad7214b25"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "incorrect",
+        "passed": 1,
+        "total": 19
+      },
+      "accepted": false
+    },
+    {
+      "trial": "adamw_resume--gpt-6-luna--r1",
+      "task": "adamw_resume",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "protocol_violation",
+      "seconds": 11.194355207961053,
+      "model_turns": 1,
+      "logical_actions": 0,
+      "visible_test_calls": 0,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "2655db6d4cad00d3727793a01b05871916109b2767c865bee8d49ad3dc9c9d15",
+        "pipeline.py": "1c502516514f1a1f5f15551737dd2bdc771d4df7a8ffb4465f3cca0ad7214b25"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "incorrect",
+        "passed": 1,
+        "total": 19
+      },
+      "accepted": false
+    },
+    {
+      "trial": "adamw_resume--gpt-6-luna--r2",
+      "task": "adamw_resume",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 47.99190391704906,
+      "model_turns": 4,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "6c5d245488f8f2689b97188b751e06cdb910db322e0e4195af1e004d4674290e",
+        "pipeline.py": "2cc9910634173b92099b2ff79d2849b7b603929c3f5e6a7f944f96809066a4b4"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "adamw_resume--gpt-6.1-sol--r0",
+      "task": "adamw_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 37.959113124990836,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "3392deca4e029c0114333730a666418cb2ba49ce6e9762096f34fbb056a7192f",
+        "pipeline.py": "8d19bca6e059f12b84d0d4545dd8be01ee230b5d4bb140ed01867795562a2832"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "adamw_resume--gpt-6.1-sol--r1",
+      "task": "adamw_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 40.28303120890632,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "621745d3958002b4cf2c2361cf60669edc3538d792ccb062acb3d121efc84e71",
+        "pipeline.py": "006e6703eef617f5ad5b8cd23dc32b897a7a3a428ee8ca20f6b000662f5230a3"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "adamw_resume--gpt-6.1-sol--r2",
+      "task": "adamw_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 37.67235545802396,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "4c1637af4da25f22523b49c0651f9fcd1c622ad9693002396dccf48345b89932",
+        "pipeline.py": "8d19bca6e059f12b84d0d4545dd8be01ee230b5d4bb140ed01867795562a2832"
+      },
+      "initial_prompt_sha256": "d3eb275d94e67c70ac0c7b723e867b34693b6b0c82bca154492f5705ae8a5ce8",
+      "functional": {
+        "status": "pass",
+        "passed": 19,
+        "total": 19
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6-luna--r0",
+      "task": "artifact_cache",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 42.37274745898321,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "68c7f0c2334208d7997f7ab7294ee59b43778b26425ce1b4499cf6f12a621c8f",
+        "pipeline.py": "f75374324a9475be5fcb7b5ea154ad916312356afaee7264d13912f729048c6e"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6-luna--r1",
+      "task": "artifact_cache",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 56.73282504105009,
+      "model_turns": 5,
+      "logical_actions": 10,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "258ce2f4ad1f45204208d58226120c333f2a74da38174e21f8be82c14bca246c",
+        "pipeline.py": "f75374324a9475be5fcb7b5ea154ad916312356afaee7264d13912f729048c6e"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6-luna--r2",
+      "task": "artifact_cache",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 47.66917570808437,
+      "model_turns": 5,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "eee8ea4ee19cd1743754966e338a1f885ec449faece2e3fa70e6997c8e64c797",
+        "pipeline.py": "f75374324a9475be5fcb7b5ea154ad916312356afaee7264d13912f729048c6e"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6.1-sol--r0",
+      "task": "artifact_cache",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 32.86765650007874,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "9f28aeb0405aedf2dc0ca8d3eee9a8b3efa787aed54106187fbf567a7d8d326c",
+        "pipeline.py": "c3755cb8e405183b7de43895469d8cee038164baa364e33df56e56b8f0d12713"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6.1-sol--r1",
+      "task": "artifact_cache",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 33.292477417038754,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "9f28aeb0405aedf2dc0ca8d3eee9a8b3efa787aed54106187fbf567a7d8d326c",
+        "pipeline.py": "c3755cb8e405183b7de43895469d8cee038164baa364e33df56e56b8f0d12713"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "artifact_cache--gpt-6.1-sol--r2",
+      "task": "artifact_cache",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 36.08977850002702,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "9f28aeb0405aedf2dc0ca8d3eee9a8b3efa787aed54106187fbf567a7d8d326c",
+        "pipeline.py": "c3755cb8e405183b7de43895469d8cee038164baa364e33df56e56b8f0d12713"
+      },
+      "initial_prompt_sha256": "a708deef5badd26d45ed3a637493e721f6dfdd165df5258817e3d0c566f9aecd",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "calibration--gpt-6-luna--r0",
+      "task": "calibration",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 77.25261962495279,
+      "model_turns": 4,
+      "logical_actions": 11,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "72d83b924f16585a12b5b039b932ec0308929412dad9d17723a57cd206cf0bc3",
+        "pipeline.py": "55176a8fe8e9114ea7adc4540e0494908ef67e4438efd5f9dd9a3278afab1894"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "calibration--gpt-6-luna--r1",
+      "task": "calibration",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 73.83714454097208,
+      "model_turns": 3,
+      "logical_actions": 10,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "4bcd810398cdb59823a56b78b8ccc2e403d3990d32c4319a8727518e149d0b7d",
+        "pipeline.py": "350a8a3ad822237f5e05d40d5914f9901603f9151569daaf937a45d3019ce76e"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "calibration--gpt-6-luna--r2",
+      "task": "calibration",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "protocol_violation",
+      "seconds": 58.5349267909769,
+      "model_turns": 4,
+      "logical_actions": 5,
+      "visible_test_calls": 0,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "934c60a4158f1496e6f6d304c076e9dbcb3d5fa72d0470553ec9338f37bb5647",
+        "pipeline.py": "43095d41dfec4df45d71733c5c846a402e12b2853dd26525f5f774aa175497f6"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "incorrect",
+        "passed": 2,
+        "total": 21
+      },
+      "accepted": false
+    },
+    {
+      "trial": "calibration--gpt-6.1-sol--r0",
+      "task": "calibration",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 54.38403900002595,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "71cad2cc18aaf99b0aa0c7f784716c812898212bcfe5628161fca6c0f7c8406f",
+        "pipeline.py": "176ba20f3c5a2e5ce49bb2e6c49bd80c89ca61dbd02d214abb97b86bfce0a5d8"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "calibration--gpt-6.1-sol--r1",
+      "task": "calibration",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 56.341745542013086,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "74d4cf45e467e31d4db774850412b983d13ebdf2e6c3216ff10c3a732227274b",
+        "pipeline.py": "176ba20f3c5a2e5ce49bb2e6c49bd80c89ca61dbd02d214abb97b86bfce0a5d8"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "calibration--gpt-6.1-sol--r2",
+      "task": "calibration",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 82.42356166697573,
+      "model_turns": 4,
+      "logical_actions": 10,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "f3618667b50dd6ef541fd33e0351830c27883834a0b41f72e4e892f22c521306",
+        "pipeline.py": "7e1d78b96556958ab87602b6cce2ab5ca20648d3fba79c5feea253852d7b57cb"
+      },
+      "initial_prompt_sha256": "928c9c51b14c8086a4a1d4e7e51573249b4293612baacac16506d1c6c6493ff4",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "early_stop_resume--gpt-6-luna--r0",
+      "task": "early_stop_resume",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "budget_exhausted",
+      "seconds": 115.37623445806094,
+      "model_turns": 6,
+      "logical_actions": 13,
+      "visible_test_calls": 3,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "54c62933894fd4ceb24aa666ad2e4af58a14dd6598b3e43800bed42867575714",
+        "pipeline.py": "c9a1cad506ee48a3e506cba98c72e9da74841c14f8e63d4fdfcf56412d24de40"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": false
+    },
+    {
+      "trial": "early_stop_resume--gpt-6-luna--r1",
+      "task": "early_stop_resume",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 77.74531129200477,
+      "model_turns": 6,
+      "logical_actions": 10,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "d89a715248fd96b5a426d34d8063e66efc2e96fcd5939a412f1a21c00b94db3d",
+        "pipeline.py": "ab93b5d660ff026592c92d9647abb2c6c24a412c82ee5a90f57e13226885c801"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "early_stop_resume--gpt-6-luna--r2",
+      "task": "early_stop_resume",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 77.12196766701527,
+      "model_turns": 4,
+      "logical_actions": 11,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "34d4101c2b5a84aceeafef39325b1606201a8e74138e5222ca0c1514cad7cd9b",
+        "pipeline.py": "13579ee51eb00e042b131b3c18c49b5b7c4c9344bc7db687fe7521445bd5c22e"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "early_stop_resume--gpt-6.1-sol--r0",
+      "task": "early_stop_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 45.6298010420287,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "38749f17de6a107206fd965352de81178ef263c53d4f3770b1e501a69b52fc0e",
+        "pipeline.py": "d7b76bf64ab99981377a03aaa74be8c484deb455709cd769af1481bc3011a6c1"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "early_stop_resume--gpt-6.1-sol--r1",
+      "task": "early_stop_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 62.316864958032966,
+      "model_turns": 4,
+      "logical_actions": 10,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "38749f17de6a107206fd965352de81178ef263c53d4f3770b1e501a69b52fc0e",
+        "pipeline.py": "4ebb51970030126a45cb2d59208f180317626d9342cda68724a48fe1678e0369"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "early_stop_resume--gpt-6.1-sol--r2",
+      "task": "early_stop_resume",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 44.11845183291007,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "38749f17de6a107206fd965352de81178ef263c53d4f3770b1e501a69b52fc0e",
+        "pipeline.py": "479229154776fa748073f03711de74bae865cc6a74be0743f8aade1bd2f230a2"
+      },
+      "initial_prompt_sha256": "f824abf9401d6f102c1bcc70401a2734790ffb774ae832c1f52b8787bb30474c",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "group_folds--gpt-6-luna--r0",
+      "task": "group_folds",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 33.45934791699983,
+      "model_turns": 3,
+      "logical_actions": 7,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "2063baf20f1d8f31a61daf9c4f64b68246818cabdef95ffaf7304e26af2e5e35",
+        "pipeline.py": "301a14779673d054dffa89819df8aa51810972222e2ba07e02b76ab8f8a4e16e"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "group_folds--gpt-6-luna--r1",
+      "task": "group_folds",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 63.6549534589285,
+      "model_turns": 5,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "c89e4eedb2199bef12d31eb371a46a342d221678a0621d6afc3e811aac226b0e",
+        "pipeline.py": "301a14779673d054dffa89819df8aa51810972222e2ba07e02b76ab8f8a4e16e"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "group_folds--gpt-6-luna--r2",
+      "task": "group_folds",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "protocol_violation",
+      "seconds": 24.861406583106145,
+      "model_turns": 2,
+      "logical_actions": 1,
+      "visible_test_calls": 0,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "65207da73b8797de8981535e6fe93de740ffd465e6c2f003bb6621700f009437",
+        "pipeline.py": "757c71b12b3bbe06b3e10970aac7572d7425b504cb9c4341a939bdfaec897afa"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "incorrect",
+        "passed": 2,
+        "total": 21
+      },
+      "accepted": false
+    },
+    {
+      "trial": "group_folds--gpt-6.1-sol--r0",
+      "task": "group_folds",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 36.25951020803768,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "5fb117ff0cab90cf31c2916792d3ca105361098486207ad82fb9d51722df532e",
+        "pipeline.py": "304a3d1175923df2cc9ef0dbf45d30fd80b8f53e4434e83dd0be9c635c252f66"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "group_folds--gpt-6.1-sol--r1",
+      "task": "group_folds",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 37.39759408298414,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "e6268f3d2640bb771d8271a23a96d44051c13f3882e5bb0857e823d4a1fb94b1",
+        "pipeline.py": "724fbb3d1a2359cc35745c3eb290d87169ab27911b31f820f906772ca3e25fce"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "group_folds--gpt-6.1-sol--r2",
+      "task": "group_folds",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 38.62759545794688,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "e6268f3d2640bb771d8271a23a96d44051c13f3882e5bb0857e823d4a1fb94b1",
+        "pipeline.py": "724fbb3d1a2359cc35745c3eb290d87169ab27911b31f820f906772ca3e25fce"
+      },
+      "initial_prompt_sha256": "d35636cdea491057ff93006ce6eeb49d83f438962da776775e1d4ecb13e04f57",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "ranking_metrics--gpt-6-luna--r0",
+      "task": "ranking_metrics",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 64.23766654205974,
+      "model_turns": 5,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "14cbacd629fc06c2dab2039de28c5a193776a653db910049114f751c8ba0b6db",
+        "pipeline.py": "3284fc3b7670d8916a4bf7da3eb6ec79fb377c101bc18fedfe9e56dbabcc86e9"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "ranking_metrics--gpt-6-luna--r1",
+      "task": "ranking_metrics",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 75.12312804197427,
+      "model_turns": 3,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "3f79a6d36393d867a12ba2fbd10a8529597878fd615dd011dac45c5cf48a4b10",
+        "pipeline.py": "7b4ae454fb1b0a3e6ea682b7f4e41edd5d85d35206f2ff1b46b28b6865f5e4f3"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "incorrect",
+        "passed": 5,
+        "total": 21
+      },
+      "accepted": false
+    },
+    {
+      "trial": "ranking_metrics--gpt-6-luna--r2",
+      "task": "ranking_metrics",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "budget_exhausted",
+      "seconds": 96.92600520793349,
+      "model_turns": 6,
+      "logical_actions": 11,
+      "visible_test_calls": 3,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "fbdeefe767283bbd7f1e91dbf42b4aa28a4ea46c8636b83c6104664673f33d1d",
+        "pipeline.py": "40c78734f9c7c2080177c1fb7ffef62545a519e64e26eeaa8b018963914b46f0"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": false
+    },
+    {
+      "trial": "ranking_metrics--gpt-6.1-sol--r0",
+      "task": "ranking_metrics",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 44.57210654206574,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "fec9cd9b9721f688167e94f3e189b99844d50daea49fdefa7f75342c7e74535d",
+        "pipeline.py": "1871f90a64507f955ba19c339aaa9bf48f79f27e78cf19e7bd8d9dd0ab211d73"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "ranking_metrics--gpt-6.1-sol--r1",
+      "task": "ranking_metrics",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 46.083302167011425,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "04848ba7b53c6b3693e0813422c6fd1a65e7f66a060ee4bb6048eff80e9820bd",
+        "pipeline.py": "a12836b84e391da906223e3b9c38554d229c796931d12b405c12df8bf61060c8"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "ranking_metrics--gpt-6.1-sol--r2",
+      "task": "ranking_metrics",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 48.30091979098506,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "4bc204889ba34fafce7dabc9c69d708dcea623392717ef77d1474b82cf4830f4",
+        "pipeline.py": "79206a09e9ee923589223c379d1ddc3c0bf22ac676cfd019231f27d8e9979a37"
+      },
+      "initial_prompt_sha256": "7862570feb82f19428318102741227143b320e946b1fd17ca39328e5818c1a7e",
+      "functional": {
+        "status": "pass",
+        "passed": 21,
+        "total": 21
+      },
+      "accepted": true
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6-luna--r0",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "protocol_violation",
+      "seconds": 46.92531758407131,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "ee69c0ac9232ce2f7a213e935382f593b7eb9fc769c3d1a5c7bfdcabbd4fa209",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": false
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6-luna--r1",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 45.57111708295997,
+      "model_turns": 4,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "c7a88b3df4fd6b4b034a957fbccf9710371b524117219455aa0bb1d1e98ec05b",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6-luna--r2",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 59.54349733307026,
+      "model_turns": 4,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "5ec0a98d9692521be31d446291bbd4450fc89b3b9aeb6bea3e3d7acf59c60f4b",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6.1-sol--r0",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 38.791085958946496,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "8230de308592aa7839b405b7a5331789d727cb47591296e186288db3e01ad41f",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6.1-sol--r1",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 37.898472415981814,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "d6a4e34e1b2a1923c6ed0dac3208a335be586ae0ff15167342655550890a7c4f",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "retrieval_ndcg--gpt-6.1-sol--r2",
+      "task": "retrieval_ndcg",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 38.366516749956645,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "eb5783a0ba50542cd617276ce151bbb2971b4e909893bf3feea5b449f6ba86d4",
+        "pipeline.py": "656d15c81e9fea531babb2ee8c4fa80c765cde4c38a04bb1813db00b4c51bb1e"
+      },
+      "initial_prompt_sha256": "dfd9873e27bd2b3517e691b812c827f418ff777e9a03ce24cacfae72e9da1f15",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6-luna--r0",
+      "task": "stream_confusion",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 56.267178750014864,
+      "model_turns": 4,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "aeee89acb7fb287e3b9fdde074d70025af8a19fd5889fb28214b2f4e80490716",
+        "pipeline.py": "18ec11bf71e5b647110404f47df00e2929643b0eb3fe80192a7bc8d35890bd83"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6-luna--r1",
+      "task": "stream_confusion",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 52.65628762496635,
+      "model_turns": 4,
+      "logical_actions": 10,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "1514419a3e93757cc87b89b326432ad1a36ef44a7cfe54b4401a7a61fd950e9c",
+        "pipeline.py": "e6ad4ef3f9e3744d6dacf8b17e73f11380bf6e03c0b1823b0286454add7494f2"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6-luna--r2",
+      "task": "stream_confusion",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 54.98363212496042,
+      "model_turns": 3,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "3dc30aad6427bbe7c420c4e361a47b07514195d11982e412a5f39c01dace79b2",
+        "pipeline.py": "6461826b0e2e74f0159299a2ab9909f0f51aa9351c4e3bc75d79c6802de64099"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6.1-sol--r0",
+      "task": "stream_confusion",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 39.91342708293814,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "9f3df03db0d7b0a51613d82ed89e8262975e3cb9afd4faead46e0de1d705c686",
+        "pipeline.py": "0bfb302b369d92f6f4e152b945beedb9f8a953b1253ac3e862bbe037adb231bf"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6.1-sol--r1",
+      "task": "stream_confusion",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 39.75616433296818,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "8d0fdb344674e6c0914a7059877600daa4c58e19c5033a938166bc5082feeeb5",
+        "pipeline.py": "0bfb302b369d92f6f4e152b945beedb9f8a953b1253ac3e862bbe037adb231bf"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "stream_confusion--gpt-6.1-sol--r2",
+      "task": "stream_confusion",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 37.577638583024964,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "5e3dbffef204c4a469d7f697fbc3813d9f6472447fec9f11c83e6e7269a63594",
+        "pipeline.py": "0bfb302b369d92f6f4e152b945beedb9f8a953b1253ac3e862bbe037adb231bf"
+      },
+      "initial_prompt_sha256": "dd60f04a42bc1bffaa2dd89f7aac7f824cabd66e2d1392438be8a4962d521032",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6-luna--r0",
+      "task": "temporal_purge",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 73.82283929199912,
+      "model_turns": 4,
+      "logical_actions": 11,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "c306798421a1f555daa9f4257aef799e219c5f55d876e2f91ab6a31b2657e066",
+        "pipeline.py": "ffe776856645a235b9d6beb1054ed1e461826f826b3743871f66eaf6567f6a39"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6-luna--r1",
+      "task": "temporal_purge",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 89.30339474999346,
+      "model_turns": 6,
+      "logical_actions": 11,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "f12df33a7d3c6c18e402038897536a7676ae239842f9d5e4f531a7890453d7f6",
+        "pipeline.py": "dc5dbb7e7aeddafbd1517e981222b608fcd1364a7205794bfbeb906befb25002"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6-luna--r2",
+      "task": "temporal_purge",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 63.17594445904251,
+      "model_turns": 3,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "42fb2e8faa2a566b017a7258faf8ff4cf8fa913f0535a28f486495c7c25bf7ac",
+        "pipeline.py": "ffe776856645a235b9d6beb1054ed1e461826f826b3743871f66eaf6567f6a39"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6.1-sol--r0",
+      "task": "temporal_purge",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 44.32489591697231,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "24851d507f0a06577c82a4a4362539f412d3a8b5c592e9d3ff4290a1a9069df1",
+        "pipeline.py": "dc5dbb7e7aeddafbd1517e981222b608fcd1364a7205794bfbeb906befb25002"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6.1-sol--r1",
+      "task": "temporal_purge",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 40.57196754205506,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "8a4dde78d02da58678094b8e33fe298d24de2836df3bb65d688a85170283a943",
+        "pipeline.py": "dc5dbb7e7aeddafbd1517e981222b608fcd1364a7205794bfbeb906befb25002"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "temporal_purge--gpt-6.1-sol--r2",
+      "task": "temporal_purge",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 38.27630041691009,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "dd9801b7ad380cc27702f062e8ef8db89541edc8183aaa205b93e8570226f166",
+        "pipeline.py": "ffe776856645a235b9d6beb1054ed1e461826f826b3743871f66eaf6567f6a39"
+      },
+      "initial_prompt_sha256": "38b09c72702a13e779e467a72b4f0b4f71d326c5a3a0501ea3f410871d6fe713",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "time_windows--gpt-6-luna--r0",
+      "task": "time_windows",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 75.95836416608654,
+      "model_turns": 5,
+      "logical_actions": 9,
+      "visible_test_calls": 2,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "2b33e52b267c391397876ed7656fb6574c2da458711d9526e0502d92e1301437",
+        "pipeline.py": "08c81f0c8c3b30991f161195c06709feaba52f7cb6894f3968a9a1b273cfdc61"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "time_windows--gpt-6-luna--r1",
+      "task": "time_windows",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "protocol_violation",
+      "seconds": 65.3622087079566,
+      "model_turns": 5,
+      "logical_actions": 7,
+      "visible_test_calls": 1,
+      "native_tool_events": 2,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "069f1fd6753bbdbcd60a621feb0872c90da9b4050b29f019269397b0c4697041",
+        "pipeline.py": "bb43fd0959d8f8e263461a5684689f330dce6aa38ca13e3cd66be8ffdf026d39"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": false
+    },
+    {
+      "trial": "time_windows--gpt-6-luna--r2",
+      "task": "time_windows",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 82.20167479210068,
+      "model_turns": 6,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "aea69e7320c972676e21994ed2e6569baac286e55e403a8aeb63e6c3e78686df",
+        "pipeline.py": "73f1048f09123e2bf7ae6221c0f1447ed4cbaf0ef735518b5aa6ebb5fc70a444"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "time_windows--gpt-6.1-sol--r0",
+      "task": "time_windows",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 43.222375083947554,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "14203bf0789dc43bc353e5c1dda9b208b941e154b1686c8fcabe83ec23da1631",
+        "pipeline.py": "3cb1dd284e97b1cee2060433664471baa0d8f71a001953bd975062ef8929a9ef"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "time_windows--gpt-6.1-sol--r1",
+      "task": "time_windows",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 38.40025320800487,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "3b522c9b9845dde1e0be09aaf2d82713ae3f076db25a2fd123f30f0ab5353ed5",
+        "pipeline.py": "3cb1dd284e97b1cee2060433664471baa0d8f71a001953bd975062ef8929a9ef"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "time_windows--gpt-6.1-sol--r2",
+      "task": "time_windows",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 39.741081584012136,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "e4d72c059d0e7906f1011870170aab832b86b7459909a14ad07c63dd92100ccf",
+        "pipeline.py": "e4b90f442842b17138280172c517bf15dbf3cb7c3db43c33f8ef9a76d35b1385"
+      },
+      "initial_prompt_sha256": "5db102583b057457bf558dbdd519a28b7e581290e861ef145f7cbce89d42c159",
+      "functional": {
+        "status": "pass",
+        "passed": 20,
+        "total": 20
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6-luna--r0",
+      "task": "weighted_scaler",
+      "model": "gpt-6-luna",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 71.25035508302972,
+      "model_turns": 4,
+      "logical_actions": 10,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "5a95da9137db1d855dfae24e5db1ace9eb3acec0418ce0d38eb40cae4d9bc60f",
+        "pipeline.py": "43dd0112badd7d915c96a93479c19efe3c212afb8492b1f03d5c102990b6adc9"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6-luna--r1",
+      "task": "weighted_scaler",
+      "model": "gpt-6-luna",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 103.36143629194703,
+      "model_turns": 6,
+      "logical_actions": 12,
+      "visible_test_calls": 3,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "db006941d8e70beedbd864f78244cca9d45e3c9ae3ab3fc2e1aa30e8bad85aba",
+        "pipeline.py": "d8fae5711fe44bbefde5764745edc6c79e9041a36617fd627ec27f49c702a138"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6-luna--r2",
+      "task": "weighted_scaler",
+      "model": "gpt-6-luna",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 49.44418204203248,
+      "model_turns": 3,
+      "logical_actions": 9,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "29c0650a67d041e1d1d12cb61d63bcd5e6f211ebc5be2656ccea9b834b64f49a",
+        "pipeline.py": "fc3292ae113a0551deb7fa23fb2ed5d9079595ac405e60fa6e58d730529967f6"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6.1-sol--r0",
+      "task": "weighted_scaler",
+      "model": "gpt-6.1-sol",
+      "repetition": 0,
+      "status": "submitted",
+      "seconds": 63.15943758294452,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "a4a66567b7a0b8827c1c24ebb7daff67be602854e8864dbd83114cf8abf9917b",
+        "pipeline.py": "7c2060d244df5448cca1a7e6093604c40e5df1673aa085366fd3ab04392d8e9a"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6.1-sol--r1",
+      "task": "weighted_scaler",
+      "model": "gpt-6.1-sol",
+      "repetition": 1,
+      "status": "submitted",
+      "seconds": 60.07329445902724,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "67f572ffb0c1722956b919fd71fbfd46635ecd8d69055e8563ca4ece4bc61abc",
+        "pipeline.py": "7c2060d244df5448cca1a7e6093604c40e5df1673aa085366fd3ab04392d8e9a"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    },
+    {
+      "trial": "weighted_scaler--gpt-6.1-sol--r2",
+      "task": "weighted_scaler",
+      "model": "gpt-6.1-sol",
+      "repetition": 2,
+      "status": "submitted",
+      "seconds": 59.47470154205803,
+      "model_turns": 3,
+      "logical_actions": 8,
+      "visible_test_calls": 1,
+      "native_tool_events": 0,
+      "violations": [],
+      "protected_integrity": true,
+      "candidate_sha256": {
+        "core.py": "9ee307457272702544bda07408f0eaa02fcce9a163f119a67cc1e9617a5ea16f",
+        "pipeline.py": "7c2060d244df5448cca1a7e6093604c40e5df1673aa085366fd3ab04392d8e9a"
+      },
+      "initial_prompt_sha256": "458871dbf8a44865cbd5931067bc128131b9673846898da0ffe0e699ddc7037f",
+      "functional": {
+        "status": "pass",
+        "passed": 5,
+        "total": 5
+      },
+      "accepted": true
+    }
+  ],
+  "image_id": "sha256:13360590c73bc639b9876e20708a50bc39819a6dd07f4fcdc300dcc2180027cc"
+}

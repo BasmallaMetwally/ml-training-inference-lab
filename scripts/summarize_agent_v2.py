@@ -5,6 +5,8 @@ import os
 from collections import Counter
 from pathlib import Path
 
+from summarize_agents import wilson
+
 os.environ.setdefault("MPLCONFIGDIR", str(Path(".mplconfig").resolve()))
 import matplotlib
 
@@ -85,6 +87,10 @@ def main():
                 "median_wall_seconds_including_cli": float(np.median([g["seconds"] for g in rows])),
                 "visible_test_calls": sum(g["visible_test_calls"] for g in rows),
                 "uncertainty": bootstrap(per_task),
+                "all_repetitions_successful_tasks": sum(v == 1 for v in per_task),
+                "all_repetitions_task_wilson_ci95": wilson(
+                    sum(v == 1 for v in per_task), len(per_task)
+                ),
             }
         )
     contrast = bootstrap(
@@ -152,6 +158,15 @@ def main():
         lines.append(
             f"- {r['model']}: mean acceptance {r['uncertainty']['mean']:.1%}; descriptive task-block bootstrap 95% interval [{low:.1%}, {high:.1%}]."
         )
+    lines += [
+        "",
+        "Boundary warning: Sol has no observed failed task block, so its bootstrap interval degenerates to [100%, 100%]. Resampling observed all-success blocks cannot bound unseen failures; this is not evidence of a true 100% success rate.",
+    ]
+    for r in table:
+        left, right = r["all_repetitions_task_wilson_ci95"]
+        lines.append(
+            f"- Separate descriptive all-three-repeats task outcome for {r['model']}: {r['all_repetitions_successful_tasks']}/12; nominal task-level Wilson interval [{left:.1%}, {right:.1%}]. This uses a different estimand and a Bernoulli sampling assumption for a fixed purposive suite."
+        )
     low, high = contrast["task_bootstrap_ci95"]
     lines += [
         f"- Second model minus first: {contrast['mean'] * 100:+.2f} percentage points; task-block interval [{low * 100:+.2f}, {high * 100:+.2f}].",
@@ -175,6 +190,29 @@ def main():
         "- [Trajectory viewer](viewer.html) and raw per-turn prompt/response/action records under trials/",
         "",
         "Twelve independent hand-calculated examples check reference formulas. Correct references, broken starters, visible-result overfits and deliberate exit/mutation/output-flood/hang/write/network attacks are evaluated as separate grader controls. The hidden evaluator is private: published hashes and validation do not provide full independent replay. This is an educational synthetic benchmark, not a security certification or a production SWE benchmark.",
+    ]
+    audit = json.loads((OUT / "action_audit.json").read_text())
+    names = Counter(c.get("tool") for row in audit["ledger"] for c in row["native_calls"])
+    protected = sum(bool(row["blocked_logical_actions"]) for row in audit["ledger"])
+    repair_loops = sum(row["edit_after_failed_visible_test"] for row in audit["ledger"])
+    lines += [
+        "",
+        "## What the observed trajectories do and do not show",
+        "",
+        f"Native calls by name: `{dict(names)}`. Blocked logical path/protected-file actions: {protected}. Edits after a failing visible-test result: {repair_loops}.",
+        "The recorded native violations are resource-inventory calls, not evidence of malicious intent or test modification. Visible checks all passed after source edits; the experiment therefore establishes tool execution and feedback delivery, but does not demonstrate a benefit from iterative repair after failing feedback. The visible tests are also weak discriminators. Hidden correctness and completion are evaluated separately.",
+        "",
+        "[Full action audit](action_audit.json) · [Environment and infrastructure attempt audit](environment.json)",
+    ]
+    lines += [
+        "",
+        "## Concrete submitted correctness failure",
+        "",
+        "In ranking_metrics / Luna repetition 1, the core AUC/AP functions handle weights, but pipeline.solve reads `p.get('weight', ...)` instead of the contracted `weights` key. The single visible unweighted fixture passes; 16 of 21 hidden cases fail. This is a schema/integration error rather than evidence that the ranking formulas were misunderstood. The immutable candidate is retained as submitted.",
+        "",
+        "A new post-evaluation public illustration uses y=[1,0,1], scores=[0.9,0.8,0.1], weights=[1,1,9]: expected weighted AUC=0.1, observed AUC=0.5. This illustration was never part of model feedback or hidden grading. [Input, hand calculation and actual isolated output](failure_example.json).",
+        "",
+        "[Hand-calculated reference checks](reference_math_validation.json)",
     ]
     (OUT / "REPORT.md").write_text("\n".join(lines) + "\n")
     viewer = {"summary": summary, "grades": grades, "trajectories": trajectories}

@@ -45,9 +45,8 @@ Dynamic int8 is a measured negative result when it changes classifications, even
 
 Fusion removes the BatchNorm operator paths and reduces the number of ATen invocations. These instrumented totals include profiling overhead; operator self time does not independently identify pure Python or C++ dispatch overhead. Uninstrumented latency ablations supply the performance comparison. Do not subtract nested profiler totals as if they were independent costs.
 
-## Peak process memory — Linux v1.0 inconclusive
-
-**Correction:** the original Linux rows below are invalid for comparing variants. Their identical 871.0 MiB peaks may reflect pre-exec high-water history. They are retained only as an audit record; see [ERRATA.md](../../ERRATA.md).
+## Actual peak process memory
+Linux v1.0 memory measurements are inconclusive. Use the [corrected three-repeat Linux study](../performance-linux/corrected/REPORT.md). The following table contains macOS observations only.
 
 | Platform | Runtime | Checks | Peak process RSS MiB | Baseline after imports MiB |
 | --- | --- | --- | ---: | ---: |
@@ -59,25 +58,11 @@ Fusion removes the BatchNorm operator paths and reduces the number of ATen invoc
 | macOS | int8 | False | 285.0 | 280.1 |
 | macOS | onnx | True | 306.2 | 280.0 |
 | macOS | onnx | False | 305.7 | 279.8 |
-| Linux | eager | True | 871.0 | 367.1 |
-| Linux | eager | False | 871.0 | 367.0 |
-| Linux | fused | True | 871.0 | 367.2 |
-| Linux | fused | False | 871.0 | 367.0 |
-| Linux | compiled | True | 871.0 | 367.2 |
-| Linux | compiled | False | 871.0 | 367.1 |
-| Linux | int8 | True | 871.0 | 367.1 |
-| Linux | int8 | False | 871.0 | 367.0 |
-| Linux | onnx | True | 871.0 | 367.0 |
-| Linux | onnx | False | 871.0 | 367.0 |
 
-Measured with OS high-water RSS in separate fresh processes, including imports, model/runtime construction and 50 batch-128 forwards. On Linux ru_maxrss KiB is converted to bytes; on macOS it is already bytes. These are process peaks, not peak activations or parameter storage. One process measurement per variant is not evidence of a small memory improvement. Compiled construction may reuse an on-disk compiler cache.
+Measured with OS high-water RSS in separate fresh processes, including imports, model/runtime construction and 50 batch-128 forwards. macOS ru_maxrss is in bytes. Corrected Linux measurements use exec-local VmHWM; original Linux values must not be compared. These are process peaks, not peak activations or parameter storage. One process measurement per variant is not evidence of a small memory improvement. Compiled construction may reuse an on-disk compiler cache.
 
 ## Attempt audit
 
 The macOS Inductor attempt failed while loading the C++ runtime and is recorded as unavailable; Linux compilation is separately measured. A first Linux ONNX attempt reused an exported graph from a different checkpoint and was invalidated. The cache now verifies both checkpoint SHA256 and graph SHA256 before reuse, with regression tests. Only the corrected run is included in the comparison.
 
 Corrected Linux runtime run: https://github.com/BasmallaMetwally/ml-training-inference-lab/actions/runs/43453954524
-
-## Corrected Linux memory follow-up
-
-[Three-repeat VmHWM measurements, stage counters and regression evidence](../performance-linux/corrected/REPORT.md) supersede the inconclusive archived Linux table.

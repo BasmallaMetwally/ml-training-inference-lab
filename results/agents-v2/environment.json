@@ -13,5 +13,7 @@
   "infrastructure_notes": [
     "Initial Docker prevalidation could not fetch an abbreviated ref; rerun used full SHA.",
     "Next prevalidation found the legacy Docker ignore allowlist excluded the v2 worker. A Dockerfile-specific allowlist fixed the build; task files, hidden cases and collection harness were unchanged."
-  ]
+  ],
+  "docker_final_grading_run": "https://github.com/BasmallaMetwally/ml-lab-private-evaluator/actions/runs/43504419967",
+  "evaluated_public_commit": "bf122fc1788af0a21e125ddf8afbc3e2e7688723"
 }

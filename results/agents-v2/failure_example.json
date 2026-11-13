@@ -1,0 +1,39 @@
+{
+  "trial": "ranking_metrics--gpt-6-luna--r1",
+  "classification": "schema/integration error",
+  "cause": "pipeline reads optional key 'weight' instead of contract key 'weights', silently selecting unit weights",
+  "illustration_scope": "New public explanatory example after evaluation, not a hidden grading case",
+  "input": {
+    "y": [
+      1,
+      0,
+      1
+    ],
+    "score": [
+      0.9,
+      0.8,
+      0.1
+    ],
+    "weights": [
+      1,
+      1,
+      9
+    ]
+  },
+  "expected_hand_calculated": {
+    "auc": 0.1,
+    "ap": 0.9181818181818182
+  },
+  "observed": {
+    "status": "executed",
+    "outputs": [
+      {
+        "value": {
+          "auc": 0.5,
+          "ap": 0.8333333333333333
+        },
+        "mutated": false
+      }
+    ]
+  }
+}

@@ -5,10 +5,9 @@ title: "ML Training and Inference Lab"
 authors:
   - family-names: "Metwally"
     given-names: "Basmala"
-version: "1.0"
-doi: "10.5281/zenodo.24201648"
+version: "1.1"
 date-released: "2026-11-13"
 url: "https://github.com/BasmallaMetwally/ml-training-inference-lab"
 repository-code: "https://github.com/BasmallaMetwally/ml-training-inference-lab"
 license: MIT
-abstract: "A paired ten-seed PyTorch architecture study, inference runtime ablations, measured reproducibility and a twelve-task coding-agent repair pilot."
+abstract: "Reproducible PyTorch training and inference studies, corrected Linux memory measurements, a six-capacity exploratory sweep, and a twelve-task multi-file repair evaluation with custom-tool trajectories and withheld Docker grading."

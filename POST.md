@@ -1,15 +1,11 @@
-# What a small ML engineering study actually showed
+# Measuring ML code repairs beyond a perfect pilot
 
-I built an ML training and inference lab with coding-agent assistance, then tested its claims rather than stopping at a demo.
+I built ML Training and Inference Lab with coding-agent assistance to make ML engineering claims auditable.
 
-Across ten paired seeds, a small CNN improved Fashion-MNIST accuracy by 0.54 percentage points over an MLP, with a 95% seed-level interval of 0.44–0.64. It used about twelve times fewer parameters but had higher batch-1 CPU latency on the measured machine.
+The first zero-tool pilot saturated at 36/36 for both models. A fixed follow-up now records 72 independent multi-file task trajectories with actual file/test actions and visible feedback. Under 211 withheld cases and a strict completion/tool policy, GPT-6.1-Sol achieved 36/36 accepted repairs and GPT-6-Luna 26/36. Functional correctness was 36/36 versus 30/36. These are results on twelve synthetic tasks, not a general model ranking.
 
-I also compared checked and unchecked inference, profiled operator calls, measured peak process RSS, and tested fusion, compilation, dynamic int8 and ONNX. Optimizations that changed predictions were reported as rejected under an exact-parity policy.
+The most useful submitted failure was an integration bug: reading `weight` instead of `weights` silently ignored nonuniform weights. The visible example passed; hidden cases caught it. Other failures were native-tool policy violations and step-budget exhaustion. Full traces and a read-only viewer show exactly what happened. No protected-test edit was observed, and only four trajectories read the untrusted notes, so broad reward-hacking resistance is not established.
 
-For evaluation practice, two models each attempted twelve ML repair tasks three times. Both passed every task under withheld Docker grading. That is a ceiling effect, not a credible model ranking. Transcripts, uncertainty caveats and the negative findings are included.
+The project also includes a ten-seed PyTorch study, a separately labeled six-capacity exploratory sweep, inference ablations, profiler evidence and corrected Linux peak-memory measurements. The original Linux table is explicitly marked inconclusive rather than silently replaced.
 
-Finally, checkpoint resumption was bitwise reproducible within Linux and macOS, while the cross-platform tensors differed.
-
-Code and evidence: https://github.com/BasmallaMetwally/ml-training-inference-lab
-
-Archived v1.0: https://doi.org/10.5281/zenodo.24201648
+Code, reports, limitations and recorded trajectories: https://github.com/BasmallaMetwally/ml-training-inference-lab

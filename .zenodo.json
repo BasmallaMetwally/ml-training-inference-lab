@@ -1,10 +1,28 @@
 {
   "title": "ML Training and Inference Lab",
   "upload_type": "software",
-  "description": "Paired ten-seed PyTorch MLP/CNN training, held-out evaluation, inference runtime ablations, profiler and peak-RSS evidence, Linux/macOS reproducibility, and a twelve-task coding-agent repair pilot with withheld Docker grading.",
-  "creators": [{"name": "Metwally, Basmala"}],
-  "license": "MIT",
-  "version": "1.0",
-  "keywords": ["machine learning", "PyTorch", "reproducibility", "inference", "coding agents", "evaluation"],
-  "related_identifiers": [{"identifier": "https://github.com/BasmallaMetwally/ml-training-inference-lab", "relation": "isSupplementTo", "scheme": "url"}]
+  "version": "1.1",
+  "creators": [
+    {
+      "name": "Metwally, Basmala"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "machine learning",
+    "agent evaluation",
+    "PyTorch",
+    "reproducibility",
+    "coding agents"
+  ],
+  "description": "Version 1.1: corrected Linux process-memory measurements; a post-hoc six-capacity Fashion-MNIST sweep; and a fixed twelve-task multi-file coding repair evaluation with custom JSON tool actions, visible-test feedback, immutable task/harness hashes and withheld host-side grading inside network-disabled Docker. Complete trajectories, failures, limits and grader validation are included. Developed with coding-agent assistance. Checkpoints are distributed separately in the GitHub release. The hidden evaluator is private, so full independent public replay is not claimed. Version 1.0 remains archived unchanged; its Linux memory comparison is inconclusive.",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24201648",
+      "scheme": "doi",
+      "relation": "isNewVersionOf",
+      "resource_type": "software"
+    }
+  ]
 }

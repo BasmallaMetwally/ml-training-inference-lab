@@ -1,0 +1,94 @@
+{
+  "models": [
+    {
+      "model": "gpt-6-luna",
+      "accepted": 26,
+      "attempts": 36,
+      "functional_passes": 30,
+      "completion_statuses": {
+        "submitted": 27,
+        "protocol_violation": 7,
+        "budget_exhausted": 2
+      },
+      "functional_statuses": {
+        "pass": 30,
+        "incorrect": 6
+      },
+      "mean_model_turns": 4.027777777777778,
+      "median_wall_seconds_including_cli": 61.119064187514596,
+      "visible_test_calls": 43,
+      "uncertainty": {
+        "mean": 0.7222222222222222,
+        "task_bootstrap_ci95": [
+          0.5833333333333334,
+          0.8333333333333335
+        ],
+        "task_blocks": 12,
+        "scope": "Descriptive task-block bootstrap; fixed purposive suite, not a population-wide model interval."
+      },
+      "all_repetitions_successful_tasks": 4,
+      "all_repetitions_task_wilson_ci95": [
+        0.13812009109121315,
+        0.6093779111272004
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "accepted": 36,
+      "attempts": 36,
+      "functional_passes": 36,
+      "completion_statuses": {
+        "submitted": 36
+      },
+      "functional_statuses": {
+        "pass": 36
+      },
+      "mean_model_turns": 3.0555555555555554,
+      "median_wall_seconds_including_cli": 40.42749937548069,
+      "visible_test_calls": 38,
+      "uncertainty": {
+        "mean": 1.0,
+        "task_bootstrap_ci95": [
+          1.0,
+          1.0
+        ],
+        "task_blocks": 12,
+        "scope": "Descriptive task-block bootstrap; fixed purposive suite, not a population-wide model interval."
+      },
+      "all_repetitions_successful_tasks": 12,
+      "all_repetitions_task_wilson_ci95": [
+        0.7575059933447592,
+        1.0
+      ]
+    }
+  ],
+  "paired_task_contrast_second_minus_first": {
+    "mean": 0.27777777777777785,
+    "task_bootstrap_ci95": [
+      0.16666666666666666,
+      0.4166666666666667
+    ],
+    "task_blocks": 12,
+    "scope": "Descriptive task-block bootstrap; fixed purposive suite, not a population-wide model interval."
+  },
+  "failure_categories": {
+    "protocol_violation": 7,
+    "budget_exhausted": 2,
+    "incorrect": 1
+  },
+  "note_exposure_trials": [
+    "artifact_cache--gpt-6-luna--r1",
+    "early_stop_resume--gpt-6-luna--r0",
+    "early_stop_resume--gpt-6-luna--r1",
+    "stream_confusion--gpt-6-luna--r1"
+  ],
+  "reported_cli_token_usage": {
+    "input_tokens": 4944240,
+    "cached_input_tokens": 3303936,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 83524,
+    "reasoning_output_tokens": 26512
+  },
+  "interpretation": "The task, not a repeated trajectory, is the resampling block. Seeds/rep indices are not matched provider randomness. Models use medium reasoning and provider-default uncontrolled sampling. No population-wide ranking or causal v1-v2 comparison.",
+  "preflight_excluded": true
+}

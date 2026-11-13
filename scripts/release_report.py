@@ -1,4 +1,4 @@
-"""Build release documentation and figures directly from measured evidence."""
+"""Regenerate the runtime report and figures from recorded evidence."""
 
 import json
 import os
@@ -17,8 +17,7 @@ def read(path: str) -> dict:
 
 
 def main() -> None:
-    """Write the findings, methods and charts without inventing missing measurements."""
-    study = read("results/study/summary.json")
+    """Write runtime methods and charts; preserve separately maintained editorial findings."""
     mac = read("results/performance/summary.json")
     linux = read("results/performance-linux/summary.json")
 
@@ -30,9 +29,6 @@ def main() -> None:
             if x["checked"] == checked and x["batch_size"] == batch
         )
 
-    mlp, cnn = study["accuracy"]["mlp"], study["accuracy"]["cnn"]
-    difference = study["paired_difference_cnn_minus_mlp"]
-    a, b = [x * 100 for x in difference["ci95"]]
     result_dir = Path("results/figures")
     result_dir.mkdir(exist_ok=True)
     fig, axes = plt.subplots(1, 2, figsize=(12, 5), layout="constrained")
@@ -163,35 +159,7 @@ def main() -> None:
         "Corrected Linux runtime run: https://github.com/BasmallaMetwally/ml-training-inference-lab/actions/runs/43453954524",
     ]
     Path("results/performance/REPORT.md").write_text("\n".join(lines) + "\n")
-    findings = f"""# ما الذي وجدناه
-
-**ML Training and Inference Lab — v1.0 — 13 نوفمبر 2026**
-
-1. **الدقة والحجم والسرعة لا يتحركون معًا.** عبر 10 seeds، حقق الـMLP دقة {mlp["mean"] * 100:.3f}% ± {mlp["std"] * 100:.3f} نقطة مئوية، والـCNN دقة {cnn["mean"] * 100:.3f}% ± {cnn["std"] * 100:.3f}. فرق الـCNN المزدوج {difference["mean"] * 100:.3f} نقطة، بفاصل ثقة 95% من {a:.3f} إلى {b:.3f} وp={difference["exact_sign_flip_p_two_sided"]:.6f}. رغم امتلاكه 9,098 parameters مقابل 109,770، كان الـCNN أبطأ عند batch=1 على الجهاز المقاس. فواصل الثقة تصف اختلاف التدريب بين الـseeds على تقسيم ثابت، وليس اختلاف جميع البيانات الممكنة.
-
-2. **الـfusion تحسن حقيقي لكنه يعتمد على حجم الدفعة وحدود القياس.** استمر التحسن مع تشغيل فحص المدخلات وإيقافه. يوضح profiler انخفاض عدد استدعاءات ATen بعد إزالة مسارات BatchNorm، بينما تكبر تكلفة فحص كل عناصر المدخلات مع حجم الدفعة. لم تُقاس تكلفة dispatch الخالصة بشكل مستقل. جدول ذاكرة Linux الأصلي غير حاسم؛ القياس المصحح يستخدم VmHWM وثلاثة تكرارات لكل حالة. int8 الذي يغيّر التصنيفات يُرفض تحت شرط التطابق التام؛ نجاح compile على Linux لا يعني نجاحه على macOS.
-
-3. **نتائج الـagents كشفت سقفًا للاختبار.** نجح GPT-6-Luna وGPT-6.1-Sol في 36/36 محاولة لكل نموذج: 12 مهمة × 3 تكرارات، داخل Docker بدون شبكة، مع المراجع خارج الحاويات. لم نرَ timeout أو crash أو reward hacking. فاصل Wilson الوصفي على المهام الـ12 التي نجحت في جميع التكرارات يقارب 75.8%–100%؛ التكرارات مترابطة والمهام مختارة، فلا يوجد دليل كافٍ لترتيب النموذجين أو تعميم نسبة 100%.
-
-4. **قابلية الاستكمال محلية بالبيئة.** تطابقت الأوزان حرفيًا بين التدريب المتصل والمتوقف داخل Linux وداخل macOS، لكن بصمات Linux اختلفت عن macOS. وفي النموذج الأصلي، بلغ Shirt recall نحو 72.7%؛ أمثلة Shirt→T-shirt تشير إلى تشابه بصري بدقة منخفضة، وهو تفسير محتمل وليس سببًا مثبتًا.
-
-الأدلة: [Pareto](results/study/pareto.png)، [السرعة والذاكرة](results/performance/REPORT.md)، [تجارب النماذج](results/agents/REPORT.md)، [أمثلة الأخطاء](results/demo/shirt_errors.png). جميع النتائج تعليمية ومحدودة بالنماذج والبيانات والأجهزة المختبرة.
-"""
-    Path("FINDINGS.ar.md").write_text(findings)
-    Path("POST.md").write_text(f"""# What a small ML engineering study actually showed
-
-I built an ML training and inference lab with coding-agent assistance, then tested its claims rather than stopping at a demo.
-
-Across ten paired seeds, a small CNN improved Fashion-MNIST accuracy by {difference["mean"] * 100:.2f} percentage points over an MLP, with a 95% seed-level interval of {a:.2f}–{b:.2f}. It used about twelve times fewer parameters but had higher batch-1 CPU latency on the measured machine.
-
-I also compared checked and unchecked inference, profiled operator calls, measured peak process RSS, and tested fusion, compilation, dynamic int8 and ONNX. Optimizations that changed predictions were reported as rejected under an exact-parity policy.
-
-For evaluation practice, two models each attempted twelve ML repair tasks three times. Both passed every task under withheld Docker grading. That is a ceiling effect, not a credible model ranking. Transcripts, uncertainty caveats and the negative findings are included.
-
-Finally, checkpoint resumption was bitwise reproducible within Linux and macOS, while the cross-platform tensors differed.
-
-Code and evidence: https://github.com/BasmallaMetwally/ml-training-inference-lab
-""")
+    # Editorial v1.1 findings/post are maintained separately from runtime regeneration.
 
 
 if __name__ == "__main__":

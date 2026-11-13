@@ -17,3 +17,5 @@
 ## Post-v1.0 corrections and exploratory extension
 
 The original Linux peak-memory comparison is inconclusive; use the [replacement VmHWM study](results/performance-linux/corrected/REPORT.md). The [six-capacity, three-seed sweep](results/capacity-sweep/REPORT.md) is exploratory test-set reuse. It does not replace the original ten-seed accuracy comparison. Architecture seed blocks share shuffle order, but not initialization or dropout; pairing gives no guaranteed variance reduction. An unpaired Welch sensitivity check is recorded in results/study/summary.json.
+
+V2 coding-agent evaluation is a separate synthetic software-repair experiment; see [its report](results/agents-v2/REPORT.md). Its scores are not Fashion-MNIST model performance or a general model ranking.
